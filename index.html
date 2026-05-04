@@ -10,11 +10,23 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,wght@0,400;1,400;1,500&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=14" />
+  <link rel="stylesheet" href="styles.css?v=15" />
   <link rel="icon" type="image/png" href="assets/logo.png" />
 </head>
 
 <body>
+
+  <!-- Ambient waves — persistent ocean current behind everything -->
+  <div class="ambient-waves" aria-hidden="true">
+    <svg class="ambient-wave ambient-wave-a" viewBox="0 0 1440 200" preserveAspectRatio="none">
+      <path d="M0,100 C240,60 480,140 720,100 C960,60 1200,140 1440,100 L1440,200 L0,200 Z"
+        fill="none" stroke="#F5C518" stroke-width="1" stroke-opacity="0.06" />
+    </svg>
+    <svg class="ambient-wave ambient-wave-b" viewBox="0 0 1440 200" preserveAspectRatio="none">
+      <path d="M0,120 C300,80 600,160 900,120 C1100,90 1300,150 1440,120 L1440,200 L0,200 Z"
+        fill="none" stroke="#F5C518" stroke-width="1" stroke-opacity="0.04" />
+    </svg>
+  </div>
 
   <!-- Scroll progress -->
   <div class="scroll-progress"></div>
