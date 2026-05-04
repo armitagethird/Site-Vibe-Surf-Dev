@@ -424,6 +424,10 @@ h1, h2, h3, h4 {
   display: block;
   object-fit: cover;
   background: transparent;
+  /* video files have no alpha channel (yuv420p, not yuva420p);
+     screen blend turns the encoded black backdrop transparent
+     against the navy gradient + yellow glow below */
+  mix-blend-mode: screen;
   opacity: 0;
   transition: opacity 0.45s var(--ease-out);
 }
