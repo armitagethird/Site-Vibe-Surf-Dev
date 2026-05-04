@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VibeSurfDev — Build · Surf · Ship</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,wght@0,400;1,400;1,500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=14" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+</head>
+
+<body>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress"></div>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav" data-screen-label="Nav">
+    <a href="#hero" class="nav-brand" aria-label="VibeSurfDev home">
+      <svg class="nav-brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M2 20 C 8 12, 12 28, 16 20 S 24 12, 30 20" stroke="#F5C518" stroke-width="2" stroke-linecap="round" />
+        <path d="M4 24 C 9 18, 13 30, 17 24 S 24 18, 28 24" stroke="#F5C518" stroke-opacity="0.4" stroke-width="1.4"
+          stroke-linecap="round" />
+        <circle cx="22" cy="10" r="1.8" fill="#F5C518" />
+      </svg>
+      <span class="nav-brand-text">VibeSurf<span class="accent">Dev</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#work" data-i18n="nav.work">Trabalho</a></li>
+      <li><a href="#story" data-i18n="nav.process">Processo</a></li>
+      <li><a href="#services" data-i18n="nav.services">Serviços</a></li>
+      <li><a href="#reality" data-i18n="nav.reality">Realidade</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button data-lang="pt" class="active">PT</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <a href="#contact" class="nav-cta" data-i18n="nav.cta">Iniciar projeto</a>
+    </div>
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero" data-screen-label="01 Hero">
+    <div class="hero-bg">
+      <div class="grid"></div>
+      <div class="grid-glow"></div>
+
+      <svg class="wave-layer w4" data-speed="0.05" viewBox="0 0 1440 200" preserveAspectRatio="none"
+        style="height:280px;">
+        <path d="M0,100 C240,60 480,140 720,100 C960,60 1200,140 1440,100 L1440,200 L0,200 Z" fill="#14273d" />
+      </svg>
+      <svg class="wave-layer w3" data-speed="0.1" viewBox="0 0 1440 200" preserveAspectRatio="none"
+        style="height:240px;">
+        <path d="M0,120 C240,80 480,160 720,120 C960,80 1200,160 1440,120 L1440,200 L0,200 Z" fill="#1a3050" />
+      </svg>
+      <svg class="wave-layer w2" data-speed="0.18" viewBox="0 0 1440 200" preserveAspectRatio="none"
+        style="height:200px;">
+        <path d="M0,140 C240,100 480,180 720,140 C960,100 1200,180 1440,140 L1440,200 L0,200 Z" fill="#21406c" />
+      </svg>
+      <svg class="wave-layer w1" data-speed="0.25" viewBox="0 0 1440 80" preserveAspectRatio="none"
+        style="height:80px;">
+        <path d="M0,40 C240,10 480,60 720,40 C960,20 1200,55 1440,40 L1440,80 L0,80 Z" fill="none" stroke="#F5C518"
+          stroke-width="1.5" stroke-opacity="0.5" />
+      </svg>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-text">
+        <span class="eyebrow" data-i18n="hero.eyebrow">VSD · 026 · Build · Surf · Ship</span>
+        <h1>
+          <span class="word" data-i18n="hero.h1.line1">Não apenas</span>
+          <span class="word" data-i18n="hero.h1.build">construímos.</span><br />
+          <span class="word" data-i18n="hero.h1.line2">Nós</span>
+          <span class="word accent" data-i18n="hero.h1.surf">surfamos</span>
+          <span class="word" data-i18n="hero.h1.line3">a onda da inovação.</span>
+        </h1>
+        <p class="sub" data-i18n="hero.sub">Sistemas, websites e apps criados para quem exige excelência. Somos um
+          pequeno estúdio de engenheiros e designers seniores entregando software de produção.</p>
+        <div class="hero-cta-row">
+          <a href="#contact" class="btn-primary">
+            <span data-i18n="hero.cta1">Iniciar projeto</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+          <a href="#work" class="btn-ghost">
+            <span data-i18n="hero.cta2">Veja nosso trabalho</span>
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+              <path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-logo-wrap">
+        <div class="hero-logo-frame">
+          <video class="hero-logo-video" autoplay muted loop playsinline preload="auto"
+            aria-label="VibeSurfDev">
+            <source src="assets/logo-anim.webm" type="video/webm" />
+            <source src="assets/logo-anim.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="logo-tag" data-i18n="hero.tag">EST · 2026 · BUILD · SURF · SHIP</div>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <span data-i18n="hero.scroll">Role</span>
+      <div class="line"></div>
+    </div>
+  </section>
+
+  <!-- ============ WORK ============ -->
+  <section class="work" id="work" data-screen-label="02 Work">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="work.eyebrow">Em alto-mar · 02</span>
+        <h2><span data-i18n="work.h2.l1">Trabalho em produção.</span><br /><span class="accent"
+            data-i18n="work.h2.l2">Sem maquete</span><span data-i18n="work.h2.l2b">.</span></h2>
+        <p data-i18n="work.intro">Cada projeto aqui está rodando em produção. Código auditável, deploy contínuo, ondas
+          reais.</p>
+      </div>
+
+      <div class="work-track">
+        <article class="work-slide" data-project="dra-kerly">
+          <div class="browser-frame">
+            <div class="browser-chrome">
+              <div class="browser-dots">
+                <span class="dot dot-r"></span>
+                <span class="dot dot-y"></span>
+                <span class="dot dot-g"></span>
+              </div>
+              <div class="browser-url">
+                <span class="url-protocol">https://</span><span class="url-host"
+                  style="--url-width: 21ch;">drakerlyhelena.com.br</span><span class="url-caret"
+                  aria-hidden="true">▍</span>
+              </div>
+              <div class="browser-actions">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                  <path d="M2 8a6 6 0 1 1 1.76 4.24" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+                    fill="none" />
+                  <path d="M2 4v3.5h3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                </svg>
+              </div>
+            </div>
+            <div class="browser-viewport">
+              <img src="assets/work/dra-kerly-site.png" alt="Dra. Kerly Helena — site institucional" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="work-meta">
+            <div class="work-meta-head">
+              <span class="work-num">01 / 03</span>
+              <span class="work-year">2026</span>
+            </div>
+            <h3 class="work-title" data-i18n="work.proj1.title">Dra. Kerly Helena</h3>
+            <p class="work-tagline" data-i18n="work.proj1.tagline">Site para médica ginecologista integrativa.</p>
+            <ul class="work-outcomes">
+              <li data-i18n="work.proj1.o1">Site institucional + questionário de captação que qualifica leads antes do
+                primeiro contato.</li>
+              <li data-i18n="work.proj1.o2">HTML, CSS e JS puro — zero framework, zero dependência em runtime.</li>
+              <li data-i18n="work.proj1.o3">Mobile-first, navegação direta, foco em conversão.</li>
+            </ul>
+            <div class="work-tags">
+              <span>HTML</span><span>CSS</span><span>JS</span><span>Lead capture</span>
+            </div>
+            <div class="work-cta">
+              <a href="https://drakerlyhelena.com.br" class="work-link" target="_blank" rel="noopener">
+                <span data-i18n="work.cta.live">Ver site</span> <span aria-hidden="true">→</span>
+              </a>
+            </div>
+            <dl class="work-info" aria-label="Detalhes do site">
+              <div class="work-info-item">
+                <dt class="work-info-label" data-i18n="work.proj1.info1.label">Status</dt>
+                <dd class="work-info-value" data-i18n="work.proj1.info1.value">No ar · drakerlyhelena.com.br</dd>
+              </div>
+              <div class="work-info-item">
+                <dt class="work-info-label" data-i18n="work.proj1.info2.label">Performance</dt>
+                <dd class="work-info-value" data-i18n="work.proj1.info2.value">HTML estático · zero runtime · carregamento instantâneo no mobile.</dd>
+              </div>
+              <div class="work-info-item">
+                <dt class="work-info-label" data-i18n="work.proj1.info3.label">Foco</dt>
+                <dd class="work-info-value" data-i18n="work.proj1.info3.value">Questionário de captação que qualifica leads antes do primeiro contato.</dd>
+              </div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="work-slide" data-project="motel-paraiso">
+          <div class="browser-frame">
+            <div class="browser-chrome">
+              <div class="browser-dots">
+                <span class="dot dot-r"></span>
+                <span class="dot dot-y"></span>
+                <span class="dot dot-g"></span>
+              </div>
+              <div class="browser-url">
+                <span class="url-protocol">https://</span><span class="url-host"
+                  style="--url-width: 28ch;">motelparaisosite.netlify.app</span><span class="url-caret"
+                  aria-hidden="true">▍</span>
+              </div>
+              <div class="browser-actions">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                  <path d="M2 8a6 6 0 1 1 1.76 4.24" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+                    fill="none" />
+                  <path d="M2 4v3.5h3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                </svg>
+              </div>
+            </div>
+            <div class="browser-viewport">
+              <img src="assets/work/Paraiso-Motel-Site.png" alt="Motel Paraíso — site público" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="work-meta">
+            <div class="work-meta-head">
+              <span class="work-num">02 / 03</span>
+              <span class="work-year">2026</span>
+            </div>
+            <h3 class="work-title" data-i18n="work.proj2.title">Motel Paraíso</h3>
+            <p class="work-tagline" data-i18n="work.proj2.tagline">Site público, sistema local e dashboard remoto com IA.
+            </p>
+            <ul class="work-outcomes">
+              <li data-i18n="work.proj2.o1">Ecossistema completo: site institucional, sistema operacional na recepção e
+                dashboard de gestão à distância.</li>
+              <li data-i18n="work.proj2.o2">Site em Astro 5 + Tailwind v4 — HTML estático, Lighthouse 95+, zero
+                dependência em runtime.</li>
+              <li data-i18n="work.proj2.o3">Sistema local em Tauri + React; dashboard em Next.js com resumos diários,
+                semanais e mensais gerados por IA.</li>
+            </ul>
+            <div class="work-tags">
+              <span>Astro 5</span><span>Tailwind v4</span><span>Tauri</span><span>Next.js</span><span>IA</span>
+            </div>
+            <div class="work-cta">
+              <a href="https://motelparaisosite.netlify.app/" class="work-link" target="_blank" rel="noopener">
+                <span data-i18n="work.cta.live">Ver site</span> <span aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div class="work-screens" aria-label="Telas do ecossistema">
+              <button type="button" class="work-screen" aria-label="Sistema local da recepção">
+                <img src="assets/work/sistema-local-motel.png" alt="Sistema local da recepção do motel"
+                  loading="lazy" />
+              </button>
+              <button type="button" class="work-screen" aria-label="Dashboard de gestão">
+                <img src="assets/work/dashboard-motel-paraiso.png" alt="Dashboard de gestão remota com IA"
+                  loading="lazy" />
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-slide" data-project="prontuvet">
+          <div class="browser-frame">
+            <div class="browser-chrome">
+              <div class="browser-dots">
+                <span class="dot dot-r"></span>
+                <span class="dot dot-y"></span>
+                <span class="dot dot-g"></span>
+              </div>
+              <div class="browser-url">
+                <span class="url-protocol">https://</span><span class="url-host"
+                  style="--url-width: 13ch;">prontuvet.com</span><span class="url-caret"
+                  aria-hidden="true">▍</span>
+              </div>
+              <div class="browser-actions">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                  <path d="M2 8a6 6 0 1 1 1.76 4.24" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+                    fill="none" />
+                  <path d="M2 4v3.5h3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                </svg>
+              </div>
+            </div>
+            <div class="browser-viewport">
+              <img src="assets/work/ProntuVet-Site.png" alt="ProntuVet — site institucional" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="work-meta">
+            <div class="work-meta-head">
+              <span class="work-num">03 / 03</span>
+              <span class="work-year">2026</span>
+            </div>
+            <h3 class="work-title" data-i18n="work.proj3.title">ProntuVet</h3>
+            <p class="work-tagline" data-i18n="work.proj3.tagline">WebApp de escuta clínica por IA para prontuários
+              veterinários.</p>
+            <ul class="work-outcomes">
+              <li data-i18n="work.proj3.o1">A IA escuta a consulta e devolve o prontuário completo, estruturado e
+                detalhado.</li>
+              <li data-i18n="work.proj3.o2">WebApp principal em Next.js + Node.js + React; cliente desktop em Tauri +
+                React.</li>
+              <li data-i18n="work.proj3.o3">Google AI integrada para transcrição e organização automática dos dados
+                clínicos.</li>
+            </ul>
+            <div class="work-tags">
+              <span>Next.js</span><span>Node.js</span><span>React</span><span>Tauri</span><span>Google AI</span>
+            </div>
+            <div class="work-cta">
+              <a href="https://prontuvet.com" class="work-link" target="_blank" rel="noopener">
+                <span data-i18n="work.cta.live">Ver site</span> <span aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div class="work-screens" aria-label="Telas do produto">
+              <button type="button" class="work-screen" aria-label="Tela de login do ProntuVet">
+                <img src="assets/work/tela-login-prontuvet.png" alt="Tela de login do ProntuVet" loading="lazy" />
+              </button>
+              <button type="button" class="work-screen" aria-label="Dashboard do ProntuVet">
+                <img src="assets/work/dashboard-prontuvet.png" alt="Dashboard do ProntuVet" loading="lazy" />
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="work-controls">
+        <button class="work-prev" aria-label="Projeto anterior">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+            <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+        <div class="work-dots" aria-hidden="true"></div>
+        <span class="work-counter">01 / 03</span>
+        <button class="work-next" aria-label="Próximo projeto">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+            <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SCROLLYTELLING ============ -->
+  <section class="story" id="story" data-screen-label="03 Process">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="story.eyebrow">Nosso processo</span>
+        <h2><span data-i18n="story.h2.l1">Três movimentos,</span><br /><span data-i18n="story.h2.l2">uma</span> <span
+            class="accent" data-i18n="story.h2.l2b">onda</span><span data-i18n="story.h2.l2c">.</span></h2>
+        <p data-i18n="story.intro">Cada engajamento segue o mesmo ritmo. Ouvimos com atenção, construímos com cuidado e
+          entregamos sem drama. Sem pivôs disfarçados de progresso.</p>
+      </div>
+
+      <div class="story-grid">
+        <div class="story-text">
+          <div class="chapter active" data-chapter="0">
+            <div class="chapter-num" data-i18n="story.c1.num">01 — DESCOBERTA</div>
+            <h3><span data-i18n="story.c1.title.a">Nós</span> <span class="accent"
+                data-i18n="story.c1.title.b">ouvimos</span>.</h3>
+            <p data-i18n="story.c1.body">Antes da primeira linha de código, sentamos com você. Workshops, entrevistas
+              com usuários, arqueologia técnica.</p>
+            <div class="chapter-meta">
+              <span data-i18n="story.c1.t1">Workshops</span>
+              <span data-i18n="story.c1.t2">Auditorias</span>
+              <span data-i18n="story.c1.t3">Roadmaps</span>
+            </div>
+          </div>
+
+          <div class="chapter" data-chapter="1">
+            <div class="chapter-num" data-i18n="story.c2.num">02 — OFÍCIO</div>
+            <h3><span data-i18n="story.c2.title.a">Nós</span> <span class="accent"
+                data-i18n="story.c2.title.b">construímos</span>.</h3>
+            <p data-i18n="story.c2.body">Dois engenheiros sêniores. Looms diários. Código que você consegue ler.</p>
+            <div class="chapter-meta">
+              <span data-i18n="story.c2.t1">TypeScript</span>
+              <span data-i18n="story.c2.t2">Rust · Go</span>
+              <span data-i18n="story.c2.t3">SwiftUI · Compose</span>
+            </div>
+          </div>
+
+          <div class="chapter" data-chapter="2">
+            <div class="chapter-num" data-i18n="story.c3.num">03 — LANÇAMENTO</div>
+            <h3><span data-i18n="story.c3.title.a">Nós</span> <span class="accent"
+                data-i18n="story.c3.title.b">entregamos</span>.</h3>
+            <p data-i18n="story.c3.body">Produção do dia um. CI/CD, observabilidade, runbooks, plantões.</p>
+            <div class="chapter-meta">
+              <span data-i18n="story.c3.t1">SLOs</span>
+              <span data-i18n="story.c3.t2">Handover</span>
+              <span data-i18n="story.c3.t3">Suporte</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="story-stage">
+          <!-- Scene 0: isometric cubes assembling -->
+          <div class="iso-scene active" data-scene="0">
+            <svg viewBox="0 0 460 460" fill="none">
+              <defs>
+                <linearGradient id="cubeTop" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#F5C518" />
+                  <stop offset="1" stop-color="#d9aa12" />
+                </linearGradient>
+                <linearGradient id="cubeLeft" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#1a3050" />
+                  <stop offset="1" stop-color="#0D1B2A" />
+                </linearGradient>
+                <linearGradient id="cubeRight" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#21406c" />
+                  <stop offset="1" stop-color="#14273d" />
+                </linearGradient>
+              </defs>
+              <g transform="translate(230 240)">
+                <g transform="translate(-100 60)">
+                  <polygon points="0,-30 52,0 0,30 -52,0" fill="url(#cubeTop)" />
+                  <polygon points="-52,0 0,30 0,90 -52,60" fill="url(#cubeLeft)" />
+                  <polygon points="0,30 52,0 52,60 0,90" fill="url(#cubeRight)" />
+                </g>
+                <g transform="translate(0 60)">
+                  <polygon points="0,-30 52,0 0,30 -52,0" fill="url(#cubeTop)" />
+                  <polygon points="-52,0 0,30 0,90 -52,60" fill="url(#cubeLeft)" />
+                  <polygon points="0,30 52,0 52,60 0,90" fill="url(#cubeRight)" />
+                </g>
+                <g transform="translate(100 60)">
+                  <polygon points="0,-30 52,0 0,30 -52,0" fill="url(#cubeTop)" />
+                  <polygon points="-52,0 0,30 0,90 -52,60" fill="url(#cubeLeft)" />
+                  <polygon points="0,30 52,0 52,60 0,90" fill="url(#cubeRight)" />
+                </g>
+                <g transform="translate(-50 0)">
+                  <polygon points="0,-30 52,0 0,30 -52,0" fill="url(#cubeTop)" />
+                  <polygon points="-52,0 0,30 0,90 -52,60" fill="url(#cubeLeft)" />
+                  <polygon points="0,30 52,0 52,60 0,90" fill="url(#cubeRight)" />
+                </g>
+                <g transform="translate(50 0)">
+                  <polygon points="0,-30 52,0 0,30 -52,0" fill="url(#cubeTop)" />
+                  <polygon points="-52,0 0,30 0,90 -52,60" fill="url(#cubeLeft)" />
+                  <polygon points="0,30 52,0 52,60 0,90" fill="url(#cubeRight)" />
+                </g>
+                <g transform="translate(0 -70)">
+                  <polygon points="0,-30 52,0 0,30 -52,0" fill="#F5C518" opacity="0.95" />
+                  <polygon points="-52,0 0,30 0,90 -52,60" fill="#0D1B2A" />
+                  <polygon points="0,30 52,0 52,60 0,90" fill="#14273d" />
+                </g>
+                <circle cx="0" cy="-90" r="3" fill="#F5C518" />
+                <circle cx="0" cy="-100" r="2" fill="#F5C518" opacity="0.6" />
+                <circle cx="0" cy="-108" r="1.5" fill="#F5C518" opacity="0.3" />
+              </g>
+              <g stroke="#F5C518" stroke-opacity="0.2" stroke-width="1">
+                <line x1="80" y1="380" x2="380" y2="380" />
+                <line x1="120" y1="400" x2="340" y2="400" />
+              </g>
+            </svg>
+          </div>
+
+          <!-- Scene 1: redrawn terminal/code editor — proper alignment -->
+          <div class="iso-scene" data-scene="1">
+            <svg viewBox="0 0 460 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="termTop" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#1a3050" />
+                  <stop offset="1" stop-color="#14273d" />
+                </linearGradient>
+              </defs>
+              <!-- isometric editor, rendered as a flat upright window with iso transform -->
+              <g transform="translate(230 230)">
+                <!-- iso group: scale Y for foreshortening, rotate by ~26.5deg via skew chain -->
+                <g transform="matrix(0.866,0.5,-0.866,0.5,0,0)">
+                  <!-- Window body -->
+                  <rect x="-180" y="-130" width="360" height="240" rx="10" fill="url(#termTop)" stroke="#F5C518"
+                    stroke-opacity="0.5" stroke-width="1.4" />
+                  <!-- Title bar -->
+                  <rect x="-180" y="-130" width="360" height="30" rx="10" fill="#0a1421" />
+                  <rect x="-180" y="-110" width="360" height="10" fill="#0a1421" />
+                  <!-- traffic lights -->
+                  <circle cx="-164" cy="-115" r="4" fill="#ff5f57" />
+                  <circle cx="-150" cy="-115" r="4" fill="#febc2e" />
+                  <circle cx="-136" cy="-115" r="4" fill="#28c840" />
+                  <!-- title -->
+                  <text x="0" y="-110" fill="#8a99b3" font-family="JetBrains Mono, monospace" font-size="10"
+                    text-anchor="middle">~/vibesurfdev/main.ts</text>
+                  <!-- gutter (line numbers) -->
+                  <rect x="-180" y="-100" width="32" height="210" fill="#0a1421" />
+                  <text x="-164" y="-82" fill="#8a99b3" font-family="JetBrains Mono, monospace" font-size="9"
+                    text-anchor="middle">01</text>
+                  <text x="-164" y="-66" fill="#8a99b3" font-family="JetBrains Mono, monospace" font-size="9"
+                    text-anchor="middle">02</text>
+                  <text x="-164" y="-50" fill="#8a99b3" font-family="JetBrains Mono, monospace" font-size="9"
+                    text-anchor="middle">03</text>
+                  <text x="-164" y="-34" fill="#F5C518" font-family="JetBrains Mono, monospace" font-size="9"
+                    text-anchor="middle">04</text>
+                  <text x="-164" y="-18" fill="#8a99b3" font-family="JetBrains Mono, monospace" font-size="9"
+                    text-anchor="middle">05</text>
+                  <text x="-164" y="-2" fill="#8a99b3" font-family="JetBrains Mono, monospace" font-size="9"
+                    text-anchor="middle">06</text>
+                  <text x="-164" y="14" fill="#8a99b3" font-family="JetBrains Mono, monospace" font-size="9"
+                    text-anchor="middle">07</text>
+                  <text x="-164" y="30" fill="#8a99b3" font-family="JetBrains Mono, monospace" font-size="9"
+                    text-anchor="middle">08</text>
+                  <text x="-164" y="46" fill="#8a99b3" font-family="JetBrains Mono, monospace" font-size="9"
+                    text-anchor="middle">09</text>
+
+                  <!-- Code lines (perfectly contained) -->
+                  <!-- line 1: import -->
+                  <rect x="-140" y="-90" width="32" height="6" rx="1" fill="#F5C518" />
+                  <rect x="-104" y="-90" width="40" height="6" rx="1" fill="#8a99b3" opacity="0.7" />
+                  <rect x="-60" y="-90" width="22" height="6" rx="1" fill="#F5C518" opacity="0.6" />
+                  <rect x="-34" y="-90" width="60" height="6" rx="1" fill="#4ade80" opacity="0.7" />
+                  <!-- line 2: blank-ish -->
+                  <rect x="-140" y="-74" width="20" height="6" rx="1" fill="#8a99b3" opacity="0.4" />
+                  <!-- line 3: function decl -->
+                  <rect x="-140" y="-58" width="50" height="6" rx="1" fill="#F5C518" />
+                  <rect x="-86" y="-58" width="36" height="6" rx="1" fill="#fff" opacity="0.85" />
+                  <rect x="-46" y="-58" width="14" height="6" rx="1" fill="#8a99b3" opacity="0.6" />
+                  <rect x="-28" y="-58" width="40" height="6" rx="1" fill="#4ade80" opacity="0.7" />
+                  <rect x="16" y="-58" width="10" height="6" rx="1" fill="#8a99b3" opacity="0.6" />
+                  <!-- line 4: ACTIVE / highlighted -->
+                  <rect x="-148" y="-44" width="296" height="14" fill="#F5C518" opacity="0.06" />
+                  <rect x="-128" y="-42" width="28" height="6" rx="1" fill="#F5C518" />
+                  <rect x="-96" y="-42" width="44" height="6" rx="1" fill="#fff" opacity="0.9" />
+                  <rect x="-48" y="-42" width="60" height="6" rx="1" fill="#4ade80" opacity="0.7" />
+                  <rect x="16" y="-42" width="20" height="6" rx="1" fill="#F5C518" />
+                  <!-- line 5: nested -->
+                  <rect x="-120" y="-26" width="44" height="6" rx="1" fill="#8a99b3" opacity="0.7" />
+                  <rect x="-72" y="-26" width="30" height="6" rx="1" fill="#F5C518" opacity="0.7" />
+                  <rect x="-38" y="-26" width="50" height="6" rx="1" fill="#fff" opacity="0.85" />
+                  <!-- line 6 -->
+                  <rect x="-120" y="-10" width="36" height="6" rx="1" fill="#F5C518" opacity="0.7" />
+                  <rect x="-80" y="-10" width="28" height="6" rx="1" fill="#8a99b3" opacity="0.6" />
+                  <rect x="-48" y="-10" width="60" height="6" rx="1" fill="#4ade80" opacity="0.7" />
+                  <!-- line 7 -->
+                  <rect x="-100" y="6" width="22" height="6" rx="1" fill="#8a99b3" opacity="0.6" />
+                  <rect x="-74" y="6" width="40" height="6" rx="1" fill="#F5C518" opacity="0.7" />
+                  <!-- line 8: closing brace -->
+                  <rect x="-140" y="22" width="8" height="6" rx="1" fill="#8a99b3" opacity="0.6" />
+                  <!-- line 9: cursor -->
+                  <rect x="-140" y="38" width="2" height="10" fill="#F5C518">
+                    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite" />
+                  </rect>
+
+                  <!-- status bar -->
+                  <rect x="-180" y="80" width="360" height="30" fill="#0a1421" />
+                  <circle cx="-160" cy="95" r="3" fill="#4ade80" />
+                  <text x="-150" y="98" fill="#8a99b3" font-family="JetBrains Mono, monospace" font-size="9">main</text>
+                  <text x="-118" y="98" fill="#F5C518" font-family="JetBrains Mono, monospace"
+                    font-size="9">+1,248</text>
+                  <text x="166" y="98" fill="#8a99b3" font-family="JetBrains Mono, monospace" font-size="9"
+                    text-anchor="end">UTF-8 · TS</text>
+                </g>
+              </g>
+
+              <!-- floating tags outside window (in screen space) -->
+              <g transform="translate(56 80)" opacity="0.92">
+                <rect x="0" y="0" width="100" height="26" rx="6" fill="#0D1B2A" stroke="#F5C518" stroke-opacity="0.4" />
+                <circle cx="14" cy="13" r="3" fill="#4ade80" />
+                <text x="24" y="17" fill="#F5C518" font-family="JetBrains Mono, monospace" font-size="10">build ·
+                  ok</text>
+              </g>
+              <g transform="translate(304 100)" opacity="0.85">
+                <rect x="0" y="0" width="84" height="26" rx="6" fill="#0D1B2A" stroke="#F5C518" stroke-opacity="0.4" />
+                <text x="42" y="17" fill="#F5C518" font-family="JetBrains Mono, monospace" font-size="10"
+                  text-anchor="middle">ci · pass</text>
+              </g>
+            </svg>
+          </div>
+
+          <!-- Scene 2: rocket -->
+          <div class="iso-scene" data-scene="2">
+            <svg viewBox="0 0 460 460" fill="none">
+              <g transform="translate(230 290)">
+                <g transform="translate(0 80)">
+                  <polygon points="-100,0 0,-50 100,0 0,50" fill="#14273d" />
+                  <polygon points="-100,0 0,50 0,80 -100,30" fill="#0a1421" />
+                  <polygon points="0,50 100,0 100,30 0,80" fill="#0D1B2A" />
+                </g>
+                <g>
+                  <ellipse cx="0" cy="80" rx="14" ry="40" fill="#F5C518" opacity="0.2" />
+                  <ellipse cx="0" cy="100" rx="20" ry="20" fill="#F5C518" opacity="0.3" />
+                  <ellipse cx="0" cy="120" rx="28" ry="10" fill="#F5C518" opacity="0.15" />
+                  <path d="M -18 40 L -18 -40 Q -18 -80 0 -110 Q 18 -80 18 -40 L 18 40 Z" fill="#F5C518" />
+                  <circle cx="0" cy="-50" r="9" fill="#0D1B2A" />
+                  <circle cx="-2" cy="-52" r="3" fill="#F5C518" opacity="0.6" />
+                  <path d="M -6 -90 Q 0 -100 6 -90 Z" fill="#0D1B2A" />
+                  <path d="M -18 20 L -32 50 L -18 50 Z" fill="#0D1B2A" />
+                  <path d="M 18 20 L 32 50 L 18 50 Z" fill="#0D1B2A" />
+                  <rect x="-18" y="-20" width="36" height="3" fill="#0D1B2A" />
+                  <rect x="-18" y="-10" width="36" height="2" fill="#0D1B2A" opacity="0.5" />
+                </g>
+                <g>
+                  <circle cx="-60" cy="-40" r="2" fill="#F5C518">
+                    <animate attributeName="cy" values="-40;-160;-40" dur="3s" repeatCount="indefinite" />
+                    <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx="60" cy="-20" r="1.5" fill="#F5C518">
+                    <animate attributeName="cy" values="-20;-140;-20" dur="3.5s" repeatCount="indefinite" />
+                    <animate attributeName="opacity" values="0;1;0" dur="3.5s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx="80" cy="-80" r="1" fill="#F5C518">
+                    <animate attributeName="cy" values="-80;-180;-80" dur="2.5s" repeatCount="indefinite" />
+                    <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx="-80" cy="-100" r="1" fill="#F5C518">
+                    <animate attributeName="cy" values="-100;-200;-100" dur="3s" repeatCount="indefinite" />
+                    <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" />
+                  </circle>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="services" id="services" data-screen-label="04 Services">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="services.eyebrow">O que fazemos</span>
+        <h2><span data-i18n="services.h2.l1">Ofício sênior,</span><br /><span class="accent"
+            data-i18n="services.h2.l2">ponta a ponta</span><span data-i18n="services.h2.l2b">.</span></h2>
+        <p data-i18n="services.intro">Quatro disciplinas, um só time. Não fazemos handoff entre prestadores — design,
+          engenharia e ops vivem sob o mesmo teto.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <span class="service-num">01 / 04</span>
+          <div class="service-iso">
+            <svg class="service-icon" viewBox="0 0 100 100" fill="none">
+              <g transform="translate(50 50)">
+                <polygon points="0,-30 30,-15 0,0 -30,-15" fill="#F5C518" />
+                <polygon points="-30,-15 0,0 0,30 -30,15" fill="#1a3050" />
+                <polygon points="30,-15 0,0 0,30 30,15" fill="#21406c" />
+                <circle cx="0" cy="-12" r="3" fill="#0D1B2A" />
+                <rect x="-12" y="6" width="24" height="2" fill="#F5C518" opacity="0.4" transform="skewY(-26.5)" />
+                <rect x="-12" y="14" width="16" height="2" fill="#F5C518" opacity="0.3" transform="skewY(-26.5)" />
+              </g>
+            </svg>
+          </div>
+          <h3 data-i18n="svc1.title">Sistemas Web</h3>
+          <p data-i18n="svc1.desc">Plataformas em produção, ferramentas internas, dashboards em tempo real.</p>
+          <div class="service-tags"><span>Next.js</span><span>Postgres</span><span>K8s</span></div>
+          <div class="service-arrow">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+              <path d="M5 11L11 5M11 5H6M11 5V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="service-card reveal">
+          <span class="service-num">02 / 04</span>
+          <div class="service-iso">
+            <svg class="service-icon" viewBox="0 0 100 100" fill="none">
+              <g transform="translate(50 52)">
+                <polygon points="-14,-30 14,-44 22,-22 -6,-8" fill="#F5C518" />
+                <polygon points="-14,-30 -6,-8 -6,18 -14,-4" fill="#0D1B2A" />
+                <polygon points="-6,-8 22,-22 22,4 -6,18" fill="#14273d" />
+                <circle cx="2" cy="-21" r="1.5" fill="#F5C518" opacity="0.8" />
+              </g>
+            </svg>
+          </div>
+          <h3 data-i18n="svc2.title">Aplicativos Mobile</h3>
+          <p data-i18n="svc2.desc">iOS e Android nativos. SwiftUI e Jetpack Compose.</p>
+          <div class="service-tags"><span>SwiftUI</span><span>Compose</span><span>Expo</span></div>
+          <div class="service-arrow">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+              <path d="M5 11L11 5M11 5H6M11 5V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="service-card reveal">
+          <span class="service-num">03 / 04</span>
+          <div class="service-iso">
+            <svg class="service-icon" viewBox="0 0 100 100" fill="none">
+              <g transform="translate(50 50)">
+                <polygon points="-32,-12 0,-28 32,-12 0,4" fill="#F5C518" />
+                <polygon points="-32,-12 0,4 0,28 -32,12" fill="#0D1B2A" />
+                <polygon points="0,4 32,-12 32,12 0,28" fill="#14273d" />
+                <circle cx="-22" cy="-12" r="1.5" fill="#0D1B2A" />
+                <circle cx="-18" cy="-14" r="1.5" fill="#0D1B2A" />
+                <circle cx="-14" cy="-16" r="1.5" fill="#0D1B2A" />
+              </g>
+            </svg>
+          </div>
+          <h3 data-i18n="svc3.title">Websites</h3>
+          <p data-i18n="svc3.desc">Sites de marketing que convertem. Liderados por design.</p>
+          <div class="service-tags"><span>Astro</span><span>Sanity</span><span>GSAP</span></div>
+          <div class="service-arrow">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+              <path d="M5 11L11 5M11 5H6M11 5V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="service-card reveal">
+          <span class="service-num">04 / 04</span>
+          <div class="service-iso">
+            <svg class="service-icon" viewBox="0 0 100 100" fill="none">
+              <g transform="translate(50 50)">
+                <g transform="translate(0 12)">
+                  <polygon points="-26,-10 0,-23 26,-10 0,3" fill="#0D1B2A" stroke="#F5C518" stroke-opacity="0.3" />
+                </g>
+                <g transform="translate(0 -2)">
+                  <polygon points="-26,-10 0,-23 26,-10 0,3" fill="#14273d" stroke="#F5C518" stroke-opacity="0.5" />
+                </g>
+                <g transform="translate(0 -16)">
+                  <polygon points="-26,-10 0,-23 26,-10 0,3" fill="#F5C518" />
+                  <circle cx="0" cy="-10" r="2.5" fill="#0D1B2A" />
+                </g>
+              </g>
+            </svg>
+          </div>
+          <h3 data-i18n="svc4.title">Design UX / UI</h3>
+          <p data-i18n="svc4.desc">Design de interface entregue em código, não só Figma.</p>
+          <div class="service-tags"><span>Figma</span><span>Tokens</span><span>Prototype</span></div>
+          <div class="service-arrow">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+              <path d="M5 11L11 5M11 5H6M11 5V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <section class="stats" id="stats" data-screen-label="05 Stats">
+    <canvas class="stats-canvas"></canvas>
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="stats.eyebrow">Nos números</span>
+        <h2><span data-i18n="stats.h2.l1">Código auditável.</span><br /><span data-i18n="stats.h2.l2">Sistemas
+            blindados.</span> <span class="accent" data-i18n="stats.h2.l2b">Zero enrolação.</span></h2>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat reveal">
+          <div class="stat-value"><span class="num" data-target="100">0</span><span class="suffix">%</span></div>
+          <div class="stat-label" data-i18n="stats.l1">Cobertura de revisão</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat-value"><span class="num" data-target="98">0</span><span class="suffix">%</span></div>
+          <div class="stat-label" data-i18n="stats.l2">Satisfação dos clientes</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat-value"><span class="num" data-target="100">0</span><span class="suffix">%</span></div>
+          <div class="stat-label" data-i18n="stats.l3">Uptime SLO</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat-value"><span class="num" data-target="0">0</span></div>
+          <div class="stat-label" data-i18n="stats.l4">Vazamentos de dados</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AR/VR REALITY ============ -->
+  <section class="reality" id="reality" data-screen-label="06 Reality">
+    <div class="container">
+      <div class="reality-grid">
+        <div class="reality-text">
+          <span class="eyebrow" data-i18n="reality.eyebrow">Computação espacial</span>
+          <h2><span data-i18n="reality.h2.l1">Seu produto.</span><br /><span data-i18n="reality.h2.l2">Qualquer</span>
+            <span class="accent" data-i18n="reality.h2.l2b">realidade</span><span data-i18n="reality.h2.l2c">.</span>
+          </h2>
+          <p data-i18n="reality.body">A mesma interface, presente em todo lugar onde precisa estar — celular, tablet,
+            desktop, dashboard, relógio.</p>
+          <ul class="reality-list">
+            <li><span class="dot"></span><span class="label" data-i18n="reality.li1">macOS · Windows · Linux</span><span
+                class="meta" data-i18n="reality.li1.meta">DESKTOP</span></li>
+            <li><span class="dot"></span><span class="label" data-i18n="reality.li2">Three.js · WebGL ·
+                Electron</span><span class="meta" data-i18n="reality.li2.meta">3D</span></li>
+            <li><span class="dot"></span><span class="label" data-i18n="reality.li3">Estado entre dispositivos · Handoff
+                ao vivo</span><span class="meta" data-i18n="reality.li3.meta">SYNC</span></li>
+          </ul>
+        </div>
+
+        <div class="reality-stage">
+          <!-- Phone -->
+          <div class="device-iso active" data-device="0">
+            <svg viewBox="0 0 400 480" fill="none">
+              <defs>
+                <linearGradient id="phoneScreen" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#14273d" />
+                  <stop offset="1" stop-color="#0a1421" />
+                </linearGradient>
+              </defs>
+              <g transform="translate(200 240)">
+                <rect x="-70" y="-150" width="140" height="300" rx="22" fill="#0D1B2A" stroke="#F5C518"
+                  stroke-opacity="0.4" stroke-width="1.2" />
+                <rect x="-62" y="-138" width="124" height="276" rx="14" fill="url(#phoneScreen)" />
+                <rect x="-22" y="-142" width="44" height="6" rx="3" fill="#0D1B2A" />
+                <text x="-50" y="-118" fill="#F5C518" font-family="JetBrains Mono" font-size="8">9:41</text>
+                <text x="40" y="-118" fill="#8a99b3" font-family="JetBrains Mono" font-size="8"
+                  text-anchor="end">●●●●</text>
+                <rect x="-50" y="-100" width="100" height="14" rx="3" fill="#F5C518" />
+                <rect x="-50" y="-80" width="60" height="6" rx="2" fill="#8a99b3" />
+                <rect x="-50" y="-60" width="100" height="60" rx="6" fill="#1a3050" stroke="#F5C518"
+                  stroke-opacity="0.3" />
+                <rect x="-44" y="-52" width="40" height="3" rx="1" fill="#F5C518" />
+                <rect x="-44" y="-44" width="60" height="2" rx="1" fill="#8a99b3" />
+                <rect x="-44" y="-38" width="50" height="2" rx="1" fill="#8a99b3" opacity="0.6" />
+                <circle cx="36" cy="-30" r="10" fill="#F5C518" opacity="0.2" />
+                <circle cx="36" cy="-30" r="6" fill="#F5C518" />
+                <rect x="-50" y="10" width="100" height="40" rx="6" fill="#1a3050" />
+                <rect x="-44" y="18" width="50" height="3" rx="1" fill="#F5C518" />
+                <rect x="-44" y="26" width="70" height="2" rx="1" fill="#8a99b3" />
+                <rect x="-44" y="32" width="40" height="2" rx="1" fill="#8a99b3" opacity="0.6" />
+                <rect x="-50" y="100" width="100" height="28" rx="14" fill="#1a3050" />
+                <circle cx="-30" cy="114" r="3" fill="#F5C518" />
+                <circle cx="-10" cy="114" r="3" fill="#8a99b3" />
+                <circle cx="10" cy="114" r="3" fill="#8a99b3" />
+                <circle cx="30" cy="114" r="3" fill="#8a99b3" />
+                <rect x="-25" y="138" width="50" height="3" rx="1.5" fill="#8a99b3" />
+              </g>
+            </svg>
+          </div>
+
+          <!-- Tablet -->
+          <div class="device-iso" data-device="1">
+            <svg viewBox="0 0 460 480" fill="none">
+              <g transform="translate(230 240)">
+                <rect x="-150" y="-110" width="300" height="220" rx="14" fill="#0D1B2A" stroke="#F5C518"
+                  stroke-opacity="0.4" stroke-width="1.2" />
+                <rect x="-138" y="-100" width="276" height="200" rx="6" fill="#14273d" />
+                <rect x="-138" y="-100" width="60" height="200" rx="6" fill="#0a1421" />
+                <circle cx="-108" cy="-80" r="8" fill="#F5C518" />
+                <rect x="-128" y="-58" width="40" height="3" rx="1" fill="#F5C518" />
+                <rect x="-128" y="-48" width="30" height="2" rx="1" fill="#8a99b3" />
+                <rect x="-128" y="-30" width="40" height="3" rx="1" fill="#8a99b3" />
+                <rect x="-128" y="-20" width="30" height="2" rx="1" fill="#8a99b3" opacity="0.6" />
+                <rect x="-128" y="-2" width="40" height="3" rx="1" fill="#8a99b3" />
+                <rect x="-70" y="-90" width="100" height="6" rx="2" fill="#F5C518" />
+                <rect x="-70" y="-78" width="60" height="3" rx="1" fill="#8a99b3" />
+                <rect x="-70" y="-60" width="60" height="50" rx="4" fill="#1a3050" stroke="#F5C518"
+                  stroke-opacity="0.3" />
+                <rect x="-2" y="-60" width="60" height="50" rx="4" fill="#1a3050" />
+                <rect x="66" y="-60" width="60" height="50" rx="4" fill="#1a3050" />
+                <rect x="-64" y="-54" width="30" height="3" fill="#F5C518" />
+                <rect x="-64" y="-46" width="20" height="2" fill="#8a99b3" />
+                <circle cx="20" cy="-35" r="8" fill="#F5C518" opacity="0.4" />
+                <circle cx="96" cy="-35" r="8" fill="#F5C518" opacity="0.6" />
+                <rect x="-70" y="-2" width="196" height="80" rx="4" fill="#1a3050" />
+                <polyline points="-60,68 -30,40 0,52 30,28 60,38 90,18 116,30" stroke="#F5C518" stroke-width="1.5"
+                  fill="none" />
+                <circle cx="-30" cy="40" r="2" fill="#F5C518" />
+                <circle cx="30" cy="28" r="2" fill="#F5C518" />
+                <circle cx="90" cy="18" r="2" fill="#F5C518" />
+              </g>
+            </svg>
+          </div>
+
+          <!-- Desktop / iMac-style monitor -->
+          <div class="device-iso" data-device="2">
+            <svg viewBox="0 0 520 480" fill="none">
+              <g transform="translate(260 230)">
+                <!-- Monitor body -->
+                <rect x="-220" y="-140" width="440" height="270" rx="12" fill="#0D1B2A" stroke="#F5C518"
+                  stroke-opacity="0.4" stroke-width="1.4" />
+                <!-- Screen bezel -->
+                <rect x="-210" y="-130" width="420" height="240" rx="6" fill="#14273d" />
+                <!-- Camera notch -->
+                <circle cx="0" cy="-122" r="2" fill="#0D1B2A" />
+                <!-- Top bar (window chrome) -->
+                <rect x="-210" y="-130" width="420" height="22" rx="6" fill="#0a1421" />
+                <circle cx="-196" cy="-119" r="3" fill="#ff5f57" />
+                <circle cx="-184" cy="-119" r="3" fill="#febc2e" />
+                <circle cx="-172" cy="-119" r="3" fill="#28c840" />
+                <text x="0" y="-115" fill="#8a99b3" font-family="JetBrains Mono" font-size="9"
+                  text-anchor="middle">vibesurfdev.studio</text>
+                <!-- Sidebar -->
+                <rect x="-210" y="-108" width="80" height="218" fill="#0a1421" />
+                <circle cx="-185" cy="-92" r="6" fill="#F5C518" />
+                <rect x="-176" y="-94" width="40" height="3" rx="1" fill="#F5C518" />
+                <rect x="-200" y="-72" width="60" height="3" rx="1" fill="#8a99b3" />
+                <rect x="-200" y="-62" width="40" height="2" rx="1" fill="#8a99b3" opacity="0.6" />
+                <rect x="-200" y="-44" width="60" height="3" rx="1" fill="#F5C518" opacity="0.7" />
+                <rect x="-200" y="-34" width="50" height="2" rx="1" fill="#8a99b3" opacity="0.6" />
+                <rect x="-200" y="-16" width="60" height="3" rx="1" fill="#8a99b3" />
+                <rect x="-200" y="-6" width="40" height="2" rx="1" fill="#8a99b3" opacity="0.6" />
+                <rect x="-200" y="14" width="60" height="3" rx="1" fill="#8a99b3" />
+                <rect x="-200" y="24" width="50" height="2" rx="1" fill="#8a99b3" opacity="0.6" />
+                <!-- Main content header -->
+                <rect x="-118" y="-94" width="180" height="8" rx="2" fill="#F5C518" />
+                <rect x="-118" y="-80" width="120" height="3" rx="1" fill="#8a99b3" />
+                <!-- KPI cards row -->
+                <rect x="-118" y="-60" width="100" height="48" rx="4" fill="#1a3050" stroke="#F5C518"
+                  stroke-opacity="0.4" />
+                <rect x="-110" y="-52" width="40" height="3" fill="#F5C518" />
+                <rect x="-110" y="-44" width="60" height="8" fill="#fff" opacity="0.85" />
+                <rect x="-110" y="-30" width="30" height="2" fill="#4ade80" />
+                <rect x="-10" y="-60" width="100" height="48" rx="4" fill="#1a3050" />
+                <rect x="-2" y="-52" width="40" height="3" fill="#F5C518" />
+                <rect x="-2" y="-44" width="60" height="8" fill="#fff" opacity="0.85" />
+                <rect x="-2" y="-30" width="30" height="2" fill="#4ade80" />
+                <rect x="98" y="-60" width="100" height="48" rx="4" fill="#1a3050" />
+                <rect x="106" y="-52" width="40" height="3" fill="#F5C518" />
+                <rect x="106" y="-44" width="60" height="8" fill="#fff" opacity="0.85" />
+                <rect x="106" y="-30" width="30" height="2" fill="#ff5f57" opacity="0.7" />
+                <!-- Chart area -->
+                <rect x="-118" y="-2" width="316" height="100" rx="6" fill="#1a3050" />
+                <rect x="-110" y="6" width="60" height="3" fill="#F5C518" />
+                <rect x="-110" y="14" width="80" height="2" fill="#8a99b3" />
+                <!-- chart grid -->
+                <line x1="-110" y1="80" x2="190" y2="80" stroke="#F5C518" stroke-opacity="0.1" />
+                <line x1="-110" y1="60" x2="190" y2="60" stroke="#F5C518" stroke-opacity="0.1" />
+                <line x1="-110" y1="40" x2="190" y2="40" stroke="#F5C518" stroke-opacity="0.1" />
+                <!-- chart line -->
+                <polyline points="-100,76 -70,60 -40,68 -10,42 20,52 50,28 80,40 110,22 140,34 170,16 190,28"
+                  stroke="#F5C518" stroke-width="1.8" fill="none" />
+                <!-- area under -->
+                <polygon
+                  points="-100,76 -70,60 -40,68 -10,42 20,52 50,28 80,40 110,22 140,34 170,16 190,28 190,90 -100,90"
+                  fill="#F5C518" opacity="0.08" />
+                <!-- chart dots -->
+                <circle cx="-10" cy="42" r="2.5" fill="#F5C518" />
+                <circle cx="50" cy="28" r="2.5" fill="#F5C518" />
+                <circle cx="110" cy="22" r="2.5" fill="#F5C518" />
+                <circle cx="170" cy="16" r="2.5" fill="#F5C518" />
+
+                <!-- Stand neck -->
+                <path d="M -28 130 L -36 170 L 36 170 L 28 130 Z" fill="#0D1B2A" stroke="#F5C518"
+                  stroke-opacity="0.4" />
+                <!-- Base -->
+                <ellipse cx="0" cy="178" rx="80" ry="8" fill="#0D1B2A" stroke="#F5C518" stroke-opacity="0.4" />
+                <ellipse cx="0" cy="174" rx="80" ry="6" fill="#14273d" />
+              </g>
+            </svg>
+          </div>
+
+          <div class="device-tabs">
+            <button class="active" data-i18n="reality.tab1">Celular</button>
+            <button data-i18n="reality.tab2">Tablet</button>
+            <button data-i18n="reality.tab3">Desktop</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer" id="contact" data-screen-label="07 Footer">
+    <svg class="footer-waves" viewBox="0 0 1440 120" preserveAspectRatio="none" style="height:160px;">
+      <path d="M0,60 C240,20 480,100 720,60 C960,20 1200,100 1440,60 L1440,120 L0,120 Z" fill="#14273d">
+        <animate attributeName="d" dur="8s" repeatCount="indefinite" values="M0,60 C240,20 480,100 720,60 C960,20 1200,100 1440,60 L1440,120 L0,120 Z;
+                M0,60 C240,100 480,20 720,60 C960,100 1200,20 1440,60 L1440,120 L0,120 Z;
+                M0,60 C240,20 480,100 720,60 C960,20 1200,100 1440,60 L1440,120 L0,120 Z" />
+      </path>
+      <path d="M0,80 C240,50 480,110 720,80 C960,50 1200,110 1440,80 L1440,120 L0,120 Z" fill="#1a3050" opacity="0.7">
+        <animate attributeName="d" dur="6s" repeatCount="indefinite" values="M0,80 C240,50 480,110 720,80 C960,50 1200,110 1440,80 L1440,120 L0,120 Z;
+                M0,80 C240,110 480,50 720,80 C960,110 1200,50 1440,80 L1440,120 L0,120 Z;
+                M0,80 C240,50 480,110 720,80 C960,50 1200,110 1440,80 L1440,120 L0,120 Z" />
+      </path>
+      <path d="M0,100 C240,80 480,115 720,100 C960,85 1200,115 1440,100 L1440,120 L0,120 Z" stroke="#F5C518"
+        stroke-opacity="0.4" stroke-width="1" fill="none">
+        <animate attributeName="d" dur="5s" repeatCount="indefinite" values="M0,100 C240,80 480,115 720,100 C960,85 1200,115 1440,100;
+                M0,100 C240,115 480,80 720,100 C960,115 1200,80 1440,100;
+                M0,100 C240,80 480,115 720,100 C960,85 1200,115 1440,100" />
+      </path>
+    </svg>
+
+    <div class="container">
+      <div class="footer-cta">
+        <h2><span data-i18n="footer.h2.l1.a">Tem uma onda para</span> <span class="accent"
+            data-i18n="footer.h2.l1.b">pegar</span><span data-i18n="footer.h2.l1.c">?</span><br /><span
+            data-i18n="footer.h2.l2">Vamos construir juntos.</span></h2>
+        <div class="footer-cta-side">
+          <p data-i18n="footer.cta.body">Aceitamos cerca de um novo engajamento por mês. Se você leu até aqui,
+            provavelmente deveríamos conversar.</p>
+          <a href="mailto:hello@vibesurfdev.studio" class="btn-primary">
+            hello@vibesurfdev.studio
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-brand">
+          <img class="footer-logo-img" src="assets/logo.png" alt="VibeSurfDev" />
+          <div class="name">VibeSurf<span class="accent">Dev</span></div>
+          <div class="tag">BUILD · SURF · SHIP</div>
+        </div>
+
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h4 data-i18n="footer.col1">Estúdio</h4>
+            <ul>
+              <li><a href="#work" data-i18n="footer.col1.l1">Trabalho</a></li>
+              <li><a href="#story" data-i18n="footer.col1.l2">Processo</a></li>
+              <li><a href="#services" data-i18n="footer.col1.l3">Serviços</a></li>
+              <li><a href="#reality" data-i18n="footer.col1.l4">Realidade</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 data-i18n="footer.col2">Disciplinas</h4>
+            <ul>
+              <li><a href="#services" data-i18n="footer.col2.l1">Sistemas Web</a></li>
+              <li><a href="#services" data-i18n="footer.col2.l2">Aplicativos Mobile</a></li>
+              <li><a href="#services" data-i18n="footer.col2.l3">Websites</a></li>
+              <li><a href="#services" data-i18n="footer.col2.l4">UX / UI</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 data-i18n="footer.col3">Conecte-se</h4>
+            <ul>
+              <li><a href="#contact">hello@vibesurfdev.studio</a></li>
+              <li><a href="#">Are.na</a></li>
+              <li><a href="#">GitHub</a></li>
+              <li><a href="#">Read.cv</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-meta">
+          <span class="live" data-i18n="footer.live">Disponível · 3º trim. 2026</span>
+          <span data-i18n="footer.meta1">SINAL · forte e limpo</span>
+          <span data-i18n="footer.meta2">SISTEMA · todas as ondas em paz</span>
+          <span data-i18n="footer.meta3">CADÊNCIA · main @ HEAD</span>
+        </div>
+      </div>
+
+      <div class="footer-legal">
+        <span data-i18n="footer.legal1">© 2026 VibeSurfDev — Todos os sistemas em paz.</span>
+        <span data-i18n="footer.legal2">Feito com intenção, entregue sem drama.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js?v=14"></script>
+</body>
+
+</html>
