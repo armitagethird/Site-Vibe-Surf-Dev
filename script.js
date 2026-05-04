@@ -362,18 +362,16 @@ if (document.readyState === 'complete') showHeroLogo();
 else window.addEventListener('load', showHeroLogo);
 document.addEventListener('DOMContentLoaded', () => setTimeout(showHeroLogo, 100));
 
-// ---------- HERO VIDEO READY (avoid white flash before first frame) ----------
-(function revealHeroVideo() {
-  const video = document.querySelector('.hero-logo-video');
-  if (!video) return;
-  const reveal = () => video.classList.add('is-ready');
-  // readyState >= 2 means HAVE_CURRENT_DATA — first frame is paintable
-  if (video.readyState >= 2) {
+// ---------- HERO LOGO READY (avoid flash before first frame) ----------
+(function revealHeroLogo() {
+  const img = document.querySelector('.hero-logo-anim');
+  if (!img) return;
+  const reveal = () => img.classList.add('is-ready');
+  if (img.complete && img.naturalWidth > 0) {
     reveal();
   } else {
-    video.addEventListener('loadeddata', reveal, { once: true });
-    video.addEventListener('canplay', reveal, { once: true });
-    // Defensive fallback: reveal anyway after 1.2s so the logo never stays hidden
+    img.addEventListener('load', reveal, { once: true });
+    img.addEventListener('error', reveal, { once: true });
     setTimeout(reveal, 1200);
   }
 })();
