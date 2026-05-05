@@ -66,6 +66,7 @@ const I18N = {
     'work.h2.l2': 'Sem maquete',
     'work.h2.l2b': '.',
     'work.intro': 'Cada projeto aqui está rodando em produção. Código auditável, deploy contínuo, ondas reais.',
+    'work.swipe': 'Arraste para ver mais',
     'work.cta.live': 'Ver site',
     'work.cta.code': 'Código',
     'work.cta.soon': 'Em breve',
@@ -198,6 +199,7 @@ const I18N = {
     'work.h2.l2': 'No mockups',
     'work.h2.l2b': '.',
     'work.intro': 'Every project here is live. Auditable code, continuous delivery, real waves.',
+    'work.swipe': 'Swipe for more',
     'work.cta.live': 'Visit',
     'work.cta.code': 'Code',
     'work.cta.soon': 'Coming soon',
@@ -613,6 +615,20 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 
   prev?.addEventListener('click', () => goTo(activeIdx - 1));
   next?.addEventListener('click', () => goTo(activeIdx + 1));
+
+  // Fade the swipe hint after the user actually interacts with the track
+  const swipeHint = document.querySelector('.work-swipe-hint');
+  if (swipeHint) {
+    let hintFaded = false;
+    const fadeHint = () => {
+      if (hintFaded) return;
+      hintFaded = true;
+      swipeHint.classList.add('is-faded');
+    };
+    track.addEventListener('scroll', fadeHint, { passive: true, once: true });
+    prev?.addEventListener('click', fadeHint, { once: true });
+    next?.addEventListener('click', fadeHint, { once: true });
+  }
 
   // Keyboard nav when focus is in the track
   track.addEventListener('keydown', (e) => {

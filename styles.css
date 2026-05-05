@@ -1697,7 +1697,11 @@ section {
     gap: 32px;
     align-items: start;
     align-content: start;
+    /* Netflix-style peek — slide narrower than viewport so adjacent cards show */
+    flex-basis: 88%;
+    max-width: 600px;
   }
+  .work-track { gap: 22px; }
   .work-meta { max-width: 600px; }
 }
 
@@ -1733,6 +1737,52 @@ section {
   .work-title { font-size: clamp(24px, 6.5vw, 32px); }
   .work-tagline { font-size: 14px; }
   .work-outcomes li { font-size: 13px; }
+  /* More aggressive peek on phones — clearer "there's more" signal */
+  .work-slide { flex-basis: 86%; }
+  .work-track { gap: 14px; }
+}
+
+/* Subtle "swipe" hint — only visible on stacked layouts where peek lives */
+.work-swipe-hint {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 14px auto 0;
+  padding: 8px 16px;
+  width: fit-content;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  text-transform: uppercase;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(13, 27, 42, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: opacity 0.5s var(--ease-out);
+}
+.work-swipe-hint .arrows {
+  display: inline-flex;
+  gap: 2px;
+  color: var(--yellow);
+}
+.work-swipe-hint .arrows span {
+  display: inline-block;
+  animation: swipeHintPulse 1.6s ease-in-out infinite;
+}
+.work-swipe-hint .arrows span:nth-child(2) { animation-delay: 0.18s; }
+.work-swipe-hint .arrows span:nth-child(3) { animation-delay: 0.36s; }
+.work-swipe-hint.is-faded { opacity: 0; pointer-events: none; }
+
+@keyframes swipeHintPulse {
+  0%, 100% { transform: translateX(0); opacity: 0.4; }
+  50%      { transform: translateX(4px); opacity: 1; }
+}
+
+@media (max-width: 1080px) {
+  .work-swipe-hint { display: flex; }
 }
 
 /* ============ REVEAL UTILITIES ============ */
