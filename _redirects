@@ -1,0 +1,9 @@
+# Cloudflare Pages — clean URLs for niche landing pages
+# Old .html URLs redirect 301 to extensionless canonical
+# (Cloudflare already serves /nichos/medicos when /nichos/medicos.html exists,
+#  these rules force the canonical for SEO and shared links.)
+
+/nichos/medicos.html        /nichos/medicos        301
+/nichos/sistemas.html       /nichos/sistemas       301
+/nichos/clinicas-vet.html   /nichos/clinicas-vet   301
+/nichos/motels.html         /nichos/motels         301
