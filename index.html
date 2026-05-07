@@ -10,6 +10,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,wght@0,400;1,400;1,500&display=swap"
     rel="stylesheet" />
+  <link rel="preload" as="image" href="assets/logo-anim.webp" fetchpriority="high" />
   <link rel="stylesheet" href="styles.css?v=19" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png" />
@@ -120,7 +121,8 @@
 
       <div class="hero-logo-wrap">
         <div class="hero-logo-frame">
-          <img class="hero-logo-anim" src="assets/logo-anim.webp" alt="VibeSurfDev" decoding="async" />
+          <img class="hero-logo-anim" src="assets/logo-anim.webp" alt="VibeSurfDev"
+               width="480" height="480" decoding="async" fetchpriority="high" />
         </div>
         <div class="logo-tag" data-i18n="hero.tag">EST · 2026 · BUILD · SURF · SHIP</div>
       </div>
