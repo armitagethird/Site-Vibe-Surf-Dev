@@ -42,7 +42,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,wght@0,400;1,400;1,500&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="../styles.css?v=18" />
+  <link rel="stylesheet" href="../styles.css?v=20" />
   <link rel="stylesheet" href="_shared.css?v=1" />
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png" />
@@ -170,7 +170,12 @@
               </div>
             </div>
             <div class="browser-viewport">
-              <img src="../assets/work/ProntuVet-Site.png" alt="ProntuVet — site institucional" loading="lazy" />
+              <picture>
+                <source type="image/avif" srcset="../assets/work/ProntuVet-Site.avif" />
+                <source type="image/webp" srcset="../assets/work/ProntuVet-Site.webp" />
+                <img src="../assets/work/ProntuVet-Site.png" alt="ProntuVet — site institucional"
+                     width="1908" height="944" loading="lazy" decoding="async" />
+              </picture>
             </div>
           </div>
 
@@ -199,10 +204,20 @@
             </div>
             <div class="work-screens" aria-label="Telas do produto">
               <button type="button" class="work-screen" aria-label="Tela de login do ProntuVet">
-                <img src="../assets/work/tela-login-prontuvet.png" alt="Tela de login do ProntuVet" loading="lazy" />
+                <picture>
+                  <source type="image/avif" srcset="../assets/work/tela-login-prontuvet.avif" />
+                  <source type="image/webp" srcset="../assets/work/tela-login-prontuvet.webp" />
+                  <img src="../assets/work/tela-login-prontuvet.png" alt="Tela de login do ProntuVet"
+                       width="1919" height="946" loading="lazy" decoding="async" />
+                </picture>
               </button>
               <button type="button" class="work-screen" aria-label="Dashboard do ProntuVet">
-                <img src="../assets/work/dashboard-prontuvet.png" alt="Dashboard do ProntuVet" loading="lazy" />
+                <picture>
+                  <source type="image/avif" srcset="../assets/work/dashboard-prontuvet.avif" />
+                  <source type="image/webp" srcset="../assets/work/dashboard-prontuvet.webp" />
+                  <img src="../assets/work/dashboard-prontuvet.png" alt="Dashboard do ProntuVet"
+                       width="1919" height="944" loading="lazy" decoding="async" />
+                </picture>
               </button>
             </div>
             <dl class="work-info" aria-label="Detalhes do produto">

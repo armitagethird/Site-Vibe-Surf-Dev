@@ -42,7 +42,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,wght@0,400;1,400;1,500&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="../styles.css?v=18" />
+  <link rel="stylesheet" href="../styles.css?v=20" />
   <link rel="stylesheet" href="_shared.css?v=1" />
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png" />
@@ -170,7 +170,12 @@
               </div>
             </div>
             <div class="browser-viewport">
-              <img src="../assets/work/Paraiso-Motel-Site.png" alt="Motel Paraíso — site público" loading="lazy" />
+              <picture>
+                <source type="image/avif" srcset="../assets/work/Paraiso-Motel-Site.avif" />
+                <source type="image/webp" srcset="../assets/work/Paraiso-Motel-Site.webp" />
+                <img src="../assets/work/Paraiso-Motel-Site.png" alt="Motel Paraíso — site público"
+                     width="1906" height="946" loading="lazy" decoding="async" />
+              </picture>
             </div>
           </div>
 
@@ -199,12 +204,20 @@
             </div>
             <div class="work-screens" aria-label="Telas do ecossistema">
               <button type="button" class="work-screen" aria-label="Sistema local da recepção">
-                <img src="../assets/work/sistema-local-motel.png" alt="Sistema local da recepção do motel"
-                  loading="lazy" />
+                <picture>
+                  <source type="image/avif" srcset="../assets/work/sistema-local-motel.avif" />
+                  <source type="image/webp" srcset="../assets/work/sistema-local-motel.webp" />
+                  <img src="../assets/work/sistema-local-motel.png" alt="Sistema local da recepção do motel"
+                       width="1919" height="1079" loading="lazy" decoding="async" />
+                </picture>
               </button>
               <button type="button" class="work-screen" aria-label="Dashboard de gestão">
-                <img src="../assets/work/dashboard-motel-paraiso.png" alt="Dashboard de gestão remota com IA"
-                  loading="lazy" />
+                <picture>
+                  <source type="image/avif" srcset="../assets/work/dashboard-motel-paraiso.avif" />
+                  <source type="image/webp" srcset="../assets/work/dashboard-motel-paraiso.webp" />
+                  <img src="../assets/work/dashboard-motel-paraiso.png" alt="Dashboard de gestão remota com IA"
+                       width="1920" height="943" loading="lazy" decoding="async" />
+                </picture>
               </button>
             </div>
             <dl class="work-info" aria-label="Detalhes do Motel Paraíso">

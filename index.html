@@ -11,7 +11,7 @@
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,wght@0,400;1,400;1,500&display=swap"
     rel="stylesheet" />
   <link rel="preload" as="image" href="assets/logo-anim.webp" fetchpriority="high" />
-  <link rel="stylesheet" href="styles.css?v=19" />
+  <link rel="stylesheet" href="styles.css?v=20" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png" />
   <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png" />
@@ -128,10 +128,6 @@
       </div>
     </div>
 
-    <div class="scroll-hint">
-      <span data-i18n="hero.scroll">Role</span>
-      <div class="line"></div>
-    </div>
   </section>
 
   <!-- ============ WORK ============ -->
@@ -168,7 +164,12 @@
               </div>
             </div>
             <div class="browser-viewport">
-              <img src="assets/work/dra-kerly-site.png" alt="Dra. Kerly Helena — site institucional" loading="lazy" />
+              <picture>
+                <source type="image/avif" srcset="assets/work/dra-kerly-site.avif" />
+                <source type="image/webp" srcset="assets/work/dra-kerly-site.webp" />
+                <img src="assets/work/dra-kerly-site.png" alt="Dra. Kerly Helena — site institucional"
+                     width="1905" height="943" loading="lazy" decoding="async" />
+              </picture>
             </div>
           </div>
 
@@ -232,7 +233,12 @@
               </div>
             </div>
             <div class="browser-viewport">
-              <img src="assets/work/Paraiso-Motel-Site.png" alt="Motel Paraíso — site público" loading="lazy" />
+              <picture>
+                <source type="image/avif" srcset="assets/work/Paraiso-Motel-Site.avif" />
+                <source type="image/webp" srcset="assets/work/Paraiso-Motel-Site.webp" />
+                <img src="assets/work/Paraiso-Motel-Site.png" alt="Motel Paraíso — site público"
+                     width="1906" height="946" loading="lazy" decoding="async" />
+              </picture>
             </div>
           </div>
 
@@ -262,12 +268,20 @@
             </div>
             <div class="work-screens" aria-label="Telas do ecossistema">
               <button type="button" class="work-screen" aria-label="Sistema local da recepção">
-                <img src="assets/work/sistema-local-motel.png" alt="Sistema local da recepção do motel"
-                  loading="lazy" />
+                <picture>
+                  <source type="image/avif" srcset="assets/work/sistema-local-motel.avif" />
+                  <source type="image/webp" srcset="assets/work/sistema-local-motel.webp" />
+                  <img src="assets/work/sistema-local-motel.png" alt="Sistema local da recepção do motel"
+                       width="1919" height="1079" loading="lazy" decoding="async" />
+                </picture>
               </button>
               <button type="button" class="work-screen" aria-label="Dashboard de gestão">
-                <img src="assets/work/dashboard-motel-paraiso.png" alt="Dashboard de gestão remota com IA"
-                  loading="lazy" />
+                <picture>
+                  <source type="image/avif" srcset="assets/work/dashboard-motel-paraiso.avif" />
+                  <source type="image/webp" srcset="assets/work/dashboard-motel-paraiso.webp" />
+                  <img src="assets/work/dashboard-motel-paraiso.png" alt="Dashboard de gestão remota com IA"
+                       width="1920" height="943" loading="lazy" decoding="async" />
+                </picture>
               </button>
             </div>
           </div>
@@ -295,7 +309,12 @@
               </div>
             </div>
             <div class="browser-viewport">
-              <img src="assets/work/ProntuVet-Site.png" alt="ProntuVet — site institucional" loading="lazy" />
+              <picture>
+                <source type="image/avif" srcset="assets/work/ProntuVet-Site.avif" />
+                <source type="image/webp" srcset="assets/work/ProntuVet-Site.webp" />
+                <img src="assets/work/ProntuVet-Site.png" alt="ProntuVet — site institucional"
+                     width="1908" height="944" loading="lazy" decoding="async" />
+              </picture>
             </div>
           </div>
 
@@ -325,10 +344,20 @@
             </div>
             <div class="work-screens" aria-label="Telas do produto">
               <button type="button" class="work-screen" aria-label="Tela de login do ProntuVet">
-                <img src="assets/work/tela-login-prontuvet.png" alt="Tela de login do ProntuVet" loading="lazy" />
+                <picture>
+                  <source type="image/avif" srcset="assets/work/tela-login-prontuvet.avif" />
+                  <source type="image/webp" srcset="assets/work/tela-login-prontuvet.webp" />
+                  <img src="assets/work/tela-login-prontuvet.png" alt="Tela de login do ProntuVet"
+                       width="1919" height="946" loading="lazy" decoding="async" />
+                </picture>
               </button>
               <button type="button" class="work-screen" aria-label="Dashboard do ProntuVet">
-                <img src="assets/work/dashboard-prontuvet.png" alt="Dashboard do ProntuVet" loading="lazy" />
+                <picture>
+                  <source type="image/avif" srcset="assets/work/dashboard-prontuvet.avif" />
+                  <source type="image/webp" srcset="assets/work/dashboard-prontuvet.webp" />
+                  <img src="assets/work/dashboard-prontuvet.png" alt="Dashboard do ProntuVet"
+                       width="1919" height="944" loading="lazy" decoding="async" />
+                </picture>
               </button>
             </div>
           </div>
@@ -371,7 +400,12 @@
       <div class="markets-grid">
         <a href="nichos/medicos" class="market-card reveal">
           <div class="market-thumb">
-            <img src="assets/work/dra-kerly-site.png" alt="Site para médicos" loading="lazy" />
+            <picture>
+              <source type="image/avif" srcset="assets/work/dra-kerly-site.avif" />
+              <source type="image/webp" srcset="assets/work/dra-kerly-site.webp" />
+              <img src="assets/work/dra-kerly-site.png" alt="Site para médicos"
+                   width="1905" height="943" loading="lazy" decoding="async" />
+            </picture>
           </div>
           <div class="market-meta">
             <span class="market-eyebrow" data-i18n="markets.m1.eyebrow">MÉDICOS</span>
@@ -383,7 +417,12 @@
 
         <a href="nichos/sistemas" class="market-card reveal">
           <div class="market-thumb">
-            <img src="assets/work/dashboard-prontuvet.png" alt="Sistemas sob medida" loading="lazy" />
+            <picture>
+              <source type="image/avif" srcset="assets/work/dashboard-prontuvet.avif" />
+              <source type="image/webp" srcset="assets/work/dashboard-prontuvet.webp" />
+              <img src="assets/work/dashboard-prontuvet.png" alt="Sistemas sob medida"
+                   width="1919" height="944" loading="lazy" decoding="async" />
+            </picture>
           </div>
           <div class="market-meta">
             <span class="market-eyebrow" data-i18n="markets.m2.eyebrow">SISTEMAS</span>
@@ -395,7 +434,12 @@
 
         <a href="nichos/clinicas-vet" class="market-card reveal">
           <div class="market-thumb">
-            <img src="assets/work/tela-login-prontuvet.png" alt="Clínicas veterinárias" loading="lazy" />
+            <picture>
+              <source type="image/avif" srcset="assets/work/tela-login-prontuvet.avif" />
+              <source type="image/webp" srcset="assets/work/tela-login-prontuvet.webp" />
+              <img src="assets/work/tela-login-prontuvet.png" alt="Clínicas veterinárias"
+                   width="1919" height="946" loading="lazy" decoding="async" />
+            </picture>
           </div>
           <div class="market-meta">
             <span class="market-eyebrow" data-i18n="markets.m3.eyebrow">CLÍNICAS VET</span>
@@ -407,7 +451,12 @@
 
         <a href="nichos/motels" class="market-card reveal">
           <div class="market-thumb">
-            <img src="assets/work/Paraiso-Motel-Site.png" alt="Motéis e hospitalidade" loading="lazy" />
+            <picture>
+              <source type="image/avif" srcset="assets/work/Paraiso-Motel-Site.avif" />
+              <source type="image/webp" srcset="assets/work/Paraiso-Motel-Site.webp" />
+              <img src="assets/work/Paraiso-Motel-Site.png" alt="Motéis e hospitalidade"
+                   width="1906" height="946" loading="lazy" decoding="async" />
+            </picture>
           </div>
           <div class="market-meta">
             <span class="market-eyebrow" data-i18n="markets.m4.eyebrow">MOTÉIS</span>
@@ -1083,7 +1132,12 @@
 
       <div class="footer-bottom">
         <div class="footer-brand">
-          <img class="footer-logo-img" src="assets/logo.png" alt="VibeSurfDev" />
+          <picture>
+            <source type="image/avif" srcset="assets/logo.avif" />
+            <source type="image/webp" srcset="assets/logo.webp" />
+            <img class="footer-logo-img" src="assets/logo.png" alt="VibeSurfDev"
+                 width="2816" height="1536" loading="lazy" decoding="async" />
+          </picture>
           <div class="name">VibeSurf<span class="accent">Dev</span></div>
           <div class="tag">BUILD · SURF · SHIP</div>
         </div>
@@ -1133,7 +1187,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=16"></script>
+  <script src="script.js?v=17"></script>
 </body>
 
 </html>
