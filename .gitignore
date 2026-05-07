@@ -15,3 +15,10 @@ desktop.ini
 # Env
 .env
 .env.local
+
+# Claude Code local settings
+.claude/
+
+# Scripts (image optimization tooling, one-shot)
+scripts/node_modules/
+scripts/package-lock.json

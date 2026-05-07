@@ -1,0 +1,10 @@
+{
+  "name": "vibesurfdev-scripts",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "One-shot image optimization scripts. Not part of the site build.",
+  "dependencies": {
+    "sharp": "^0.33.5"
+  }
+}
