@@ -12,7 +12,7 @@
 
 **Site oficial do estúdio VibeSurfDev — código aberto.**
 
-[![Site](https://img.shields.io/badge/site-vibesurfdev.studio-F5C518?style=flat-square&labelColor=0d1b2a)](https://vibesurfdev.studio)
+[![Site](https://img.shields.io/badge/site-vibesurfdev.com-F5C518?style=flat-square&labelColor=0d1b2a)](https://vibesurfdev.com)
 [![WhatsApp](https://img.shields.io/badge/whatsapp-falar%20agora-25D366?style=flat-square&labelColor=0d1b2a)](https://wa.me/5598984357980)
 [![Instagram](https://img.shields.io/badge/instagram-@vibesurfdev-E4405F?style=flat-square&labelColor=0d1b2a)](https://instagram.com/vibesurfdev)
 [![License](https://img.shields.io/badge/license-MIT-F5C518?style=flat-square&labelColor=0d1b2a)](#licença)
@@ -160,7 +160,7 @@ Tem um projeto? Quer conversar sobre o código? Achou um bug?
 
 - **WhatsApp** — [wa.me/5598984357980](https://wa.me/5598984357980)
 - **Instagram** — [@vibesurfdev](https://instagram.com/vibesurfdev)
-- **Site** — [vibesurfdev.studio](https://vibesurfdev.studio)
+- **Site** — [vibesurfdev.com](https://vibesurfdev.com)
 
 <div align="center">
 
