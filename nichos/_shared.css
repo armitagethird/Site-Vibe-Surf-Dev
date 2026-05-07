@@ -1,0 +1,515 @@
+/* ============================================
+   VibeSurfDev — Niche Landing Pages
+   Componentes exclusivos das páginas /nichos/
+   Carregado APÓS ../styles.css — herda tokens,
+   adiciona apenas o que é novo.
+   ============================================ */
+
+/* ============ NICHE NAV (variant of .nav) ============ */
+/* Site principal usa .nav-links com âncoras (#work, #story…) que não existem
+   nessas páginas. Aqui usamos uma variante mais enxuta. */
+
+.niche-nav .nav-links a {
+  font-size: 13px;
+  letter-spacing: 0.06em;
+}
+
+.niche-nav .back-to-site {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  transition: color 0.3s, border-color 0.3s;
+}
+.niche-nav .back-to-site:hover {
+  color: var(--yellow);
+  border-color: rgba(245, 197, 24, 0.4);
+}
+
+@media (max-width: 800px) {
+  .niche-nav .back-to-site {
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+}
+
+/* ============ NICHE HERO ============ */
+/* Variante do .hero do site principal — sem grid 2 colunas com logo,
+   focada em mensagem + CTA. */
+
+.niche-hero {
+  position: relative;
+  min-height: 86vh;
+  display: flex;
+  align-items: center;
+  padding: 140px 48px 80px;
+  overflow: hidden;
+}
+.niche-hero .container {
+  position: relative;
+  z-index: 2;
+  max-width: 920px;
+}
+.niche-hero .eyebrow { margin-bottom: 24px; }
+.niche-hero h1 {
+  font-size: clamp(36px, 5.5vw, 72px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 28px;
+}
+.niche-hero h1 .accent {
+  color: var(--yellow);
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  font-weight: 400;
+}
+.niche-hero p.sub {
+  font-size: clamp(16px, 1.4vw, 19px);
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 620px;
+  margin-bottom: 36px;
+}
+.niche-hero .hero-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 700px) {
+  .niche-hero { padding: 110px 20px 64px; min-height: auto; }
+  .niche-hero h1 { font-size: clamp(28px, 8vw, 44px); }
+  .niche-hero .hero-cta-row { flex-direction: column; align-items: stretch; gap: 14px; }
+  .niche-hero .hero-cta-row .btn-primary { justify-content: center; }
+  .niche-hero .hero-cta-row .btn-ghost { justify-content: center; }
+}
+
+/* ============ PAIN GRID ============ */
+/* Bloco "DOR" — 3 cards verticais com a dor do nicho. */
+
+.pain {
+  background: transparent;
+}
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.pain-card {
+  position: relative;
+  background: linear-gradient(180deg, var(--navy-3) 0%, var(--navy-2) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 28px 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: border-color 0.4s, transform 0.4s var(--ease-out);
+}
+.pain-card:hover {
+  border-color: rgba(245, 197, 24, 0.28);
+  transform: translateY(-4px);
+}
+.pain-card .pain-num {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--yellow);
+}
+.pain-card p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--white);
+  letter-spacing: -0.005em;
+}
+
+@media (max-width: 900px) {
+  .pain-grid { grid-template-columns: 1fr; gap: 14px; }
+  .pain-card { padding: 22px 20px 26px; }
+}
+
+/* ============ CASE SPOTLIGHT ============ */
+/* Variante do .work-slide — 1 case em destaque (não carrossel).
+   Reusa .browser-frame, .browser-chrome, .browser-viewport, .work-meta,
+   .work-outcomes, .work-tags, .work-screens, .work-link. */
+
+.case-spotlight .work-slide {
+  /* desativa peek/scroll-snap do carrossel original */
+  flex-basis: auto;
+  max-width: none;
+  scroll-snap-align: none;
+  padding: 0;
+}
+
+.case-spotlight + .case-spotlight {
+  margin-top: 96px;
+  padding-top: 96px;
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 700px) {
+  .case-spotlight + .case-spotlight {
+    margin-top: 56px;
+    padding-top: 56px;
+  }
+}
+
+/* Sub-link "Aprofundar em X →" usado na página /sistemas para apontar
+   aos verticais. */
+.case-deepen {
+  margin-top: 18px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--yellow);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid rgba(245, 197, 24, 0.3);
+  border-radius: 999px;
+  background: rgba(245, 197, 24, 0.04);
+  transition: background 0.3s, border-color 0.3s, gap 0.3s var(--ease-out);
+}
+.case-deepen:hover {
+  background: rgba(245, 197, 24, 0.1);
+  border-color: var(--yellow);
+  gap: 12px;
+}
+
+/* ============ PROCESS MINI ============ */
+/* Versão condensada da seção .story do site principal — 3 colunas,
+   sem cenas isométricas, sem scrollytelling. */
+
+.process-mini {
+  background: transparent;
+}
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.process-step {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 28px 24px;
+  border-left: 1px solid var(--line);
+}
+.process-step:first-child { border-left-color: var(--yellow); }
+.process-step .step-num {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--yellow);
+}
+.process-step h3 {
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+.process-step h3 .accent {
+  color: var(--yellow);
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  font-weight: 400;
+}
+.process-step p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+@media (max-width: 900px) {
+  .process-grid { grid-template-columns: 1fr; gap: 16px; }
+  .process-step { padding: 22px 0 22px 20px; }
+}
+
+/* ============ QUALIFY FORM ============ */
+/* Form com tom navy/yellow — submit gera mensagem WhatsApp (ver _shared.js). */
+
+.qualify {
+  background: transparent;
+}
+.qualify-shell {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 40px 36px 36px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background:
+    linear-gradient(180deg, rgba(20, 39, 61, 0.55) 0%, rgba(13, 27, 42, 0.55) 100%),
+    rgba(13, 27, 42, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.qualify-form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.qualify-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.qualify-field > label,
+.qualify-field > .field-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  font-weight: 500;
+}
+.qualify-field > .field-hint {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-top: -4px;
+}
+
+.qualify-field input[type="text"],
+.qualify-field input[type="email"],
+.qualify-field input[type="tel"],
+.qualify-field select,
+.qualify-field textarea {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 15px;
+  color: var(--white);
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+  transition: border-color 0.3s, background 0.3s;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  font-feature-settings: "ss01", "ss02";
+}
+.qualify-field input:focus,
+.qualify-field select:focus,
+.qualify-field textarea:focus {
+  outline: none;
+  border-color: var(--yellow);
+  background: rgba(0, 0, 0, 0.38);
+}
+.qualify-field textarea {
+  resize: vertical;
+  min-height: 96px;
+  line-height: 1.5;
+}
+.qualify-field select {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%23F5C518' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  padding-right: 44px;
+  cursor: pointer;
+}
+.qualify-field input::placeholder,
+.qualify-field textarea::placeholder {
+  color: rgba(138, 153, 179, 0.55);
+}
+
+/* Radio group — pill style */
+.qualify-radios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.qualify-radio {
+  position: relative;
+}
+.qualify-radio input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.qualify-radio span {
+  display: inline-flex;
+  align-items: center;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: border-color 0.25s, background 0.25s, color 0.25s;
+}
+.qualify-radio:hover span {
+  border-color: rgba(245, 197, 24, 0.5);
+}
+.qualify-radio input:checked + span {
+  background: var(--yellow);
+  color: var(--navy);
+  border-color: var(--yellow);
+  font-weight: 600;
+}
+.qualify-radio input:focus-visible + span {
+  outline: 2px solid var(--yellow-soft);
+  outline-offset: 2px;
+}
+
+/* Submit row */
+.qualify-submit {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+.qualify-submit .submit-hint {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+@media (max-width: 700px) {
+  .qualify-shell { padding: 28px 22px 26px; border-radius: 14px; }
+  .qualify-form { gap: 22px; }
+  .qualify-submit { flex-direction: column; align-items: stretch; gap: 14px; }
+  .qualify-submit .btn-primary { justify-content: center; }
+}
+
+/* ============ MINI FOOTER ============ */
+/* Versão simplificada do footer — sem 3 colunas, sem footer-cta gigante. */
+
+.niche-footer {
+  position: relative;
+  padding: 64px 48px 32px;
+  overflow: hidden;
+}
+.niche-footer .container {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: end;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+.niche-footer .footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.niche-footer .footer-brand .name {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.niche-footer .footer-brand .name .accent {
+  color: var(--yellow);
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  font-weight: 500;
+}
+.niche-footer .footer-brand .tag {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.niche-footer .footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+}
+.niche-footer .footer-links a {
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.niche-footer .footer-links a:hover { color: var(--yellow); }
+.niche-footer .footer-legal {
+  margin-top: 24px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .niche-footer { padding: 48px 20px 28px; }
+  .niche-footer .container {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .niche-footer .footer-links {
+    align-items: flex-start;
+  }
+}
+
+/* ============ DEEP LINK ROW (between cases on /sistemas) ============ */
+
+.cross-links {
+  margin-top: 64px;
+  padding: 32px 28px;
+  border: 1px dashed var(--line);
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.cross-link {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--white);
+  padding: 18px 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--line);
+  transition: border-color 0.3s, background 0.3s, transform 0.3s var(--ease-out);
+}
+.cross-link:hover {
+  border-color: rgba(245, 197, 24, 0.5);
+  background: rgba(245, 197, 24, 0.04);
+  transform: translateY(-2px);
+}
+.cross-link .label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--yellow);
+}
+.cross-link .title {
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+}
+.cross-link .desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+  .cross-links { grid-template-columns: 1fr; padding: 22px 18px; gap: 14px; }
+}

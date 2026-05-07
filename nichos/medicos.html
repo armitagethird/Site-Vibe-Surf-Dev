@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Site para médicos · VibeSurfDev</title>
+  <meta name="description" content="Site institucional para médicos com consultório próprio. Construído com a mesma engenharia da Dra. Kerly Helena — questionário que qualifica o paciente antes da primeira consulta." />
+
+  <link rel="canonical" href="https://vibesurfdev.studio/nichos/medicos.html" />
+
+  <!-- Open Graph (preview no WhatsApp / Instagram / LinkedIn) -->
+  <meta property="og:title" content="Site para médicos · VibeSurfDev" />
+  <meta property="og:description" content="Site institucional + questionário que qualifica o paciente antes da primeira consulta. Construído pela VibeSurfDev." />
+  <meta property="og:image" content="https://vibesurfdev.studio/assets/work/dra-kerly-site.png" />
+  <meta property="og:url" content="https://vibesurfdev.studio/nichos/medicos.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Schema.org Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Desenvolvimento de site para médico",
+    "provider": {
+      "@type": "Organization",
+      "name": "VibeSurfDev",
+      "url": "https://vibesurfdev.studio"
+    },
+    "areaServed": "BR",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Médicos com consultório próprio"
+    },
+    "description": "Site institucional + questionário de qualificação para médicos especialistas com consultório particular.",
+    "url": "https://vibesurfdev.studio/nichos/medicos.html"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,wght@0,400;1,400;1,500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css?v=18" />
+  <link rel="stylesheet" href="_shared.css?v=1" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="../assets/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon-180.png" />
+</head>
+
+<body data-niche="medicos">
+
+  <!-- Ambient waves -->
+  <div class="ambient-waves" aria-hidden="true">
+    <svg class="ambient-wave ambient-wave-a" viewBox="0 0 1440 200" preserveAspectRatio="none">
+      <path d="M0,100 C240,60 480,140 720,100 C960,60 1200,140 1440,100 L1440,200 L0,200 Z"
+        fill="none" stroke="#F5C518" stroke-width="1" stroke-opacity="0.06" />
+    </svg>
+    <svg class="ambient-wave ambient-wave-b" viewBox="0 0 1440 200" preserveAspectRatio="none">
+      <path d="M0,120 C300,80 600,160 900,120 C1100,90 1300,150 1440,120 L1440,200 L0,200 Z"
+        fill="none" stroke="#F5C518" stroke-width="1" stroke-opacity="0.04" />
+    </svg>
+  </div>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav niche-nav">
+    <a href="../index.html" class="nav-brand" aria-label="VibeSurfDev home">
+      <svg class="nav-brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M2 20 C 8 12, 12 28, 16 20 S 24 12, 30 20" stroke="#F5C518" stroke-width="2" stroke-linecap="round" />
+        <path d="M4 24 C 9 18, 13 30, 17 24 S 24 18, 28 24" stroke="#F5C518" stroke-opacity="0.4" stroke-width="1.4"
+          stroke-linecap="round" />
+        <circle cx="22" cy="10" r="1.8" fill="#F5C518" />
+      </svg>
+      <span class="nav-brand-text">VibeSurf<span class="accent">Dev</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#dor">A dor</a></li>
+      <li><a href="#case">O caso</a></li>
+      <li><a href="#processo">Processo</a></li>
+      <li><a href="#qualificar">Conversar</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="../index.html" class="back-to-site">← Site completo</a>
+      <a href="#qualificar" class="nav-cta">Iniciar projeto</a>
+    </div>
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section class="niche-hero">
+    <div class="container">
+      <span class="eyebrow reveal">Para médicos com consultório próprio</span>
+      <h1 class="reveal">O paciente certo,<br /><span class="accent">antes</span> da primeira consulta.</h1>
+      <p class="sub reveal">Site institucional + questionário que filtra o paciente antes da primeira consulta — qualifica especialidade, urgência, modalidade e expectativa. HTML estático, mobile-first, instantâneo. Mesma engenharia da Dra. Kerly Helena.</p>
+      <div class="hero-cta-row reveal">
+        <a class="btn-primary" data-wa-direct href="#">
+          Falar no WhatsApp
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+        <a href="#case" class="btn-ghost">
+          Ver o caso da Dra. Kerly
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+            <path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DOR ============ -->
+  <section class="pain" id="dor">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">O que travou até aqui</span>
+        <h2>Três coisas que sangram <span class="accent">silêncio</span> no consultório.</h2>
+      </div>
+
+      <div class="pain-grid">
+        <article class="pain-card reveal">
+          <span class="pain-num">01</span>
+          <p>Seu site genérico te coloca no mesmo balaio do residente recém-formado.</p>
+        </article>
+        <article class="pain-card reveal">
+          <span class="pain-num">02</span>
+          <p>WhatsApp lotado com pergunta que cabia na primeira tela do site.</p>
+        </article>
+        <article class="pain-card reveal">
+          <span class="pain-num">03</span>
+          <p>Paciente entra sem clareza do tratamento — e sai sem fechar.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CASE EM DESTAQUE ============ -->
+  <section class="work" id="case">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Caso em produção · 2026</span>
+        <h2>Dra. Kerly Helena, <span class="accent">ginecologista</span> integrativa.</h2>
+        <p>No ar, em produção, código auditável.</p>
+      </div>
+
+      <div class="case-spotlight">
+        <article class="work-slide in" data-project="dra-kerly">
+          <div class="browser-frame">
+            <div class="browser-chrome">
+              <div class="browser-dots">
+                <span class="dot dot-r"></span>
+                <span class="dot dot-y"></span>
+                <span class="dot dot-g"></span>
+              </div>
+              <div class="browser-url">
+                <span class="url-protocol">https://</span><span class="url-host"
+                  style="--url-width: 21ch;">drakerlyhelena.com.br</span><span class="url-caret"
+                  aria-hidden="true">▍</span>
+              </div>
+              <div class="browser-actions">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                  <path d="M2 8a6 6 0 1 1 1.76 4.24" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+                    fill="none" />
+                  <path d="M2 4v3.5h3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                </svg>
+              </div>
+            </div>
+            <div class="browser-viewport">
+              <img src="../assets/work/dra-kerly-site.png" alt="Dra. Kerly Helena — site institucional" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="work-meta">
+            <div class="work-meta-head">
+              <span class="work-num">CASO · DRA. KERLY</span>
+              <span class="work-year">2026</span>
+            </div>
+            <h3 class="work-title">Dra. Kerly Helena</h3>
+            <p class="work-tagline">Ginecologista integrativa em São Luís — site institucional com captação qualificada que filtra paciente antes da primeira conversa.</p>
+            <ul class="work-outcomes">
+              <li>Questionário <strong>qualifica o paciente</strong> antes do primeiro contato — especialidade, urgência, modalidade, expectativa.</li>
+              <li>HTML/CSS/JS puro — <strong>~50KB</strong> totais, carrega &lt;1s no 3G. Sem WordPress, sem plugin que quebra na atualização.</li>
+              <li>Mobile-first — porque 70%+ dos pacientes vêm do Instagram no celular.</li>
+              <li>Captação assíncrona: lead pode chegar 2h da manhã, já cai filtrado no seu WhatsApp pela manhã.</li>
+              <li>Identidade visual sob medida — sem template de prateleira igual ao do médico do convênio.</li>
+              <li>Hospedagem leve, domínio próprio, SSL automático. Zero painel-admin pra você apanhar.</li>
+            </ul>
+            <div class="work-tags">
+              <span>HTML</span><span>CSS</span><span>JS</span><span>Lead capture</span><span>Mobile-first</span><span>Sub-1s</span>
+            </div>
+            <div class="work-cta">
+              <a href="https://drakerlyhelena.com.br" class="work-link" target="_blank" rel="noopener">
+                Ver site no ar <span aria-hidden="true">→</span>
+              </a>
+            </div>
+            <dl class="work-info" aria-label="Detalhes do site">
+              <div class="work-info-item">
+                <dt class="work-info-label">O que o questionário filtra</dt>
+                <dd class="work-info-value">Especialidade buscada · urgência · particular ou convênio · expectativa de tratamento</dd>
+              </div>
+              <div class="work-info-item">
+                <dt class="work-info-label">Performance</dt>
+                <dd class="work-info-value">HTML estático · ~50KB · &lt;1s no 3G · 100/100 acessibilidade Lighthouse</dd>
+              </div>
+              <div class="work-info-item">
+                <dt class="work-info-label">Status</dt>
+                <dd class="work-info-value">Em produção · drakerlyhelena.com.br</dd>
+              </div>
+            </dl>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMO FUNCIONA NA PRÁTICA (site médico) ============ -->
+  <section class="process-mini" id="como-funciona">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Como funciona o site na prática</span>
+        <h2>Quatro passos. <span class="accent">O lead</span> chega já filtrado.</h2>
+      </div>
+
+      <div class="process-grid" style="grid-template-columns: repeat(4, 1fr);">
+        <article class="process-step reveal">
+          <span class="step-num">01 — CHEGA</span>
+          <h3>Paciente <span class="accent">aparece</span></h3>
+          <p>Vem do Instagram, Google, indicação. Cai no site mobile-first, carrega antes da terceira batida do polegar.</p>
+        </article>
+        <article class="process-step reveal">
+          <span class="step-num">02 — LÊ</span>
+          <h3>Entende <span class="accent">você</span></h3>
+          <p>Vê quem você é, sua abordagem, o tipo de tratamento. Sai com a expectativa correta — não te liga achando que você faz outra coisa.</p>
+        </article>
+        <article class="process-step reveal">
+          <span class="step-num">03 — RESPONDE</span>
+          <h3>Faz o <span class="accent">questionário</span></h3>
+          <p>5 perguntas curtas qualificam especialidade, urgência, convênio ou particular, expectativa. Não é formulário burocrático.</p>
+        </article>
+        <article class="process-step reveal">
+          <span class="step-num">04 — CHEGA NO WHATS</span>
+          <h3>Você recebe <span class="accent">filtrado</span></h3>
+          <p>Mensagem formatada cai no seu WhatsApp já com contexto. Você (ou a secretária) responde sabendo do que se trata.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESSO MINI ============ -->
+  <section class="process-mini" id="processo">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Como funciona</span>
+        <h2>Três movimentos, <span class="accent">uma</span> entrega.</h2>
+        <p>Do briefing ao site no ar — mesma cadência do estúdio.</p>
+      </div>
+
+      <div class="process-grid">
+        <article class="process-step reveal">
+          <span class="step-num">01 — DESCOBERTA</span>
+          <h3>Nós <span class="accent">ouvimos</span></h3>
+          <p>Conversa de 30 min mapeando especialidade, perfil de paciente, gargalo atual. Sem briefing genérico.</p>
+        </article>
+        <article class="process-step reveal">
+          <span class="step-num">02 — OFÍCIO</span>
+          <h3>Nós <span class="accent">construímos</span></h3>
+          <p>Site sob medida + questionário calibrado pra sua especialidade. Demos semanais, sem caixa-preta.</p>
+        </article>
+        <article class="process-step reveal">
+          <span class="step-num">03 — LANÇAMENTO</span>
+          <h3>Nós <span class="accent">entregamos</span></h3>
+          <p>No ar, monitorado, suporte ativo. Mudou texto, foto, preço? Manda no WhatsApp — atualizamos no mesmo dia.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FORM QUALIFICADOR ============ -->
+  <section class="qualify" id="qualificar">
+    <div class="container">
+      <div class="section-head reveal" style="margin: 0 auto 40px; text-align: center; align-items: center;">
+        <span class="eyebrow">Antes de você ligar</span>
+        <h2>4 perguntas. <span class="accent">3 minutos.</span></h2>
+        <p style="margin: 0 auto;">Responda — chamo no WhatsApp sabendo do que se trata.</p>
+      </div>
+
+      <div class="qualify-shell reveal">
+        <form class="qualify-form" novalidate>
+          <div class="qualify-field">
+            <label for="m-especialidade">Qual sua especialidade?</label>
+            <select id="m-especialidade" name="especialidade" data-q="Especialidade" required>
+              <option value="" disabled selected>Selecione…</option>
+              <option>Ginecologia / Obstetrícia</option>
+              <option>Dermatologia</option>
+              <option>Cardiologia</option>
+              <option>Psiquiatria</option>
+              <option>Pediatria</option>
+              <option>Endocrinologia</option>
+              <option>Ortopedia</option>
+              <option>Nutrologia</option>
+              <option>Clínico geral</option>
+              <option>Outra</option>
+            </select>
+          </div>
+
+          <div class="qualify-field">
+            <span class="field-label">Você atende particular, convênio ou ambos?</span>
+            <div class="qualify-radios" role="radiogroup" aria-label="Modalidade de atendimento">
+              <label class="qualify-radio">
+                <input type="radio" name="modalidade" value="Particular" data-q="Modalidade de atendimento" required />
+                <span>Particular</span>
+              </label>
+              <label class="qualify-radio">
+                <input type="radio" name="modalidade" value="Convênio" data-q-name="modalidade" />
+                <span>Convênio</span>
+              </label>
+              <label class="qualify-radio">
+                <input type="radio" name="modalidade" value="Ambos" data-q-name="modalidade" />
+                <span>Ambos</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="qualify-field">
+            <label for="m-site">Já tem site? Se sim, qual o endereço?</label>
+            <input type="text" id="m-site" name="site_atual" data-q="Site atual" placeholder="ex.: drfulano.com.br — ou ‘ainda não tenho’" />
+          </div>
+
+          <div class="qualify-field">
+            <label for="m-gargalo">Qual o maior gargalo hoje na captação de paciente?</label>
+            <p class="field-hint">Uma frase. Técnico, de processo, de percepção — qualquer ângulo.</p>
+            <textarea id="m-gargalo" name="gargalo" data-q="Maior gargalo na captação" placeholder="Conta aí…" rows="3"></textarea>
+          </div>
+
+          <div class="qualify-submit">
+            <button type="submit" class="btn-primary">
+              Enviar e abrir o WhatsApp
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+            <span class="submit-hint">Suas respostas viram uma mensagem no WhatsApp pronta para enviar.</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER MINI ============ -->
+  <footer class="niche-footer">
+    <div class="container">
+      <div class="footer-brand">
+        <div class="name">VibeSurf<span class="accent">Dev</span></div>
+        <div class="tag">BUILD · SURF · SHIP</div>
+      </div>
+      <div class="footer-links">
+        <a data-wa-direct href="#">WhatsApp · +55 98 98435-7980</a>
+        <a href="https://instagram.com/vibesurfdev" target="_blank" rel="noopener">Instagram · @vibesurfdev</a>
+        <a href="../index.html">← Voltar ao site completo</a>
+      </div>
+    </div>
+    <div class="footer-legal">© 2026 VibeSurfDev — Feito com intenção, entregue sem drama.</div>
+  </footer>
+
+  <script src="_shared.js?v=1"></script>
+</body>
+
+</html>

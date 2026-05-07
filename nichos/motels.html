@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema para motel · VibeSurfDev</title>
+  <meta name="description" content="Site público + sistema local da recepção + dashboard remota com IA. Mesma engenharia do Motel Paraíso, sob medida pra sua operação." />
+
+  <link rel="canonical" href="https://vibesurfdev.studio/nichos/motels.html" />
+
+  <meta property="og:title" content="Sistema para motel · VibeSurfDev" />
+  <meta property="og:description" content="Veja sua operação de qualquer lugar. Site + sistema local + dashboard com IA. Construído pela VibeSurfDev." />
+  <meta property="og:image" content="https://vibesurfdev.studio/assets/work/dashboard-motel-paraiso.png" />
+  <meta property="og:url" content="https://vibesurfdev.studio/nichos/motels.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Sistema de gestão para motel",
+    "provider": {
+      "@type": "Organization",
+      "name": "VibeSurfDev",
+      "url": "https://vibesurfdev.studio"
+    },
+    "areaServed": "BR",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Donos e gerentes de motel e pousada"
+    },
+    "description": "Site institucional + sistema local de recepção + dashboard remota com IA para motéis e pousadas.",
+    "url": "https://vibesurfdev.studio/nichos/motels.html"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,wght@0,400;1,400;1,500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css?v=18" />
+  <link rel="stylesheet" href="_shared.css?v=1" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="../assets/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon-180.png" />
+</head>
+
+<body data-niche="motels">
+
+  <div class="ambient-waves" aria-hidden="true">
+    <svg class="ambient-wave ambient-wave-a" viewBox="0 0 1440 200" preserveAspectRatio="none">
+      <path d="M0,100 C240,60 480,140 720,100 C960,60 1200,140 1440,100 L1440,200 L0,200 Z"
+        fill="none" stroke="#F5C518" stroke-width="1" stroke-opacity="0.06" />
+    </svg>
+    <svg class="ambient-wave ambient-wave-b" viewBox="0 0 1440 200" preserveAspectRatio="none">
+      <path d="M0,120 C300,80 600,160 900,120 C1100,90 1300,150 1440,120 L1440,200 L0,200 Z"
+        fill="none" stroke="#F5C518" stroke-width="1" stroke-opacity="0.04" />
+    </svg>
+  </div>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav niche-nav">
+    <a href="../index.html" class="nav-brand" aria-label="VibeSurfDev home">
+      <svg class="nav-brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M2 20 C 8 12, 12 28, 16 20 S 24 12, 30 20" stroke="#F5C518" stroke-width="2" stroke-linecap="round" />
+        <path d="M4 24 C 9 18, 13 30, 17 24 S 24 18, 28 24" stroke="#F5C518" stroke-opacity="0.4" stroke-width="1.4"
+          stroke-linecap="round" />
+        <circle cx="22" cy="10" r="1.8" fill="#F5C518" />
+      </svg>
+      <span class="nav-brand-text">VibeSurf<span class="accent">Dev</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#dor">A dor</a></li>
+      <li><a href="#case">O Paraíso</a></li>
+      <li><a href="#processo">Processo</a></li>
+      <li><a href="#qualificar">Conversar</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="../index.html" class="back-to-site">← Site completo</a>
+      <a href="#qualificar" class="nav-cta">Iniciar projeto</a>
+    </div>
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section class="niche-hero">
+    <div class="container">
+      <span class="eyebrow reveal">Para motéis e pousadas</span>
+      <h1 class="reveal">Veja sua operação de qualquer lugar. <span class="accent">Sem ligar</span> pra recepção.</h1>
+      <p class="sub reveal">Três frentes em produção: site público (cliente reserva), sistema local na recepção (offline, integra maquininha), dashboard remota com IA (resumo diário, semanal, mensal). Mesma engenharia do Motel Paraíso.</p>
+      <div class="hero-cta-row reveal">
+        <a class="btn-primary" data-wa-direct href="#">
+          Falar no WhatsApp
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+        <a href="#case" class="btn-ghost">
+          Ver o Motel Paraíso
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+            <path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DOR ============ -->
+  <section class="pain" id="dor">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">O que travou até aqui</span>
+        <h2>Três coisas que custam <span class="accent">finais de semana</span> da sua vida.</h2>
+      </div>
+
+      <div class="pain-grid">
+        <article class="pain-card reveal">
+          <span class="pain-num">01</span>
+          <p>Fim de semana ligando pra recepção pra saber se tá cheio.</p>
+        </article>
+        <article class="pain-card reveal">
+          <span class="pain-num">02</span>
+          <p>Sistema da concorrência cobra por suíte e nem fala com a maquininha.</p>
+        </article>
+        <article class="pain-card reveal">
+          <span class="pain-num">03</span>
+          <p>Relatório mensal feito na unha, com 2 semanas de atraso.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CASE EM DESTAQUE ============ -->
+  <section class="work" id="case">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Caso em produção · 2026</span>
+        <h2>Motel Paraíso, <span class="accent">três frentes</span> em produção.</h2>
+        <p>Site público, sistema local, dashboard remota com IA.</p>
+      </div>
+
+      <div class="case-spotlight">
+        <article class="work-slide in" data-project="motel-paraiso">
+          <div class="browser-frame">
+            <div class="browser-chrome">
+              <div class="browser-dots">
+                <span class="dot dot-r"></span>
+                <span class="dot dot-y"></span>
+                <span class="dot dot-g"></span>
+              </div>
+              <div class="browser-url">
+                <span class="url-protocol">https://</span><span class="url-host"
+                  style="--url-width: 28ch;">motelparaisosite.netlify.app</span><span class="url-caret"
+                  aria-hidden="true">▍</span>
+              </div>
+              <div class="browser-actions">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                  <path d="M2 8a6 6 0 1 1 1.76 4.24" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+                    fill="none" />
+                  <path d="M2 4v3.5h3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                </svg>
+              </div>
+            </div>
+            <div class="browser-viewport">
+              <img src="../assets/work/Paraiso-Motel-Site.png" alt="Motel Paraíso — site público" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="work-meta">
+            <div class="work-meta-head">
+              <span class="work-num">CASO · MOTEL PARAÍSO</span>
+              <span class="work-year">2026</span>
+            </div>
+            <h3 class="work-title">Motel Paraíso</h3>
+            <p class="work-tagline">Ecossistema de três frentes — cada peça atualiza independente, cada peça sobrevive se a outra cai.</p>
+            <ul class="work-outcomes">
+              <li><strong>Site público</strong> em Astro 5 + Tailwind v4 — Lighthouse 95+, zero runtime, indexável no Google.</li>
+              <li><strong>Sistema local</strong> em Tauri + React — roda offline na recepção, integra com maquininha de cartão.</li>
+              <li><strong>Dashboard remota</strong> em Next.js + IA — você vê ocupação, ticket médio, padrões de horário em tempo real.</li>
+              <li>IA processa os dados crus e devolve <strong>insights</strong> (não só gráfico): tendência da semana, melhor dia da semana, alerta de queda.</li>
+              <li>Cada frente tem <strong>independência</strong>: site cai? recepção continua. Internet caiu? sistema local opera offline.</li>
+              <li>Dado fica com você — sem aluguel mensal de servidor de outro.</li>
+            </ul>
+            <div class="work-tags">
+              <span>Astro 5</span><span>Tailwind v4</span><span>Tauri</span><span>Next.js</span><span>IA</span><span>Offline</span>
+            </div>
+            <div class="work-cta">
+              <a href="https://motelparaisosite.netlify.app/" class="work-link" target="_blank" rel="noopener">
+                Ver site no ar <span aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div class="work-screens" aria-label="Telas do ecossistema">
+              <button type="button" class="work-screen" aria-label="Sistema local da recepção">
+                <img src="../assets/work/sistema-local-motel.png" alt="Sistema local da recepção do motel"
+                  loading="lazy" />
+              </button>
+              <button type="button" class="work-screen" aria-label="Dashboard de gestão">
+                <img src="../assets/work/dashboard-motel-paraiso.png" alt="Dashboard de gestão remota com IA"
+                  loading="lazy" />
+              </button>
+            </div>
+            <dl class="work-info" aria-label="Detalhes do Motel Paraíso">
+              <div class="work-info-item">
+                <dt class="work-info-label">Três frentes</dt>
+                <dd class="work-info-value">Site público (cliente reserva) · Sistema local (recepção opera) · Dashboard (dono observa)</dd>
+              </div>
+              <div class="work-info-item">
+                <dt class="work-info-label">O que a IA devolve</dt>
+                <dd class="work-info-value">Resumo diário, semanal, mensal · ocupação · ticket médio · alerta de tendência</dd>
+              </div>
+              <div class="work-info-item">
+                <dt class="work-info-label">Status</dt>
+                <dd class="work-info-value">Em produção · motelparaisosite.netlify.app</dd>
+              </div>
+            </dl>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMO FUNCIONA O ECOSSISTEMA ============ -->
+  <section class="process-mini" id="como-funciona">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Como funciona o ecossistema</span>
+        <h2>Três frentes, <span class="accent">uma</span> operação inteira.</h2>
+      </div>
+
+      <div class="process-grid">
+        <article class="process-step reveal">
+          <span class="step-num">FRENTE 01 — SITE</span>
+          <h3>Cliente <span class="accent">reserva</span></h3>
+          <p>Site público em Astro — carrega rápido, indexa no Google, mostra suítes, preços e disponibilidade. Cliente reserva sem ligar.</p>
+        </article>
+        <article class="process-step reveal">
+          <span class="step-num">FRENTE 02 — RECEPÇÃO</span>
+          <h3>Recepção <span class="accent">opera</span></h3>
+          <p>Sistema desktop em Tauri — check-in, check-out, controle de suítes, integração com maquininha. Roda offline; sincroniza quando a internet volta.</p>
+        </article>
+        <article class="process-step reveal">
+          <span class="step-num">FRENTE 03 — DONO</span>
+          <h3>Você <span class="accent">observa</span></h3>
+          <p>Dashboard web em Next.js — abre no celular, vê ocupação ao vivo, resumo do dia, da semana, do mês. IA marca o que sai do padrão.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESSO MINI ============ -->
+  <section class="process-mini" id="processo">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Como funciona</span>
+        <h2>Três movimentos, <span class="accent">uma</span> entrega.</h2>
+        <p>Da primeira conversa às três frentes rodando.</p>
+      </div>
+
+      <div class="process-grid">
+        <article class="process-step reveal">
+          <span class="step-num">01 — DESCOBERTA</span>
+          <h3>Nós <span class="accent">ouvimos</span></h3>
+          <p>Mapeamos suítes, fluxo de check-in, integração com maquininha e o que mais te tira sono hoje.</p>
+        </article>
+        <article class="process-step reveal">
+          <span class="step-num">02 — OFÍCIO</span>
+          <h3>Nós <span class="accent">construímos</span></h3>
+          <p>Site, sistema da recepção e dashboard — cada peça calibrada pra rodar offline quando precisar.</p>
+        </article>
+        <article class="process-step reveal">
+          <span class="step-num">03 — LANÇAMENTO</span>
+          <h3>Nós <span class="accent">entregamos</span></h3>
+          <p>No ar, monitorado, suporte ativo. Mudou tarifa, suíte, regra? Manda no WhatsApp — ajustamos no mesmo dia.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FORM QUALIFICADOR ============ -->
+  <section class="qualify" id="qualificar">
+    <div class="container">
+      <div class="section-head reveal" style="margin: 0 auto 40px; text-align: center; align-items: center;">
+        <span class="eyebrow">Antes de você ligar</span>
+        <h2>4 perguntas. <span class="accent">3 minutos.</span></h2>
+        <p style="margin: 0 auto;">Responda — chamo no WhatsApp já com o panorama na cabeça.</p>
+      </div>
+
+      <div class="qualify-shell reveal">
+        <form class="qualify-form" novalidate>
+          <div class="qualify-field">
+            <span class="field-label">Quantas suítes?</span>
+            <div class="qualify-radios" role="radiogroup" aria-label="Número de suítes">
+              <label class="qualify-radio">
+                <input type="radio" name="suites" value="Menos de 10" data-q="Número de suítes" required />
+                <span>&lt; 10</span>
+              </label>
+              <label class="qualify-radio">
+                <input type="radio" name="suites" value="10–25" />
+                <span>10–25</span>
+              </label>
+              <label class="qualify-radio">
+                <input type="radio" name="suites" value="25–50" />
+                <span>25–50</span>
+              </label>
+              <label class="qualify-radio">
+                <input type="radio" name="suites" value="50+" />
+                <span>50+</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="qualify-field">
+            <span class="field-label">Sistema de recepção atual?</span>
+            <div class="qualify-radios" role="radiogroup" aria-label="Sistema atual">
+              <label class="qualify-radio">
+                <input type="radio" name="sistema_atual" value="Papel ou planilha" data-q="Sistema de recepção atual" required />
+                <span>Papel / planilha</span>
+              </label>
+              <label class="qualify-radio">
+                <input type="radio" name="sistema_atual" value="SaaS pronto (qual?)" />
+                <span>SaaS pronto</span>
+              </label>
+              <label class="qualify-radio">
+                <input type="radio" name="sistema_atual" value="Sistema próprio antigo" />
+                <span>Sistema antigo</span>
+              </label>
+              <label class="qualify-radio">
+                <input type="radio" name="sistema_atual" value="Nenhum" />
+                <span>Nenhum</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="qualify-field">
+            <span class="field-label">Hoje você está mais na recepção ou fora dela?</span>
+            <div class="qualify-radios" role="radiogroup" aria-label="Onde você opera">
+              <label class="qualify-radio">
+                <input type="radio" name="presenca" value="Quase sempre na recepção" data-q="Sua presença hoje" required />
+                <span>Quase sempre na recepção</span>
+              </label>
+              <label class="qualify-radio">
+                <input type="radio" name="presenca" value="Metade do tempo" />
+                <span>Metade do tempo</span>
+              </label>
+              <label class="qualify-radio">
+                <input type="radio" name="presenca" value="Quase nunca, quero ver de longe" />
+                <span>Quero ver de longe</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="qualify-field">
+            <label for="mt-incomodo">O que mais te incomoda na gestão hoje?</label>
+            <p class="field-hint">Uma frase. Pode ser financeiro, operacional, de pessoal — qualquer ângulo.</p>
+            <textarea id="mt-incomodo" name="incomodo" data-q="Maior incômodo na gestão" placeholder="Conta aí…" rows="3"></textarea>
+          </div>
+
+          <div class="qualify-submit">
+            <button type="submit" class="btn-primary">
+              Enviar e abrir o WhatsApp
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+            <span class="submit-hint">Suas respostas viram uma mensagem no WhatsApp pronta para enviar.</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER MINI ============ -->
+  <footer class="niche-footer">
+    <div class="container">
+      <div class="footer-brand">
+        <div class="name">VibeSurf<span class="accent">Dev</span></div>
+        <div class="tag">BUILD · SURF · SHIP</div>
+      </div>
+      <div class="footer-links">
+        <a data-wa-direct href="#">WhatsApp · +55 98 98435-7980</a>
+        <a href="https://instagram.com/vibesurfdev" target="_blank" rel="noopener">Instagram · @vibesurfdev</a>
+        <a href="sistemas.html">← Voltar para Sistemas</a>
+        <a href="../index.html">← Voltar ao site completo</a>
+      </div>
+    </div>
+    <div class="footer-legal">© 2026 VibeSurfDev — Feito com intenção, entregue sem drama.</div>
+  </footer>
+
+  <script src="_shared.js?v=1"></script>
+</body>
+
+</html>

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistemas sob medida · VibeSurfDev</title>
+  <meta name="description" content="Software sob medida para operações que não cabem em SaaS genérico. Cases em produção: ProntuVet (clínicas veterinárias) e Motel Paraíso (hospitalidade)." />
+
+  <link rel="canonical" href="https://vibesurfdev.studio/nichos/sistemas.html" />
+
+  <meta property="og:title" content="Sistemas sob medida · VibeSurfDev" />
+  <meta property="og:description" content="Software sob medida para operações que não cabem em SaaS genérico. ProntuVet + Motel Paraíso em produção." />
+  <meta property="og:image" content="https://vibesurfdev.studio/assets/work/dashboard-prontuvet.png" />
+  <meta property="og:url" content="https://vibesurfdev.studio/nichos/sistemas.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Desenvolvimento de software sob medida",
+    "provider": {
+      "@type": "Organization",
+      "name": "VibeSurfDev",
+      "url": "https://vibesurfdev.studio"
+    },
+    "areaServed": "BR",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Donos de operação com processo manual"
+    },
+    "description": "Sistemas web e desktop sob medida — cases em clínicas veterinárias e hospitalidade.",
+    "url": "https://vibesurfdev.studio/nichos/sistemas.html"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,wght@0,400;1,400;1,500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css?v=18" />
+  <link rel="stylesheet" href="_shared.css?v=1" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="../assets/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon-180.png" />
+</head>
+
+<body data-niche="sistemas">
+
+  <div class="ambient-waves" aria-hidden="true">
+    <svg class="ambient-wave ambient-wave-a" viewBox="0 0 1440 200" preserveAspectRatio="none">
+      <path d="M0,100 C240,60 480,140 720,100 C960,60 1200,140 1440,100 L1440,200 L0,200 Z"
+        fill="none" stroke="#F5C518" stroke-width="1" stroke-opacity="0.06" />
+    </svg>
+    <svg class="ambient-wave ambient-wave-b" viewBox="0 0 1440 200" preserveAspectRatio="none">
+      <path d="M0,120 C300,80 600,160 900,120 C1100,90 1300,150 1440,120 L1440,200 L0,200 Z"
+        fill="none" stroke="#F5C518" stroke-width="1" stroke-opacity="0.04" />
+    </svg>
+  </div>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav niche-nav">
+    <a href="../index.html" class="nav-brand" aria-label="VibeSurfDev home">
+      <svg class="nav-brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M2 20 C 8 12, 12 28, 16 20 S 24 12, 30 20" stroke="#F5C518" stroke-width="2" stroke-linecap="round" />
+        <path d="M4 24 C 9 18, 13 30, 17 24 S 24 18, 28 24" stroke="#F5C518" stroke-opacity="0.4" stroke-width="1.4"
+          stroke-linecap="round" />
+        <circle cx="22" cy="10" r="1.8" fill="#F5C518" />
+      </svg>
+      <span class="nav-brand-text">VibeSurf<span class="accent">Dev</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#dor">A dor</a></li>
+      <li><a href="#cases">Cases</a></li>
+      <li><a href="#processo">Processo</a></li>
+      <li><a href="#qualificar">Conversar</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="../index.html" class="back-to-site">← Site completo</a>
+      <a href="#qualificar" class="nav-cta">Iniciar projeto</a>
+    </div>
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section class="niche-hero">
+    <div class="container">
+      <span class="eyebrow reveal">Sistemas sob medida</span>
+      <h1 class="reveal">Sua operação não cabe num <span class="accent">SaaS genérico</span>. Construímos o que cabe.</h1>
+      <p class="sub reveal">Dois cases em produção: ProntuVet (escuta clínica por IA pra vets) e Motel Paraíso (site + sistema local na recepção + dashboard remota com IA). Stack escolhida pelo problema, não pela moda. Mesma engenharia, sob medida.</p>
+      <div class="hero-cta-row reveal">
+        <a class="btn-primary" data-wa-direct href="#">
+          Falar no WhatsApp
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+        <a href="#cases" class="btn-ghost">
+          Ver os cases
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+            <path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DOR ============ -->
+  <section class="pain" id="dor">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">O que travou até aqui</span>
+        <h2>Três sintomas de uma operação <span class="accent">presa no improviso</span>.</h2>
+      </div>
+
+      <div class="pain-grid">
+        <article class="pain-card reveal">
+          <span class="pain-num">01</span>
+          <p>Planilha que ninguém atualiza desde sexta-feira.</p>
+        </article>
+        <article class="pain-card reveal">
+          <span class="pain-num">02</span>
+          <p>SaaS importado cobra por feature que você não usa — e não cobre o que precisa.</p>
+        </article>
+        <article class="pain-card reveal">
+          <span class="pain-num">03</span>
+          <p>Operação trava na mesma pessoa porque "só ela sabe o sistema".</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CASES EM DESTAQUE ============ -->
+  <section class="work" id="cases">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Cases em produção · 2026</span>
+        <h2>Dois sistemas, <span class="accent">duas operações</span>, em produção.</h2>
+        <p>Stack diferente, mesma engenharia.</p>
+      </div>
+
+      <!-- CASE 1: ProntuVet -->
+      <div class="case-spotlight">
+        <article class="work-slide in" data-project="prontuvet">
+          <div class="browser-frame">
+            <div class="browser-chrome">
+              <div class="browser-dots">
+                <span class="dot dot-r"></span>
+                <span class="dot dot-y"></span>
+                <span class="dot dot-g"></span>
+              </div>
+              <div class="browser-url">
+                <span class="url-protocol">https://</span><span class="url-host"
+                  style="--url-width: 13ch;">prontuvet.com</span><span class="url-caret"
+                  aria-hidden="true">▍</span>
+              </div>
+              <div class="browser-actions">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                  <path d="M2 8a6 6 0 1 1 1.76 4.24" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+                    fill="none" />
+                  <path d="M2 4v3.5h3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                </svg>
+              </div>
+            </div>
+            <div class="browser-viewport">
+              <img src="../assets/work/ProntuVet-Site.png" alt="ProntuVet — site institucional" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="work-meta">
+            <div class="work-meta-head">
+              <span class="work-num">CASO · PRONTUVET</span>
+              <span class="work-year">2026</span>
+            </div>
+            <h3 class="work-title">ProntuVet</h3>
+            <p class="work-tagline">Escuta clínica por IA — prontuário estruturado, histórico acumulado, zero digitação no fim do expediente.</p>
+            <ul class="work-outcomes">
+              <li>Vet aperta REC e atende normalmente — IA acompanha a consulta.</li>
+              <li>Anamnese, exame físico, conduta e prescrição vêm <strong>separados</strong> — não bloco de texto cru.</li>
+              <li>Histórico do paciente acumula automaticamente: peso, vacina, cirurgia, alergia.</li>
+              <li>WebApp (Next.js) + cliente desktop (Tauri) — Mac/Windows/Linux, funciona offline.</li>
+              <li>Google AI integrada pra transcrição calibrada em vocabulário clínico veterinário.</li>
+            </ul>
+            <div class="work-tags">
+              <span>Next.js</span><span>Node.js</span><span>React</span><span>Tauri</span><span>Google AI</span><span>Offline-first</span>
+            </div>
+            <div class="work-cta">
+              <a href="https://prontuvet.com" class="work-link" target="_blank" rel="noopener">
+                Ver site no ar <span aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div class="work-screens" aria-label="Telas do produto">
+              <button type="button" class="work-screen" aria-label="Tela de login do ProntuVet">
+                <img src="../assets/work/tela-login-prontuvet.png" alt="Tela de login do ProntuVet" loading="lazy" />
+              </button>
+              <button type="button" class="work-screen" aria-label="Dashboard do ProntuVet">
+                <img src="../assets/work/dashboard-prontuvet.png" alt="Dashboard do ProntuVet" loading="lazy" />
+              </button>
+            </div>
+            <dl class="work-info" aria-label="Detalhes do ProntuVet">
+              <div class="work-info-item">
+                <dt class="work-info-label">O que a IA preenche</dt>
+                <dd class="work-info-value">Anamnese · Exame físico · Conduta · Prescrição · Observações</dd>
+              </div>
+              <div class="work-info-item">
+                <dt class="work-info-label">Por que esta stack</dt>
+                <dd class="work-info-value">Next.js (real-time + SEO) · Tauri (desktop leve, multi-OS) · Google AI (qualidade de transcrição PT-BR clínico)</dd>
+              </div>
+            </dl>
+            <a href="clinicas-vet.html" class="case-deepen">
+              Você é vet? Aprofunde aqui →
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <!-- CASE 2: Motel Paraíso -->
+      <div class="case-spotlight">
+        <article class="work-slide in" data-project="motel-paraiso">
+          <div class="browser-frame">
+            <div class="browser-chrome">
+              <div class="browser-dots">
+                <span class="dot dot-r"></span>
+                <span class="dot dot-y"></span>
+                <span class="dot dot-g"></span>
+              </div>
+              <div class="browser-url">
+                <span class="url-protocol">https://</span><span class="url-host"
+                  style="--url-width: 28ch;">motelparaisosite.netlify.app</span><span class="url-caret"
+                  aria-hidden="true">▍</span>
+              </div>
+              <div class="browser-actions">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                  <path d="M2 8a6 6 0 1 1 1.76 4.24" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+                    fill="none" />
+                  <path d="M2 4v3.5h3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                </svg>
+              </div>
+            </div>
+            <div class="browser-viewport">
+              <img src="../assets/work/Paraiso-Motel-Site.png" alt="Motel Paraíso — site público" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="work-meta">
+            <div class="work-meta-head">
+              <span class="work-num">CASO · MOTEL PARAÍSO</span>
+              <span class="work-year">2026</span>
+            </div>
+            <h3 class="work-title">Motel Paraíso</h3>
+            <p class="work-tagline">Ecossistema de três frentes — site público, sistema local na recepção e dashboard remota com IA.</p>
+            <ul class="work-outcomes">
+              <li><strong>Site público</strong> em Astro 5 + Tailwind v4 — Lighthouse 95+, zero runtime, indexável.</li>
+              <li><strong>Sistema local</strong> em Tauri + React — roda offline na recepção, integra com maquininha.</li>
+              <li><strong>Dashboard remota</strong> em Next.js + IA — dono vê resumo diário, semanal, mensal de qualquer lugar.</li>
+              <li>IA processa ocupação, ticket médio, padrões de horário e devolve insights (não só gráfico bonito).</li>
+              <li>Cada peça atualiza independente — site cai? sistema continua. Internet caiu? recepção continua.</li>
+            </ul>
+            <div class="work-tags">
+              <span>Astro 5</span><span>Tailwind v4</span><span>Tauri</span><span>Next.js</span><span>IA</span><span>Offline</span>
+            </div>
+            <div class="work-cta">
+              <a href="https://motelparaisosite.netlify.app/" class="work-link" target="_blank" rel="noopener">
+                Ver site no ar <span aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div class="work-screens" aria-label="Telas do ecossistema">
+              <button type="button" class="work-screen" aria-label="Sistema local da recepção">
+                <img src="../assets/work/sistema-local-motel.png" alt="Sistema local da recepção do motel"
+                  loading="lazy" />
+              </button>
+              <button type="button" class="work-screen" aria-label="Dashboard de gestão">
+                <img src="../assets/work/dashboard-motel-paraiso.png" alt="Dashboard de gestão remota com IA"
+                  loading="lazy" />
+              </button>
+            </div>
+            <dl class="work-info" aria-label="Detalhes do Motel Paraíso">
+              <div class="work-info-item">
+                <dt class="work-info-label">Três frentes</dt>
+                <dd class="work-info-value">Site público (cliente reserva) · Sistema local (recepção opera) · Dashboard (dono observa)</dd>
+              </div>
+              <div class="work-info-item">
+                <dt class="work-info-label">Por que esta stack</dt>
+                <dd class="work-info-value">Astro (estático = rápido + SEO) · Tauri (desktop leve, offline) · Next.js (dashboard real-time)</dd>
+              </div>
+            </dl>
+            <a href="motels.html" class="case-deepen">
+              Você é dono de motel? Aprofunde aqui →
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POR QUE SOB MEDIDA VS SAAS ============ -->
+  <section class="process-mini" id="por-que-sob-medida">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Sob medida vs SaaS pronto</span>
+        <h2>Quando faz sentido <span class="accent">construir</span> em vez de assinar.</h2>
+      </div>
+
+      <div class="process-grid" style="grid-template-columns: repeat(4, 1fr);">
+        <article class="process-step reveal">
+          <span class="step-num">01 — FLUXO ÚNICO</span>
+          <h3>Sua operação <span class="accent">não cabe</span></h3>
+          <p>SaaS genérico é desenhado pro caso médio. Se sua operação tem 3 jeitos próprios, você apanha pra encaixar.</p>
+        </article>
+        <article class="process-step reveal">
+          <span class="step-num">02 — DADO VALIOSO</span>
+          <h3>Você <span class="accent">não quer</span> alugar</h3>
+          <p>Em SaaS, seu dado mora no servidor deles. Migrar depois é doloroso. Sob medida = dado seu, código seu.</p>
+        </article>
+        <article class="process-step reveal">
+          <span class="step-num">03 — RECORRÊNCIA</span>
+          <h3>Mensalidade <span class="accent">cresce</span> com você</h3>
+          <p>SaaS cobra por usuário, por feature, por suíte. Sob medida você paga uma vez e evolui sob demanda.</p>
+        </article>
+        <article class="process-step reveal">
+          <span class="step-num">04 — INTEGRAÇÃO</span>
+          <h3>Conecta com <span class="accent">o que você</span> já tem</h3>
+          <p>SaaS força você a entrar no ecossistema dele. Sob medida conversa com sua maquininha, ERP, planilha, WhatsApp.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESSO MINI ============ -->
+  <section class="process-mini" id="processo">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Como funciona</span>
+        <h2>Três movimentos, <span class="accent">uma</span> entrega.</h2>
+        <p>Do mapeamento ao sistema rodando.</p>
+      </div>
+
+      <div class="process-grid">
+        <article class="process-step reveal">
+          <span class="step-num">01 — DESCOBERTA</span>
+          <h3>Nós <span class="accent">ouvimos</span></h3>
+          <p>Mapeamos o fluxo real (não o do organograma) e achamos onde o software trava ou destrava.</p>
+        </article>
+        <article class="process-step reveal">
+          <span class="step-num">02 — OFÍCIO</span>
+          <h3>Nós <span class="accent">construímos</span></h3>
+          <p>Stack escolhida pelo problema, não pela moda. Demos semanais, código auditável.</p>
+        </article>
+        <article class="process-step reveal">
+          <span class="step-num">03 — LANÇAMENTO</span>
+          <h3>Nós <span class="accent">entregamos</span></h3>
+          <p>No ar, monitorado, suporte ativo. Mudou regra de negócio? Manda no WhatsApp — implantamos.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FORM QUALIFICADOR ============ -->
+  <section class="qualify" id="qualificar">
+    <div class="container">
+      <div class="section-head reveal" style="margin: 0 auto 40px; text-align: center; align-items: center;">
+        <span class="eyebrow">Antes de você ligar</span>
+        <h2>5 perguntas. <span class="accent">4 minutos.</span></h2>
+        <p style="margin: 0 auto;">Responda — chamo no WhatsApp já com o panorama na cabeça.</p>
+      </div>
+
+      <div class="qualify-shell reveal">
+        <form class="qualify-form" novalidate>
+          <div class="qualify-field">
+            <label for="s-operacao">Qual operação você tem?</label>
+            <input type="text" id="s-operacao" name="operacao" data-q="Operação" placeholder="ex.: clínica odontológica, distribuidora, escola técnica…" required />
+          </div>
+
+          <div class="qualify-field">
+            <span class="field-label">Quantas pessoas trabalham nela?</span>
+            <div class="qualify-radios" role="radiogroup" aria-label="Tamanho da operação">
+              <label class="qualify-radio">
+                <input type="radio" name="tamanho" value="1-3" data-q="Tamanho da operação" required />
+                <span>1–3</span>
+              </label>
+              <label class="qualify-radio">
+                <input type="radio" name="tamanho" value="4-10" />
+                <span>4–10</span>
+              </label>
+              <label class="qualify-radio">
+                <input type="radio" name="tamanho" value="11-30" />
+                <span>11–30</span>
+              </label>
+              <label class="qualify-radio">
+                <input type="radio" name="tamanho" value="30+" />
+                <span>30+</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="qualify-field">
+            <label for="s-manual">O que hoje vive em planilha, papel ou na cabeça?</label>
+            <p class="field-hint">Os processos que você sabe que precisariam virar software.</p>
+            <textarea id="s-manual" name="manual" data-q="O que hoje é manual" placeholder="Conta aí…" rows="3"></textarea>
+          </div>
+
+          <div class="qualify-field">
+            <label for="s-saas">Já tentou algum SaaS pronto? Por que não funcionou?</label>
+            <textarea id="s-saas" name="saas_tentado" data-q="SaaS já tentado" placeholder="ex.: tentei o X, mas não cobre Y; tentei o Z, mas é caro pelo que entrega…" rows="3"></textarea>
+          </div>
+
+          <div class="qualify-field">
+            <label for="s-custo">Quanto custa pra você 1 dia de operação parada? <span style="opacity:.5">(opcional)</span></label>
+            <p class="field-hint">Ajuda a calibrar o investimento. Pode ser estimativa.</p>
+            <input type="text" id="s-custo" name="custo_dia" data-q="Custo de 1 dia parado" placeholder="ex.: R$ 5.000 / não sei dizer / depende…" />
+          </div>
+
+          <div class="qualify-submit">
+            <button type="submit" class="btn-primary">
+              Enviar e abrir o WhatsApp
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+            <span class="submit-hint">Suas respostas viram uma mensagem no WhatsApp pronta para enviar.</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER MINI ============ -->
+  <footer class="niche-footer">
+    <div class="container">
+      <div class="footer-brand">
+        <div class="name">VibeSurf<span class="accent">Dev</span></div>
+        <div class="tag">BUILD · SURF · SHIP</div>
+      </div>
+      <div class="footer-links">
+        <a data-wa-direct href="#">WhatsApp · +55 98 98435-7980</a>
+        <a href="https://instagram.com/vibesurfdev" target="_blank" rel="noopener">Instagram · @vibesurfdev</a>
+        <a href="../index.html">← Voltar ao site completo</a>
+      </div>
+    </div>
+    <div class="footer-legal">© 2026 VibeSurfDev — Feito com intenção, entregue sem drama.</div>
+  </footer>
+
+  <script src="_shared.js?v=1"></script>
+</body>
+
+</html>

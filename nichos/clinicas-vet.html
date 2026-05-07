@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema para clínica veterinária · VibeSurfDev</title>
+  <meta name="description" content="ProntuVet: a IA escuta a consulta e devolve o prontuário detalhado em segundos. WebApp + cliente desktop, construído pela VibeSurfDev." />
+
+  <link rel="canonical" href="https://vibesurfdev.studio/nichos/clinicas-vet.html" />
+
+  <meta property="og:title" content="Sistema para clínica veterinária · VibeSurfDev" />
+  <meta property="og:description" content="ProntuVet escuta a consulta e devolve o prontuário em segundos. Mesma engenharia da VSD para a sua clínica." />
+  <meta property="og:image" content="https://vibesurfdev.studio/assets/work/dashboard-prontuvet.png" />
+  <meta property="og:url" content="https://vibesurfdev.studio/nichos/clinicas-vet.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Sistema para clínica veterinária",
+    "provider": {
+      "@type": "Organization",
+      "name": "VibeSurfDev",
+      "url": "https://vibesurfdev.studio"
+    },
+    "areaServed": "BR",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Médicos veterinários e donos de clínica veterinária"
+    },
+    "description": "WebApp + desktop com IA que escuta a consulta veterinária e devolve o prontuário estruturado.",
+    "url": "https://vibesurfdev.studio/nichos/clinicas-vet.html"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,wght@0,400;1,400;1,500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css?v=18" />
+  <link rel="stylesheet" href="_shared.css?v=1" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="../assets/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon-180.png" />
+</head>
+
+<body data-niche="clinicas-vet">
+
+  <div class="ambient-waves" aria-hidden="true">
+    <svg class="ambient-wave ambient-wave-a" viewBox="0 0 1440 200" preserveAspectRatio="none">
+      <path d="M0,100 C240,60 480,140 720,100 C960,60 1200,140 1440,100 L1440,200 L0,200 Z"
+        fill="none" stroke="#F5C518" stroke-width="1" stroke-opacity="0.06" />
+    </svg>
+    <svg class="ambient-wave ambient-wave-b" viewBox="0 0 1440 200" preserveAspectRatio="none">
+      <path d="M0,120 C300,80 600,160 900,120 C1100,90 1300,150 1440,120 L1440,200 L0,200 Z"
+        fill="none" stroke="#F5C518" stroke-width="1" stroke-opacity="0.04" />
+    </svg>
+  </div>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav niche-nav">
+    <a href="../index.html" class="nav-brand" aria-label="VibeSurfDev home">
+      <svg class="nav-brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M2 20 C 8 12, 12 28, 16 20 S 24 12, 30 20" stroke="#F5C518" stroke-width="2" stroke-linecap="round" />
+        <path d="M4 24 C 9 18, 13 30, 17 24 S 24 18, 28 24" stroke="#F5C518" stroke-opacity="0.4" stroke-width="1.4"
+          stroke-linecap="round" />
+        <circle cx="22" cy="10" r="1.8" fill="#F5C518" />
+      </svg>
+      <span class="nav-brand-text">VibeSurf<span class="accent">Dev</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#dor">A dor</a></li>
+      <li><a href="#case">O ProntuVet</a></li>
+      <li><a href="#processo">Processo</a></li>
+      <li><a href="#qualificar">Conversar</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="../index.html" class="back-to-site">← Site completo</a>
+      <a href="#qualificar" class="nav-cta">Iniciar projeto</a>
+    </div>
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section class="niche-hero">
+    <div class="container">
+      <span class="eyebrow reveal">Para clínicas veterinárias</span>
+      <h1 class="reveal">8 minutos de prontuário viram <span class="accent">30 segundos</span>.</h1>
+      <p class="sub reveal">ProntuVet escuta a consulta e separa anamnese, exame físico, conduta e prescrição automaticamente. Você revisa, ajusta, salva. WebApp + cliente desktop, online ou offline.</p>
+      <div class="hero-cta-row reveal">
+        <a class="btn-primary" data-wa-direct href="#">
+          Falar no WhatsApp
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+        <a href="#case" class="btn-ghost">
+          Ver o ProntuVet
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+            <path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DOR ============ -->
+  <section class="pain" id="dor">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">O que travou até aqui</span>
+        <h2>Três horas que <span class="accent">não voltam</span> no fim do expediente.</h2>
+      </div>
+
+      <div class="pain-grid">
+        <article class="pain-card reveal">
+          <span class="pain-num">01</span>
+          <p>Fim do expediente escrevendo o que aconteceu de manhã.</p>
+        </article>
+        <article class="pain-card reveal">
+          <span class="pain-num">02</span>
+          <p>Tutor pede histórico do bichinho — você gasta 10 minutos folheando.</p>
+        </article>
+        <article class="pain-card reveal">
+          <span class="pain-num">03</span>
+          <p>Plantão sem o prontuário do colega que atendeu antes.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CASE EM DESTAQUE ============ -->
+  <section class="work" id="case">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Caso em produção · 2026</span>
+        <h2>ProntuVet, escuta clínica <span class="accent">por IA</span>.</h2>
+        <p>WebApp + desktop, em produção.</p>
+      </div>
+
+      <div class="case-spotlight">
+        <article class="work-slide in" data-project="prontuvet">
+          <div class="browser-frame">
+            <div class="browser-chrome">
+              <div class="browser-dots">
+                <span class="dot dot-r"></span>
+                <span class="dot dot-y"></span>
+                <span class="dot dot-g"></span>
+              </div>
+              <div class="browser-url">
+                <span class="url-protocol">https://</span><span class="url-host"
+                  style="--url-width: 13ch;">prontuvet.com</span><span class="url-caret"
+                  aria-hidden="true">▍</span>
+              </div>
+              <div class="browser-actions">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                  <path d="M2 8a6 6 0 1 1 1.76 4.24" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+                    fill="none" />
+                  <path d="M2 4v3.5h3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                </svg>
+              </div>
+            </div>
+            <div class="browser-viewport">
+              <img src="../assets/work/ProntuVet-Site.png" alt="ProntuVet — site institucional" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="work-meta">
+            <div class="work-meta-head">
+              <span class="work-num">CASO · PRONTUVET</span>
+              <span class="work-year">2026</span>
+            </div>
+            <h3 class="work-title">ProntuVet</h3>
+            <p class="work-tagline">Escuta clínica por IA — prontuário estruturado, histórico acumulado, zero digitação no fim do expediente.</p>
+            <ul class="work-outcomes">
+              <li>Aperta REC no início da consulta — IA escuta enquanto você atende normalmente.</li>
+              <li>Anamnese, exame físico, conduta e prescrição vêm <strong>separados</strong>, não bloco de texto cru.</li>
+              <li>Histórico do paciente acumula automaticamente: peso, vacina, cirurgia, alergia, medicação atual.</li>
+              <li>Você revisa, ajusta o que quiser, salva. Nada sai sem o seu OK.</li>
+              <li>WebApp (Next.js) <strong>+</strong> cliente desktop (Tauri) — Mac, Windows, Linux. Funciona offline.</li>
+              <li>Transcrição e organização via Google AI — calibrada para vocabulário clínico veterinário.</li>
+            </ul>
+            <div class="work-tags">
+              <span>Next.js</span><span>Node.js</span><span>React</span><span>Tauri</span><span>Google AI</span><span>Offline-first</span>
+            </div>
+            <div class="work-cta">
+              <a href="https://prontuvet.com" class="work-link" target="_blank" rel="noopener">
+                Ver site no ar <span aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div class="work-screens" aria-label="Telas do produto">
+              <button type="button" class="work-screen" aria-label="Tela de login do ProntuVet">
+                <img src="../assets/work/tela-login-prontuvet.png" alt="Tela de login do ProntuVet" loading="lazy" />
+              </button>
+              <button type="button" class="work-screen" aria-label="Dashboard do ProntuVet">
+                <img src="../assets/work/dashboard-prontuvet.png" alt="Dashboard do ProntuVet" loading="lazy" />
+              </button>
+            </div>
+            <dl class="work-info" aria-label="Detalhes do produto">
+              <div class="work-info-item">
+                <dt class="work-info-label">O que a IA preenche</dt>
+                <dd class="work-info-value">Anamnese · Exame físico · Conduta · Prescrição · Observações</dd>
+              </div>
+              <div class="work-info-item">
+                <dt class="work-info-label">Onde roda</dt>
+                <dd class="work-info-value">Consultório · sala de cirurgia · plantão · celular do vet em campo</dd>
+              </div>
+              <div class="work-info-item">
+                <dt class="work-info-label">Status</dt>
+                <dd class="work-info-value">Em produção · prontuvet.com</dd>
+              </div>
+            </dl>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMO FUNCIONA NA PRÁTICA (ProntuVet) ============ -->
+  <section class="process-mini" id="como-funciona">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Como funciona na prática</span>
+        <h2>Quatro segundos pra começar. <span class="accent">Zero</span> pra terminar.</h2>
+      </div>
+
+      <div class="process-grid" style="grid-template-columns: repeat(4, 1fr);">
+        <article class="process-step reveal">
+          <span class="step-num">01 — REC</span>
+          <h3>Você <span class="accent">aperta</span></h3>
+          <p>Um clique no início da consulta. Pode usar o WebApp ou o app desktop, online ou offline.</p>
+        </article>
+        <article class="process-step reveal">
+          <span class="step-num">02 — ATENDE</span>
+          <h3>Você <span class="accent">consulta</span></h3>
+          <p>Atende o paciente normalmente — fala com o tutor, examina o animal, dita o que vê. A IA acompanha.</p>
+        </article>
+        <article class="process-step reveal">
+          <span class="step-num">03 — ESTRUTURA</span>
+          <h3>A IA <span class="accent">organiza</span></h3>
+          <p>Anamnese, exame físico, conduta e prescrição saem separados em campos. Não é transcrição crua.</p>
+        </article>
+        <article class="process-step reveal">
+          <span class="step-num">04 — SALVA</span>
+          <h3>Você <span class="accent">confere</span></h3>
+          <p>Revisa, ajusta o que quiser, assina. Histórico do paciente atualiza automaticamente.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESSO MINI ============ -->
+  <section class="process-mini" id="processo">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Como funciona</span>
+        <h2>Três movimentos, <span class="accent">uma</span> entrega.</h2>
+        <p>Da primeira conversa ao sistema rodando na clínica.</p>
+      </div>
+
+      <div class="process-grid">
+        <article class="process-step reveal">
+          <span class="step-num">01 — DESCOBERTA</span>
+          <h3>Nós <span class="accent">ouvimos</span></h3>
+          <p>Conversa de 30 min mapeando porte da clínica, especialidade e o gargalo de prontuário hoje.</p>
+        </article>
+        <article class="process-step reveal">
+          <span class="step-num">02 — OFÍCIO</span>
+          <h3>Nós <span class="accent">construímos</span></h3>
+          <p>Sistema calibrado pro seu fluxo — anestesia, cirurgia, consulta. Demos semanais, código auditável.</p>
+        </article>
+        <article class="process-step reveal">
+          <span class="step-num">03 — LANÇAMENTO</span>
+          <h3>Nós <span class="accent">entregamos</span></h3>
+          <p>No ar, monitorado, suporte ativo. Mudou protocolo? Manda no WhatsApp — ajustamos no mesmo dia.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FORM QUALIFICADOR ============ -->
+  <section class="qualify" id="qualificar">
+    <div class="container">
+      <div class="section-head reveal" style="margin: 0 auto 40px; text-align: center; align-items: center;">
+        <span class="eyebrow">Antes de você ligar</span>
+        <h2>4 perguntas. <span class="accent">3 minutos.</span></h2>
+        <p style="margin: 0 auto;">Responda — chamo no WhatsApp já com o panorama na cabeça.</p>
+      </div>
+
+      <div class="qualify-shell reveal">
+        <form class="qualify-form" novalidate>
+          <div class="qualify-field">
+            <span class="field-label">Quantos vets atendem na clínica?</span>
+            <div class="qualify-radios" role="radiogroup" aria-label="Quantidade de vets">
+              <label class="qualify-radio">
+                <input type="radio" name="vets" value="Só eu" data-q="Quantidade de vets" required />
+                <span>Só eu</span>
+              </label>
+              <label class="qualify-radio">
+                <input type="radio" name="vets" value="2–3" />
+                <span>2–3</span>
+              </label>
+              <label class="qualify-radio">
+                <input type="radio" name="vets" value="4–6" />
+                <span>4–6</span>
+              </label>
+              <label class="qualify-radio">
+                <input type="radio" name="vets" value="7+" />
+                <span>7+</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="qualify-field">
+            <span class="field-label">Qual sistema de prontuário hoje?</span>
+            <div class="qualify-radios" role="radiogroup" aria-label="Sistema atual">
+              <label class="qualify-radio">
+                <input type="radio" name="sistema_atual" value="Papel" data-q="Sistema de prontuário hoje" required />
+                <span>Papel</span>
+              </label>
+              <label class="qualify-radio">
+                <input type="radio" name="sistema_atual" value="Planilha" />
+                <span>Planilha</span>
+              </label>
+              <label class="qualify-radio">
+                <input type="radio" name="sistema_atual" value="SaaS pronto (qual?)" />
+                <span>SaaS pronto</span>
+              </label>
+              <label class="qualify-radio">
+                <input type="radio" name="sistema_atual" value="Nenhum sistema" />
+                <span>Nenhum</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="qualify-field">
+            <span class="field-label">Quanto tempo por dia escrevendo prontuário?</span>
+            <div class="qualify-radios" role="radiogroup" aria-label="Tempo gasto">
+              <label class="qualify-radio">
+                <input type="radio" name="tempo" value="Menos de 30 min" data-q="Tempo escrevendo prontuário/dia" required />
+                <span>&lt; 30 min</span>
+              </label>
+              <label class="qualify-radio">
+                <input type="radio" name="tempo" value="30 min a 1h" />
+                <span>30 min – 1h</span>
+              </label>
+              <label class="qualify-radio">
+                <input type="radio" name="tempo" value="1h a 2h" />
+                <span>1h – 2h</span>
+              </label>
+              <label class="qualify-radio">
+                <input type="radio" name="tempo" value="Mais de 2h" />
+                <span>2h+</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="qualify-field">
+            <span class="field-label">Tem interesse em testar ou só conhecer?</span>
+            <div class="qualify-radios" role="radiogroup" aria-label="Intenção">
+              <label class="qualify-radio">
+                <input type="radio" name="intencao" value="Quero testar" data-q="Intenção" required />
+                <span>Testar</span>
+              </label>
+              <label class="qualify-radio">
+                <input type="radio" name="intencao" value="Quero entender melhor primeiro" />
+                <span>Entender primeiro</span>
+              </label>
+              <label class="qualify-radio">
+                <input type="radio" name="intencao" value="Só estou pesquisando o mercado" />
+                <span>Só pesquisando</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="qualify-submit">
+            <button type="submit" class="btn-primary">
+              Enviar e abrir o WhatsApp
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+            <span class="submit-hint">Suas respostas viram uma mensagem no WhatsApp pronta para enviar.</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER MINI ============ -->
+  <footer class="niche-footer">
+    <div class="container">
+      <div class="footer-brand">
+        <div class="name">VibeSurf<span class="accent">Dev</span></div>
+        <div class="tag">BUILD · SURF · SHIP</div>
+      </div>
+      <div class="footer-links">
+        <a data-wa-direct href="#">WhatsApp · +55 98 98435-7980</a>
+        <a href="https://instagram.com/vibesurfdev" target="_blank" rel="noopener">Instagram · @vibesurfdev</a>
+        <a href="sistemas.html">← Voltar para Sistemas</a>
+        <a href="../index.html">← Voltar ao site completo</a>
+      </div>
+    </div>
+    <div class="footer-legal">© 2026 VibeSurfDev — Feito com intenção, entregue sem drama.</div>
+  </footer>
+
+  <script src="_shared.js?v=1"></script>
+</body>
+
+</html>
