@@ -45,7 +45,7 @@
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,wght@0,400;1,400;1,500&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="../styles.css?v=20" />
-  <link rel="stylesheet" href="_shared.css?v=1" />
+  <link rel="stylesheet" href="_shared.css?v=2" />
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png" />
   <link rel="icon" type="image/png" sizes="512x512" href="../assets/favicon-512.png" />
@@ -94,9 +94,24 @@
 
   <!-- ============ HERO ============ -->
   <section class="niche-hero">
+    <div class="hero-spotlight" aria-hidden="true"></div>
+    <svg class="hero-surfline" viewBox="0 0 640 140" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="hsl-grad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#F5C518" stop-opacity="0" />
+          <stop offset="0.5" stop-color="#F5C518" stop-opacity="0.5" />
+          <stop offset="1" stop-color="#ffd84a" stop-opacity="0" />
+        </linearGradient>
+      </defs>
+      <path class="hero-surfline-path" d="M0,96 C140,40 300,128 440,72 C520,40 580,84 640,58"
+        fill="none" stroke="url(#hsl-grad)" stroke-width="2" stroke-linecap="round" />
+    </svg>
     <div class="container">
       <span class="eyebrow reveal">Para médicos com consultório próprio</span>
-      <h1 class="reveal">O paciente certo,<br /><span class="accent">antes</span> da primeira consulta.</h1>
+      <h1 class="reveal hero-title">
+        <span class="line"><span class="line-inner">O paciente certo,</span></span>
+        <span class="line"><span class="line-inner"><span class="accent">antes</span> da primeira consulta.</span></span>
+      </h1>
       <p class="sub reveal">Site institucional + questionário que filtra o paciente antes da primeira consulta — qualifica especialidade, urgência, modalidade e expectativa. HTML estático, mobile-first, instantâneo. Mesma engenharia da Dra. Kerly Helena.</p>
       <div class="hero-cta-row reveal">
         <a class="btn-primary" data-wa-direct href="#">
@@ -113,6 +128,11 @@
           </svg>
         </a>
       </div>
+      <a class="hero-proof reveal" href="https://drakerlyhelena.com.br" target="_blank" rel="noopener">
+        <span class="proof-dot" aria-hidden="true"></span>
+        <span class="proof-host">drakerlyhelena.com.br</span>
+        <span class="proof-label">no ar agora</span>
+      </a>
     </div>
   </section>
 
@@ -233,7 +253,7 @@
         <h2>Quatro passos. <span class="accent">O lead</span> chega já filtrado.</h2>
       </div>
 
-      <div class="process-grid" style="grid-template-columns: repeat(4, 1fr);">
+      <div class="process-grid cols-4 process-flow">
         <article class="process-step reveal">
           <span class="step-num">01 — CHEGA</span>
           <h3>Paciente <span class="accent">aparece</span></h3>

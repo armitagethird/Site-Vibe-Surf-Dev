@@ -513,3 +513,250 @@
 @media (max-width: 700px) {
   .cross-links { grid-template-columns: 1fr; padding: 22px 18px; gap: 14px; }
 }
+
+/* ============================================================
+   ANTI-ARRASTE LATERAL (todas as páginas de nicho)
+   O body já tem overflow-x:hidden (styles.css); reforçamos no html
+   porque o iOS Safari não segura o drag só com o body quando algo
+   excede a largura. A cura real é o grid responsivo logo abaixo.
+   ============================================================ */
+html { overflow-x: hidden; }
+
+/* ============================================================
+   PROCESS GRID — variante de 4 passos (compartilhada)
+   Substitui o antigo style inline grid-template-columns:repeat(4,1fr),
+   que vencia a media query e espremia 4 colunas no mobile (quebrava
+   a seção E estourava a largura → arraste). Agora escala 4 → 2 → 1.
+   ============================================================ */
+.process-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 1024px) {
+  .process-grid.cols-4 { grid-template-columns: repeat(2, 1fr); gap: 22px; }
+}
+@media (max-width: 640px) {
+  .process-grid.cols-4 { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   MÉDICOS — pacote de motion (escopado em [data-niche="medicos"])
+   Reaproveita .reveal/.in (wireReveals em _shared.js), --ease-out
+   e o padrão de pulse. Nada disso vaza para as outras páginas.
+   ============================================================ */
+
+/* ---------- HERO: spotlight + surf line ---------- */
+/* .niche-hero já é position:relative + overflow:hidden → tudo abaixo
+   fica clipado no hero, sem risco de overflow horizontal. */
+body[data-niche="medicos"] .hero-spotlight {
+  position: absolute;
+  top: -12%;
+  left: 50%;
+  width: min(900px, 130%);
+  height: 680px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse 50% 45% at 50% 42%,
+              rgba(245, 197, 24, 0.16) 0%,
+              rgba(245, 197, 24, 0.06) 36%,
+              transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  animation: heroBreathe 9s var(--ease-in-out) infinite;
+}
+body[data-niche="medicos"] .hero-surfline {
+  position: absolute;
+  bottom: 7%;
+  left: 0;
+  width: 100%;
+  height: 140px;
+  pointer-events: none;
+  z-index: 0;
+}
+body[data-niche="medicos"] .hero-surfline-path {
+  stroke-dasharray: 1400;
+  stroke-dashoffset: 1400;
+  animation: surflineDraw 2.6s var(--ease-out) 0.4s forwards;
+}
+@keyframes heroBreathe {
+  0%, 100% { opacity: 0.65; transform: translateX(-50%) scale(1); }
+  50%      { opacity: 1;    transform: translateX(-50%) scale(1.06); }
+}
+@keyframes surflineDraw { to { stroke-dashoffset: 0; } }
+
+/* ---------- HERO: título reveal linha-a-linha ---------- */
+/* Neutraliza o translate base do .reveal; o motion vem das linhas. */
+body[data-niche="medicos"] .niche-hero .hero-title.reveal {
+  opacity: 1;
+  transform: none;
+}
+body[data-niche="medicos"] .hero-title .line { display: block; overflow: hidden; }
+body[data-niche="medicos"] .hero-title .line-inner {
+  display: block;
+  transform: translateY(115%);
+  transition: transform 0.9s var(--ease-out);
+}
+body[data-niche="medicos"] .hero-title.in .line-inner { transform: translateY(0); }
+body[data-niche="medicos"] .hero-title.in .line:nth-child(1) .line-inner { transition-delay: 0.05s; }
+body[data-niche="medicos"] .hero-title.in .line:nth-child(2) .line-inner { transition-delay: 0.18s; }
+
+/* underline que desenha sob "antes" */
+body[data-niche="medicos"] .hero-title .accent { position: relative; }
+body[data-niche="medicos"] .hero-title .accent::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -0.08em;
+  height: 3px; border-radius: 2px;
+  background: linear-gradient(90deg, var(--yellow), var(--yellow-soft));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.8s var(--ease-out) 0.95s;
+}
+body[data-niche="medicos"] .hero-title.in .accent::after { transform: scaleX(1); }
+
+/* ---------- HERO: badge "site no ar" ---------- */
+body[data-niche="medicos"] .hero-proof {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 28px;
+  padding: 8px 15px 8px 13px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.02);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  text-decoration: none;
+  transition: border-color 0.3s, background 0.3s, transform 0.3s var(--ease-out);
+}
+body[data-niche="medicos"] .hero-proof:hover {
+  border-color: rgba(245, 197, 24, 0.4);
+  background: rgba(245, 197, 24, 0.05);
+  transform: translateY(-2px);
+}
+body[data-niche="medicos"] .hero-proof .proof-label {
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+body[data-niche="medicos"] .proof-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #35d07f;
+  box-shadow: 0 0 0 0 rgba(53, 208, 127, 0.5);
+  animation: proofPulse 2s var(--ease-in-out) infinite;
+  flex: none;
+}
+@keyframes proofPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(53, 208, 127, 0.45); }
+  70%  { box-shadow: 0 0 0 8px rgba(53, 208, 127, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(53, 208, 127, 0); }
+}
+
+/* ---------- HERO: shine no CTA primário (usa ::after; ::before é o glow global) ---------- */
+body[data-niche="medicos"] .niche-hero .hero-cta-row .btn-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 35%, rgba(255, 255, 255, 0.55) 50%, transparent 65%);
+  background-size: 250% 100%;
+  background-position: 150% 0;
+  pointer-events: none;
+  animation: ctaShine 5s ease-in-out 1.4s infinite;
+}
+@keyframes ctaShine {
+  0%   { background-position: 150% 0; }
+  30%  { background-position: -150% 0; }
+  100% { background-position: -150% 0; }
+}
+
+/* ============================================================
+   MÉDICOS — "Como funciona" flow timeline (#como-funciona)
+   Desktop (>1024): trilho horizontal que cintila + nós que acendem
+   em cascata. Tablet/mobile (≤1024): espinha vertical à esquerda.
+   ============================================================ */
+body[data-niche="medicos"] #como-funciona .process-flow {
+  position: relative;
+  padding-top: 38px;
+}
+/* trilho horizontal cintilante (contido no próprio grid → sem overflow) */
+body[data-niche="medicos"] #como-funciona .process-flow::before {
+  content: "";
+  position: absolute;
+  top: 11px; left: 1%; right: 1%;
+  height: 2px; border-radius: 2px;
+  background: linear-gradient(90deg,
+    transparent 0%, var(--line) 12%, rgba(245, 197, 24, 0.55) 50%, var(--line) 88%, transparent 100%);
+  background-size: 220% 100%;
+  animation: flowShimmer 5.5s linear infinite;
+}
+@keyframes flowShimmer {
+  0%   { background-position: 120% 0; }
+  100% { background-position: -120% 0; }
+}
+body[data-niche="medicos"] #como-funciona .process-flow .process-step {
+  position: relative;
+  border-left: none;
+  padding: 34px 18px 0 0;
+  transition: transform 0.45s var(--ease-out), opacity 0.8s var(--ease-out);
+}
+/* nó por passo */
+body[data-niche="medicos"] #como-funciona .process-flow .process-step::before {
+  content: "";
+  position: absolute;
+  top: 5px; left: 0;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--navy-2);
+  border: 2px solid rgba(245, 197, 24, 0.5);
+  box-shadow: 0 0 0 4px rgba(13, 27, 42, 0.6);
+  transition: background 0.5s var(--ease-out), border-color 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out);
+}
+/* nó acende quando o passo entra na viewport (cascata por delay) */
+body[data-niche="medicos"] #como-funciona .process-flow .process-step.in::before {
+  background: var(--yellow);
+  border-color: var(--yellow);
+  box-shadow: 0 0 14px 2px rgba(245, 197, 24, 0.45);
+}
+body[data-niche="medicos"] #como-funciona .process-flow .process-step:nth-child(1).in::before { transition-delay: 0.05s; }
+body[data-niche="medicos"] #como-funciona .process-flow .process-step:nth-child(2).in::before { transition-delay: 0.20s; }
+body[data-niche="medicos"] #como-funciona .process-flow .process-step:nth-child(3).in::before { transition-delay: 0.35s; }
+body[data-niche="medicos"] #como-funciona .process-flow .process-step:nth-child(4).in::before { transition-delay: 0.50s; }
+/* hover */
+body[data-niche="medicos"] #como-funciona .process-flow .process-step:hover { transform: translateY(-4px); }
+body[data-niche="medicos"] #como-funciona .process-flow .process-step:hover::before {
+  box-shadow: 0 0 18px 3px rgba(245, 197, 24, 0.6);
+}
+
+/* tablet/mobile: sem trilho horizontal (desalinharia no 2-col); espinha vertical */
+@media (max-width: 1024px) {
+  body[data-niche="medicos"] #como-funciona .process-flow { padding-top: 0; }
+  body[data-niche="medicos"] #como-funciona .process-flow::before { display: none; }
+  body[data-niche="medicos"] #como-funciona .process-flow .process-step {
+    border-left: 2px solid var(--line);
+    padding: 6px 0 22px 24px;
+  }
+  body[data-niche="medicos"] #como-funciona .process-flow .process-step:first-child { border-left-color: var(--yellow); }
+  body[data-niche="medicos"] #como-funciona .process-flow .process-step::before { top: 4px; left: -8px; }
+}
+/* mobile (1 coluna): espinha vertical contínua */
+@media (max-width: 640px) {
+  body[data-niche="medicos"] #como-funciona .process-flow { gap: 0; }
+  body[data-niche="medicos"] #como-funciona .process-flow .process-step { padding: 8px 0 26px 24px; }
+}
+
+/* ============================================================
+   MÉDICOS — fallback prefers-reduced-motion: estados finais estáticos
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  body[data-niche="medicos"] .hero-spotlight { animation: none; opacity: 0.85; }
+  body[data-niche="medicos"] .hero-surfline-path { animation: none; stroke-dashoffset: 0; }
+  body[data-niche="medicos"] .hero-title .line-inner { transition: none; transform: none; }
+  body[data-niche="medicos"] .hero-title .accent::after { transition: none; transform: scaleX(1); }
+  body[data-niche="medicos"] .proof-dot { animation: none; }
+  body[data-niche="medicos"] .niche-hero .hero-cta-row .btn-primary::after { animation: none; display: none; }
+  body[data-niche="medicos"] #como-funciona .process-flow::before { animation: none; }
+  body[data-niche="medicos"] #como-funciona .process-flow .process-step::before {
+    transition: none;
+    background: var(--yellow);
+    border-color: var(--yellow);
+  }
+}
