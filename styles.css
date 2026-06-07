@@ -99,3 +99,25 @@ html{background:#0d1b2a}
   .nav.scrolled{padding-top:calc(10px + env(safe-area-inset-top,0px))}
   .nav-right{padding-bottom:calc(32px + env(safe-area-inset-bottom,0px))}
 }
+
+/* ============================================================
+   HERO MOBILE — cabe inteiro na 1ª tela do iPhone (sem corte/scroll)
+   svh = altura visível com a barra do Safari aberta (pior caso);
+   100vh fica de fallback. svh==vh no desktop (inócuo).
+   Estratégia: eyebrow + headline + sub + os 2 CTAs SEMPRE visíveis
+   (o padding-top com env() limpa o nav, que também tem inset); o
+   surfista ocupa a linha que sobra (grid 1fr) e encolhe sozinho em
+   telas curtas — fica tão grande quanto couber, nunca corta o resto.
+   Escopado a <=600px → desktop/tablet inalterados.
+   ============================================================ */
+.hero{min-height:100vh;min-height:100svh}
+@media (max-width:600px){
+  .hero{padding:calc(74px + env(safe-area-inset-top,0px)) 18px calc(14px + env(safe-area-inset-bottom,0px));align-items:stretch}
+  .hero-content{gap:10px;min-height:0;grid-template-rows:auto 1fr;align-items:stretch}
+  .hero-text{gap:13px;justify-content:start}
+  .hero h1{margin-bottom:0;font-size:clamp(24px,7vw,34px);line-height:1.1}
+  .hero p.sub{margin-top:0;font-size:14.5px;line-height:1.45}
+  .hero-cta-row{margin-top:0;gap:10px}
+  .hero-logo-wrap{gap:6px;min-height:0;justify-content:center}
+  .hero-logo-frame,.hero-logo-img{width:auto;height:auto;flex:1 1 0;min-height:0;max-height:min(240px,54vw);aspect-ratio:1/1}
+}
