@@ -83,3 +83,19 @@ body.menu-open .wa-fab{opacity:0;pointer-events:none;transform:scale(.85)}
   .cta-glow{animation:none}
   .cta-glow::after{animation:none;display:none}
 }
+
+/* ============================================================
+   iOS safe-area — viewport-fit=cover faz a página pintar o navy
+   de borda a borda; estes guards impedem que algo fique sob a
+   barra de status (topo) ou o home indicator (base).
+   env() resolve pra 0px em telas sem notch → desktop inalterado.
+   ============================================================ */
+html{background:#0d1b2a}
+.scroll-progress{top:env(safe-area-inset-top,0px)}
+.nav{padding-top:calc(22px + env(safe-area-inset-top,0px))}
+.footer{padding-bottom:calc(32px + env(safe-area-inset-bottom,0px))}
+@media (max-width:800px){
+  .nav{padding-top:calc(14px + env(safe-area-inset-top,0px))}
+  .nav.scrolled{padding-top:calc(10px + env(safe-area-inset-top,0px))}
+  .nav-right{padding-bottom:calc(32px + env(safe-area-inset-bottom,0px))}
+}
