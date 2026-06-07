@@ -121,3 +121,13 @@ html{background:#0d1b2a}
   .hero-logo-wrap{gap:6px;min-height:0;justify-content:center}
   .hero-logo-frame,.hero-logo-img{width:auto;height:auto;flex:1 1 0;min-height:0;max-height:min(240px,54vw);aspect-ratio:1/1}
 }
+
+/* ============================================================
+   SCROLL PROGRESS — sem transition (tracking 1:1 com o scroll via rAF no JS).
+   A transition:transform 50ms "perseguia" o scroll: ~44px de atraso e,
+   quando o denominador (scrollHeight-clientHeight) muda no mobile (barra
+   do Safari abrindo/fechando), virava saltos pra trás = flicker.
+   O update coalescido em requestAnimationFrame já é suave; este override
+   vence por ordem de fonte (mesma especificidade da regra minificada).
+   ============================================================ */
+.scroll-progress{transition:none}
