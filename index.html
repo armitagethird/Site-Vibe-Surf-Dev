@@ -5,14 +5,53 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#0d1b2a" />
-  <title>VibeSurfDev — Build · Surf · Ship</title>
+  <title>VibeSurfDev — Sites, sistemas e apps sob medida | Estúdio de software</title>
+  <meta name="description" content="Estúdio de engenharia de software em São Luís — MA, atendendo todo o Brasil. Sites, sistemas sob medida e apps em produção — backend em Rust, código auditável. Médicos, clínicas, motéis e qualquer operação." />
+  <link rel="canonical" href="https://vibesurfdev.com/" />
+  <meta property="og:title" content="VibeSurfDev — Build · Surf · Ship" />
+  <meta property="og:description" content="Sites, sistemas e apps criados para quem exige excelência. Trabalho em produção, código aberto." />
+  <meta property="og:image" content="https://vibesurfdev.com/assets/logo.png" />
+  <meta property="og:url" content="https://vibesurfdev.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="VibeSurfDev — Build · Surf · Ship" />
+  <meta name="twitter:description" content="Sites, sistemas e apps criados para quem exige excelência. Trabalho em produção, código aberto." />
+  <meta name="twitter:image" content="https://vibesurfdev.com/assets/logo.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://vibesurfdev.com/#org",
+        "name": "VibeSurfDev",
+        "url": "https://vibesurfdev.com",
+        "logo": "https://vibesurfdev.com/assets/favicon-512.png",
+        "sameAs": ["https://instagram.com/vibesurfdev", "https://github.com/armitagethird/Site-Vibe-Surf-Dev"],
+        "contactPoint": { "@type": "ContactPoint", "telephone": "+55-98-98435-7980", "contactType": "sales", "availableLanguage": ["Portuguese", "English"] }
+      },
+      {
+        "@type": "ProfessionalService",
+        "name": "VibeSurfDev",
+        "url": "https://vibesurfdev.com",
+        "image": "https://vibesurfdev.com/assets/logo.png",
+        "telephone": "+55-98-98435-7980",
+        "address": { "@type": "PostalAddress", "addressLocality": "São Luís", "addressRegion": "MA", "addressCountry": "BR" },
+        "areaServed": { "@type": "Country", "name": "Brasil" }
+      }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,wght@0,400;1,400;1,500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,wght@0,400;1,400;1,500&display=swap"
     rel="stylesheet" />
   <link rel="preload" as="image" href="assets/logo-anim.webp" fetchpriority="high" />
-  <link rel="stylesheet" href="styles.css?v=24" />
+  <link rel="stylesheet" href="styles.css?v=25" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png" />
   <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png" />
@@ -20,6 +59,8 @@
 </head>
 
 <body>
+
+  <a class="skip-link" href="#hero">Pular para o conteúdo</a>
 
   <!-- Ambient waves — persistent ocean current behind everything -->
   <div class="ambient-waves" aria-hidden="true">
@@ -56,8 +97,8 @@
     </ul>
     <div class="nav-right">
       <div class="lang-toggle" role="group" aria-label="Language">
-        <button data-lang="pt" class="active">PT</button>
-        <button data-lang="en">EN</button>
+        <button data-lang="pt" class="active" aria-pressed="true">PT</button>
+        <button data-lang="en" aria-pressed="false">EN</button>
       </div>
       <a href="#contact" class="nav-cta cta-glow" data-i18n="nav.cta">Iniciar projeto</a>
     </div>
@@ -450,7 +491,7 @@
           </svg>
         </button>
         <div class="work-dots" aria-hidden="true"></div>
-        <span class="work-counter">01 / 04</span>
+        <span class="work-counter" aria-live="polite">01 / 04</span>
         <button class="work-next" aria-label="Próximo projeto">
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
             <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
@@ -471,7 +512,7 @@
       </div>
 
       <div class="markets-grid">
-        <a href="nichos/medicos" class="market-card reveal">
+        <a href="/nichos/medicos" class="market-card reveal">
           <div class="market-thumb">
             <picture>
               <source type="image/avif" srcset="assets/work/dra-kerly-site.avif" />
@@ -488,7 +529,7 @@
           </div>
         </a>
 
-        <a href="nichos/sistemas" class="market-card reveal">
+        <a href="/nichos/sistemas" class="market-card reveal">
           <div class="market-thumb">
             <picture>
               <source type="image/avif" srcset="assets/work/dashboard-prontuvet.avif" />
@@ -505,7 +546,7 @@
           </div>
         </a>
 
-        <a href="nichos/clinicas-vet" class="market-card reveal">
+        <a href="/nichos/clinicas-vet" class="market-card reveal">
           <div class="market-thumb">
             <picture>
               <source type="image/avif" srcset="assets/work/tela-login-prontuvet.avif" />
@@ -522,7 +563,7 @@
           </div>
         </a>
 
-        <a href="nichos/motels" class="market-card reveal">
+        <a href="/nichos/motels" class="market-card reveal">
           <div class="market-thumb">
             <picture>
               <source type="image/avif" srcset="assets/work/Paraiso-Motel-Site.avif" />
@@ -964,15 +1005,15 @@
 
       <div class="stats-grid">
         <div class="stat reveal">
-          <div class="stat-value"><span class="num" data-target="100">0</span><span class="suffix">%</span></div>
+          <div class="stat-value"><span class="num" data-target="100">100</span><span class="suffix">%</span></div>
           <div class="stat-label" data-i18n="stats.l1">Cobertura de revisão</div>
         </div>
         <div class="stat reveal">
-          <div class="stat-value"><span class="num" data-target="98">0</span><span class="suffix">%</span></div>
+          <div class="stat-value"><span class="num" data-target="98">98</span><span class="suffix">%</span></div>
           <div class="stat-label" data-i18n="stats.l2">Satisfação dos clientes</div>
         </div>
         <div class="stat reveal">
-          <div class="stat-value"><span class="num" data-target="100">0</span><span class="suffix">%</span></div>
+          <div class="stat-value"><span class="num" data-target="100">100</span><span class="suffix">%</span></div>
           <div class="stat-label" data-i18n="stats.l3">Uptime SLO</div>
         </div>
         <div class="stat reveal">
@@ -1237,14 +1278,14 @@
               <li><a href="#services" data-i18n="footer.col2.l2">Aplicativos Mobile</a></li>
               <li><a href="#services" data-i18n="footer.col2.l3">Websites</a></li>
               <li><a href="#services" data-i18n="footer.col2.l4">UX / UI</a></li>
-              <li><a href="nichos/sistemas">Páginas por mercado →</a></li>
+              <li><a href="/nichos/sistemas">Páginas por mercado →</a></li>
             </ul>
           </div>
           <div class="footer-col">
             <h4 data-i18n="footer.col3">Conecte-se</h4>
             <ul>
               <li><a href="https://wa.me/5598984357980?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20VibeSurfDev.%20Tenho%20um%20projeto%20em%20mente%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener">WhatsApp</a></li>
-              <li><a href="https://github.com/armitagethird" target="_blank" rel="noopener">GitHub</a></li>
+              <li><a href="https://github.com/armitagethird/Site-Vibe-Surf-Dev" target="_blank" rel="noopener">GitHub</a></li>
               <li><a href="https://instagram.com/vibesurfdev" target="_blank" rel="noopener">Instagram</a></li>
             </ul>
           </div>
@@ -1272,7 +1313,7 @@
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.358.101 11.892c0 2.096.549 4.142 1.595 5.945L0 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.582 0 11.946-5.358 11.949-11.893a11.821 11.821 0 00-3.421-8.402z"/>
     </svg>
   </a>
-  <script src="script.js?v=18"></script>
+  <script src="script.js?v=19"></script>
 </body>
 
 </html>

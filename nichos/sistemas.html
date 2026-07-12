@@ -41,17 +41,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,wght@0,400;1,400;1,500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,wght@0,400;1,400;1,500&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="../styles.css?v=24" />
-  <link rel="stylesheet" href="_shared.css?v=2" />
+  <link rel="stylesheet" href="../styles.css?v=25" />
+  <link rel="stylesheet" href="_shared.css?v=5" />
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png" />
   <link rel="icon" type="image/png" sizes="512x512" href="../assets/favicon-512.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
 </head>
 
 <body data-niche="sistemas">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
   <div class="ambient-waves" aria-hidden="true">
     <svg class="ambient-wave ambient-wave-a" viewBox="0 0 1440 200" preserveAspectRatio="none">
@@ -66,7 +69,7 @@
 
   <!-- ============ NAV ============ -->
   <nav class="nav niche-nav">
-    <a href="../index.html" class="nav-brand" aria-label="VibeSurfDev home">
+    <a href="/" class="nav-brand" aria-label="VibeSurfDev home">
       <svg class="nav-brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
         <path d="M2 20 C 8 12, 12 28, 16 20 S 24 12, 30 20" stroke="#F5C518" stroke-width="2" stroke-linecap="round" />
         <path d="M4 24 C 9 18, 13 30, 17 24 S 24 18, 28 24" stroke="#F5C518" stroke-opacity="0.4" stroke-width="1.4"
@@ -82,7 +85,7 @@
       <li><a href="#qualificar">Conversar</a></li>
     </ul>
     <div class="nav-right">
-      <a href="../index.html" class="back-to-site">← Site completo</a>
+      <a href="/" class="back-to-site">← Site completo</a>
       <a href="#qualificar" class="nav-cta cta-glow">Iniciar projeto</a>
     </div>
     <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -91,13 +94,13 @@
   </nav>
 
   <!-- ============ HERO ============ -->
-  <section class="niche-hero">
+  <section class="niche-hero" id="conteudo">
     <div class="container">
       <span class="eyebrow reveal">Sistemas sob medida</span>
       <h1 class="reveal">Sua operação não cabe num <span class="accent">SaaS genérico</span>. Construímos o que cabe.</h1>
       <p class="sub reveal">Dois cases em produção: ProntuVet (escuta clínica por IA pra vets) e Motel Paraíso (site + sistema local na recepção + dashboard remota com IA). Stack escolhida pelo problema, não pela moda. Mesma engenharia, sob medida.</p>
       <div class="hero-cta-row reveal">
-        <a class="btn-primary" data-wa-direct href="#">
+        <a class="btn-primary" data-wa-direct href="https://wa.me/5598984357980?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20de%20sistemas%20da%20VibeSurfDev%20e%20quero%20conversar%20sobre%20meu%20projeto." target="_blank" rel="noopener">
           Falar no WhatsApp
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
@@ -402,7 +405,7 @@
       </div>
 
       <div class="qualify-shell reveal">
-        <form class="qualify-form" novalidate>
+        <form class="qualify-form">
           <div class="qualify-field">
             <label for="s-operacao">Qual operação você tem?</label>
             <input type="text" id="s-operacao" name="operacao" data-q="Operação" placeholder="ex.: clínica odontológica, distribuidora, escola técnica…" required />
@@ -470,9 +473,9 @@
         <div class="tag">BUILD · SURF · SHIP</div>
       </div>
       <div class="footer-links">
-        <a data-wa-direct href="#">WhatsApp · +55 98 98435-7980</a>
+        <a data-wa-direct href="https://wa.me/5598984357980?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20de%20sistemas%20da%20VibeSurfDev%20e%20quero%20conversar%20sobre%20meu%20projeto." target="_blank" rel="noopener">WhatsApp · +55 98 98435-7980</a>
         <a href="https://instagram.com/vibesurfdev" target="_blank" rel="noopener">Instagram · @vibesurfdev</a>
-        <a href="../index.html">← Voltar ao site completo</a>
+        <a href="/">← Voltar ao site completo</a>
       </div>
     </div>
     <div class="footer-legal">© 2026 VibeSurfDev — Feito com intenção, entregue sem drama.</div>
@@ -485,7 +488,7 @@
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.358.101 11.892c0 2.096.549 4.142 1.595 5.945L0 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.582 0 11.946-5.358 11.949-11.893a11.821 11.821 0 00-3.421-8.402z"/>
     </svg>
   </a>
-  <script src="_shared.js?v=1"></script>
+  <script src="_shared.js?v=2"></script>
 </body>
 
 </html>

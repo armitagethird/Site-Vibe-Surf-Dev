@@ -28,7 +28,9 @@ function checkHtml(file) {
     if (ref.startsWith('#')) continue;
     // anchor-only nichos urls without extension are local routes — skip
     if (!ref.match(/\.[a-z0-9]{2,5}$/i)) continue;
-    const abs = resolve(fileDir, ref);
+    // Leading-slash refs are site-root-relative (Cloudflare serves from repo root),
+    // not filesystem-root — resolve them against the project root, not the file's dir.
+    const abs = ref.startsWith('/') ? join(root, ref) : resolve(fileDir, ref);
     try { statSync(abs); }
     catch {
       issues.push(`${relative(root, file)}: missing -> ${ref} (resolved to ${abs})`);

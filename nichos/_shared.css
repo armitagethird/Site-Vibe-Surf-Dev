@@ -772,6 +772,7 @@ body[data-niche="stack"] .rust-hero {
   grid-template-columns: 1.05fr 0.95fr;
   gap: 56px;
   align-items: center;
+  max-width: 1280px;
 }
 body[data-niche="stack"] .rust-hero .hero-copy { max-width: 620px; }
 body[data-niche="stack"] .hero-art { display: flex; justify-content: center; align-items: center; }

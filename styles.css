@@ -131,3 +131,26 @@ html{background:#0d1b2a}
    vence por ordem de fonte (mesma especificidade da regra minificada).
    ============================================================ */
 .scroll-progress{transition:none}
+
+/* ===== Melhorias: reduced-motion, skip-link, selection, FAB ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .15s !important;
+  }
+  html { scroll-behavior: auto !important; }
+}
+.skip-link {
+  position: absolute; left: 8px; top: -60px; z-index: 2000;
+  background: #F5C518; color: #0D1B2A; padding: 10px 16px; border-radius: 8px;
+  font-family: 'Space Grotesk', system-ui, sans-serif; font-weight: 600; font-size: .9rem;
+  text-decoration: none; transition: top .15s ease;
+}
+.skip-link:focus { top: 8px; outline: 2px solid #0D1B2A; }
+::selection { background: #F5C518; color: #0D1B2A; }
+::-moz-selection { background: #F5C518; color: #0D1B2A; }
+/* P2-9: FAB do WhatsApp nao cobrir o fim do texto no mobile */
+@media (max-width: 600px) {
+  .logo-tag { padding-right: 72px; }
+}
