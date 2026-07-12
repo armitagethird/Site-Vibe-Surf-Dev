@@ -760,3 +760,147 @@ body[data-niche="medicos"] #como-funciona .process-flow .process-step:hover::bef
     border-color: var(--yellow);
   }
 }
+
+/* ============================================================
+   STACK PAGE — /stack  (body[data-niche="stack"])
+   "Nossa stack em Rust". Escopado pra não vazar nas outras páginas.
+   ============================================================ */
+
+/* Hero: 2 colunas (copy + arte SVG) */
+body[data-niche="stack"] .rust-hero {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+}
+body[data-niche="stack"] .rust-hero .hero-copy { max-width: 620px; }
+body[data-niche="stack"] .hero-art { display: flex; justify-content: center; align-items: center; }
+body[data-niche="stack"] .rust-mark {
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  filter: drop-shadow(0 24px 60px rgba(245, 197, 24, 0.14));
+}
+body[data-niche="stack"] .rust-gear {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: rust-gear-spin 26s linear infinite;
+}
+@keyframes rust-gear-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* Seções custom herdam o ritmo do sistema */
+body[data-niche="stack"] .stack-section,
+body[data-niche="stack"] .rust-ia-section,
+body[data-niche="stack"] .stack-cta { padding: 96px 48px; }
+
+/* A stack, camada por camada */
+body[data-niche="stack"] .stack-layers {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 8px;
+}
+body[data-niche="stack"] .stack-layer {
+  display: grid;
+  grid-template-columns: 156px 1fr auto;
+  align-items: center;
+  gap: 24px;
+  padding: 22px 26px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: linear-gradient(180deg, var(--navy-3) 0%, var(--navy-2) 100%);
+  transition: transform 0.4s var(--ease-out), border-color 0.4s var(--ease-out);
+}
+body[data-niche="stack"] .stack-layer:hover {
+  transform: translateX(6px);
+  border-color: rgba(245, 197, 24, 0.4);
+}
+body[data-niche="stack"] .layer-tag {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--yellow);
+}
+body[data-niche="stack"] .layer-body h3 { font-size: 20px; font-weight: 600; margin: 0 0 4px; color: var(--white); }
+body[data-niche="stack"] .layer-body p { font-size: 14.5px; line-height: 1.5; color: var(--muted); margin: 0; }
+body[data-niche="stack"] .layer-chip {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 12px;
+  white-space: nowrap;
+}
+
+/* Rust + IA */
+body[data-niche="stack"] .rust-ia-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+body[data-niche="stack"] .rust-ia-card {
+  padding: 32px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: linear-gradient(180deg, var(--navy-3) 0%, var(--navy-2) 100%);
+}
+body[data-niche="stack"] .ia-icon {
+  width: 48px; height: 48px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+body[data-niche="stack"] .ia-icon svg { width: 26px; height: 26px; }
+body[data-niche="stack"] .rust-ia-card h3 { font-size: 21px; font-weight: 600; margin: 0 0 12px; color: var(--white); }
+body[data-niche="stack"] .rust-ia-card p { font-size: 15px; line-height: 1.6; color: var(--muted); margin: 0; }
+body[data-niche="stack"] .rust-ia-chips { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 32px; }
+body[data-niche="stack"] .rust-ia-chips span {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 10px 18px;
+  background: rgba(245, 197, 24, 0.04);
+}
+
+/* CTA crosslinks */
+body[data-niche="stack"] .stack-crosslinks { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-top: 36px; }
+body[data-niche="stack"] .stack-crosslink {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 10px 20px;
+  transition: color 0.3s var(--ease-out), border-color 0.3s var(--ease-out);
+}
+body[data-niche="stack"] .stack-crosslink:hover { color: var(--yellow); border-color: rgba(245, 197, 24, 0.4); }
+
+/* Responsivo */
+@media (max-width: 860px) {
+  body[data-niche="stack"] .rust-hero { grid-template-columns: 1fr; gap: 24px; }
+  body[data-niche="stack"] .hero-art { order: -1; }
+  body[data-niche="stack"] .rust-mark { max-width: 210px; }
+  body[data-niche="stack"] .rust-ia-grid { grid-template-columns: 1fr; }
+  body[data-niche="stack"] .stack-layer { grid-template-columns: 1fr auto; gap: 6px 16px; }
+  body[data-niche="stack"] .stack-layer .layer-tag { grid-column: 1 / -1; }
+}
+@media (max-width: 700px) {
+  body[data-niche="stack"] .stack-section,
+  body[data-niche="stack"] .rust-ia-section,
+  body[data-niche="stack"] .stack-cta { padding: 64px 20px; }
+}
+@media (max-width: 480px) {
+  body[data-niche="stack"] .stack-layer { grid-template-columns: 1fr; }
+  body[data-niche="stack"] .layer-chip { justify-self: start; }
+  body[data-niche="stack"] .stack-section,
+  body[data-niche="stack"] .rust-ia-section,
+  body[data-niche="stack"] .stack-cta { padding: 48px 16px; }
+}
+
+/* Reduced motion: engrenagem parada */
+@media (prefers-reduced-motion: reduce) {
+  body[data-niche="stack"] .rust-gear { animation: none; }
+}

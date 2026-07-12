@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0d1b2a" />
+  <title>Nossa stack em Rust · VibeSurfDev</title>
+  <meta name="description" content="Por que a VibeSurfDev constrói backend exclusivamente em Rust — Axum, SQLx, PostgreSQL, Tauri e React Router. Velocidade de C, segurança por construção, e o casamento entre Rust e IA em sistemas de produção." />
+
+  <link rel="canonical" href="https://vibesurfdev.com/stack" />
+
+  <meta property="og:title" content="Nossa stack em Rust · VibeSurfDev" />
+  <meta property="og:description" content="Backend em Rust do primeiro commit ao deploy. Velocidade, segurança anti-bug e a stack que dominamos — Axum, SQLx, PostgreSQL, Tauri, React Router." />
+  <meta property="og:image" content="https://vibesurfdev.com/assets/logo.png" />
+  <meta property="og:url" content="https://vibesurfdev.com/stack" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "Nossa stack em Rust — VibeSurfDev",
+    "description": "A stack de engenharia da VibeSurfDev: backend em Rust (Axum + SQLx + PostgreSQL), frontend em React Router + Vite, desktop em Tauri.",
+    "url": "https://vibesurfdev.com/stack",
+    "publisher": {
+      "@type": "Organization",
+      "name": "VibeSurfDev",
+      "url": "https://vibesurfdev.com"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,wght@0,400;1,400;1,500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=24" />
+  <link rel="stylesheet" href="nichos/_shared.css?v=4" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png" />
+</head>
+
+<body data-niche="stack">
+
+  <div class="ambient-waves" aria-hidden="true">
+    <svg class="ambient-wave ambient-wave-a" viewBox="0 0 1440 200" preserveAspectRatio="none">
+      <path d="M0,100 C240,60 480,140 720,100 C960,60 1200,140 1440,100 L1440,200 L0,200 Z"
+        fill="none" stroke="#F5C518" stroke-width="1" stroke-opacity="0.06" />
+    </svg>
+    <svg class="ambient-wave ambient-wave-b" viewBox="0 0 1440 200" preserveAspectRatio="none">
+      <path d="M0,120 C300,80 600,160 900,120 C1100,90 1300,150 1440,120 L1440,200 L0,200 Z"
+        fill="none" stroke="#F5C518" stroke-width="1" stroke-opacity="0.04" />
+    </svg>
+  </div>
+
+  <div class="scroll-progress"></div>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav niche-nav">
+    <a href="index.html" class="nav-brand" aria-label="VibeSurfDev home">
+      <svg class="nav-brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M2 20 C 8 12, 12 28, 16 20 S 24 12, 30 20" stroke="#F5C518" stroke-width="2" stroke-linecap="round" />
+        <path d="M4 24 C 9 18, 13 30, 17 24 S 24 18, 28 24" stroke="#F5C518" stroke-opacity="0.4" stroke-width="1.4"
+          stroke-linecap="round" />
+        <circle cx="22" cy="10" r="1.8" fill="#F5C518" />
+      </svg>
+      <span class="nav-brand-text">VibeSurf<span class="accent">Dev</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#por-que-rust">Por que Rust</a></li>
+      <li><a href="#a-stack">A stack</a></li>
+      <li><a href="#rust-e-ia">Rust + IA</a></li>
+      <li><a href="#conversar">Conversar</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="index.html" class="back-to-site">← Site completo</a>
+      <a href="#conversar" class="nav-cta cta-glow">Iniciar projeto</a>
+    </div>
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section class="niche-hero" id="top">
+    <div class="container rust-hero">
+      <div class="hero-copy">
+        <span class="eyebrow reveal">Nossa stack · por dentro</span>
+        <h1 class="reveal">Backend em <span class="accent">Rust</span>. Do primeiro commit ao deploy.</h1>
+        <p class="sub reveal">A linguagem que a gente domina — e a única que colocamos por trás dos sistemas daqui pra
+          frente. Rápida como C, segura por construção, e a aposta mais séria do mercado. Aqui está o porquê.</p>
+        <div class="hero-cta-row reveal">
+          <a class="btn-primary" data-wa-direct href="#">
+            Falar no WhatsApp
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+          <a href="#a-stack" class="btn-ghost">
+            Ver a stack
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+              <path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-art reveal">
+        <svg class="rust-mark" viewBox="0 0 260 260" role="img"
+          aria-label="Rust — o caranguejo Ferris sobre uma engrenagem">
+          <!-- Gear (rotates) -->
+          <g class="rust-gear">
+            <g fill="#F5C518">
+              <rect x="122" y="16" width="16" height="28" rx="4" />
+              <rect x="122" y="16" width="16" height="28" rx="4" transform="rotate(30 130 130)" />
+              <rect x="122" y="16" width="16" height="28" rx="4" transform="rotate(60 130 130)" />
+              <rect x="122" y="16" width="16" height="28" rx="4" transform="rotate(90 130 130)" />
+              <rect x="122" y="16" width="16" height="28" rx="4" transform="rotate(120 130 130)" />
+              <rect x="122" y="16" width="16" height="28" rx="4" transform="rotate(150 130 130)" />
+              <rect x="122" y="16" width="16" height="28" rx="4" transform="rotate(180 130 130)" />
+              <rect x="122" y="16" width="16" height="28" rx="4" transform="rotate(210 130 130)" />
+              <rect x="122" y="16" width="16" height="28" rx="4" transform="rotate(240 130 130)" />
+              <rect x="122" y="16" width="16" height="28" rx="4" transform="rotate(270 130 130)" />
+              <rect x="122" y="16" width="16" height="28" rx="4" transform="rotate(300 130 130)" />
+              <rect x="122" y="16" width="16" height="28" rx="4" transform="rotate(330 130 130)" />
+            </g>
+            <circle cx="130" cy="130" r="96" fill="none" stroke="#F5C518" stroke-width="14" />
+            <circle cx="130" cy="130" r="82" fill="#0D1B2A" />
+            <circle cx="130" cy="130" r="82" fill="none" stroke="#F5C518" stroke-opacity="0.25" stroke-width="2" />
+          </g>
+
+          <!-- Ferris (imagem) na frente da engrenagem -->
+          <image class="rust-crab-img" href="assets/ferris.webp" x="46" y="71" width="168"
+            height="126" preserveAspectRatio="xMidYMid meet" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POR QUE RUST ============ -->
+  <section class="process-mini" id="por-que-rust">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Por que Rust</span>
+        <h2>Quatro motivos pra <span class="accent">apostar tudo</span> nela.</h2>
+        <p>Não é hype. É a linguagem que resolve os problemas certos — e a que a gente escolheu dominar.</p>
+      </div>
+
+      <div class="process-grid cols-4">
+        <article class="process-step reveal">
+          <span class="step-num">01 — VELOCIDADE</span>
+          <h3>Rápida <span class="accent">como C</span></h3>
+          <p>Compilada, sem garbage collector. Performance de linguagem de sistema com ergonomia moderna — menos
+            servidor, menos latência, menos custo de infra.</p>
+        </article>
+        <article class="process-step reveal">
+          <span class="step-num">02 — ANTI-BUG</span>
+          <h3>O bug <span class="accent">não compila</span></h3>
+          <p>O borrow checker prova segurança de memória e de concorrência em tempo de compilação. Null, data race,
+            use-after-free: classes inteiras de erro que simplesmente não passam.</p>
+        </article>
+        <article class="process-step reveal">
+          <span class="step-num">03 — CONFIANÇA</span>
+          <h3>Compilou, <span class="accent">roda</span></h3>
+          <p>O compilador é rígido pra você dormir tranquilo. Menos surpresa em produção, menos plantão às 3 da manhã,
+            menos regressão silenciosa.</p>
+        </article>
+        <article class="process-step reveal">
+          <span class="step-num">04 — FUTURO</span>
+          <h3>Aposta <span class="accent">de mercado</span></h3>
+          <p>Eleita a linguagem mais amada por anos seguidos no Stack Overflow. Já roda no kernel do Linux, na AWS, na
+            Microsoft, na Cloudflare e no Discord. Quem troca, troca por Rust.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ A STACK, CAMADA POR CAMADA ============ -->
+  <section class="stack-section" id="a-stack">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">A stack, camada por camada</span>
+        <h2>Do banco ao pixel, <span class="accent">uma engenharia só</span>.</h2>
+        <p>Cada camada escolhida pelo motivo certo — não pela moda.</p>
+      </div>
+
+      <div class="stack-layers">
+        <div class="stack-layer reveal">
+          <span class="layer-tag">Linguagem</span>
+          <div class="layer-body">
+            <h3>Rust</h3>
+            <p>O núcleo de tudo. Segurança de memória e velocidade no mesmo pacote.</p>
+          </div>
+          <span class="layer-chip">memory-safe</span>
+        </div>
+        <div class="stack-layer reveal">
+          <span class="layer-tag">Web · API</span>
+          <div class="layer-body">
+            <h3>Axum</h3>
+            <p>Framework async sobre Tokio. Rotas tipadas, middleware componível, throughput altíssimo.</p>
+          </div>
+          <span class="layer-chip">async</span>
+        </div>
+        <div class="stack-layer reveal">
+          <span class="layer-tag">Dados</span>
+          <div class="layer-body">
+            <h3>SQLx + PostgreSQL</h3>
+            <p>Queries verificadas contra o banco em tempo de compilação. SQL errado nem builda.</p>
+          </div>
+          <span class="layer-chip">compile-time SQL</span>
+        </div>
+        <div class="stack-layer reveal">
+          <span class="layer-tag">Frontend</span>
+          <div class="layer-body">
+            <h3>React Router + Vite</h3>
+            <p>Interface reativa e rápida. Astro quando o alvo é site estático indexável.</p>
+          </div>
+          <span class="layer-chip">reativo</span>
+        </div>
+        <div class="stack-layer reveal">
+          <span class="layer-tag">Desktop · Mobile</span>
+          <div class="layer-body">
+            <h3>Tauri</h3>
+            <p>Núcleo em Rust, interface web. Um código pra Mac, Windows, Linux — e offline.</p>
+          </div>
+          <span class="layer-chip">multiplataforma</span>
+        </div>
+        <div class="stack-layer reveal">
+          <span class="layer-tag">Infra</span>
+          <div class="layer-body">
+            <h3>VPS própria + K8s</h3>
+            <p>Sem lock-in de plataforma. Deploy contínuo, observabilidade, dado seu no seu servidor.</p>
+          </div>
+          <span class="layer-chip">sem lock-in</span>
+        </div>
+        <div class="stack-layer reveal">
+          <span class="layer-tag">Design</span>
+          <div class="layer-body">
+            <h3>Claude Design</h3>
+            <p>Do protótipo ao código, no mesmo fluxo. Interface que já nasce pronta pra produção.</p>
+          </div>
+          <span class="layer-chip">code-first</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RUST + IA ============ -->
+  <section class="rust-ia-section" id="rust-e-ia">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Rust + IA</span>
+        <h2>Rust e IA, <span class="accent">no mesmo sistema</span>.</h2>
+        <p>Não é IA escrevendo código. É sistema em Rust usando IA de verdade — chamando a API do provedor,
+          orquestrando a resposta e entregando a feature em produção.</p>
+      </div>
+
+      <div class="rust-ia-grid">
+        <article class="rust-ia-card reveal">
+          <div class="ia-icon" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none">
+              <path d="M9 15 H31 M26 10 L31 15 L26 20" stroke="#F5C518" stroke-width="2.6" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M31 25 H9 M14 20 L9 25 L14 30" stroke="#F5C518" stroke-width="2.6" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h3>A IA vira feature do sistema</h3>
+          <p>O backend em Rust conversa com a API do provedor de IA — LLM, transcrição, embeddings. Orquestra a
+            chamada, faz streaming da resposta, trata erro e rate-limit e integra o resultado no fluxo do produto. IA
+            de verdade, dentro do sistema.</p>
+        </article>
+        <article class="rust-ia-card reveal">
+          <div class="ia-icon" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="4" fill="#F5C518" />
+              <circle cx="9" cy="11" r="3" stroke="#F5C518" stroke-width="2" />
+              <circle cx="31" cy="11" r="3" stroke="#F5C518" stroke-width="2" />
+              <circle cx="11" cy="30" r="3" stroke="#F5C518" stroke-width="2" />
+              <circle cx="29" cy="30" r="3" stroke="#F5C518" stroke-width="2" />
+              <path d="M12 12 L18 18 M28 12 L22 18 M13 28 L18 22 M27 28 L22 22" stroke="#F5C518" stroke-width="1.6"
+                stroke-opacity="0.7" />
+            </svg>
+          </div>
+          <h3>A IA está migrando pra Rust</h3>
+          <p>Tokenizers e Candle da Hugging Face, bancos vetoriais como o Qdrant — tudo escrito em Rust. Treinar e
+            servir modelo exige a velocidade e o controle de memória que só o Rust entrega sem abrir mão de segurança.</p>
+        </article>
+      </div>
+
+      <div class="rust-ia-chips reveal">
+        <span>Streaming de tokens</span>
+        <span>Chamadas concorrentes</span>
+        <span>Latência baixa</span>
+        <span>Type-safe fim a fim</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONVERSAR ============ -->
+  <section class="stack-cta" id="conversar">
+    <div class="container">
+      <div class="section-head reveal" style="text-align:center; align-items:center; margin:0 auto 40px;">
+        <span class="eyebrow">Bora construir</span>
+        <h2>Quer um sistema de verdade, <span class="accent">em Rust</span>?</h2>
+        <p style="margin:0 auto;">Do primeiro commit ao deploy — a gente cuida da stack inteira, e você dorme
+          tranquilo.</p>
+      </div>
+
+      <div class="hero-cta-row reveal" style="justify-content:center;">
+        <a class="btn-primary" data-wa-direct href="#">
+          Falar no WhatsApp
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+        <a href="index.html#work" class="btn-ghost">
+          Ver o trabalho em produção
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="stack-crosslinks reveal">
+        <a href="index.html#work" class="stack-crosslink">Trabalho em produção <span aria-hidden="true">→</span></a>
+        <a href="nichos/sistemas" class="stack-crosslink">Sistemas sob medida <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="niche-footer">
+    <div class="container">
+      <div class="footer-brand">
+        <div class="name">VibeSurf<span class="accent">Dev</span></div>
+        <div class="tag">BUILD · SURF · SHIP</div>
+      </div>
+      <div class="footer-links">
+        <a data-wa-direct href="#">WhatsApp · +55 98 98435-7980</a>
+        <a href="https://instagram.com/vibesurfdev" target="_blank" rel="noopener">Instagram · @vibesurfdev</a>
+        <a href="index.html">← Voltar ao site completo</a>
+      </div>
+    </div>
+    <div class="footer-legal">© 2026 VibeSurfDev — Feito com intenção, entregue sem drama.</div>
+  </footer>
+
+  <!-- WhatsApp FAB -->
+  <a class="wa-fab" data-wa-direct href="#" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
+    <span class="wa-fab-tip" aria-hidden="true">Fale com a gente</span>
+    <svg class="wa-fab-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.358.101 11.892c0 2.096.549 4.142 1.595 5.945L0 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.582 0 11.946-5.358 11.949-11.893a11.821 11.821 0 00-3.421-8.402z" />
+    </svg>
+  </a>
+  <script src="nichos/_shared.js?v=2"></script>
+</body>
+
+</html>
