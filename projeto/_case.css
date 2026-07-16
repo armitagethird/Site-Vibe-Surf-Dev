@@ -426,37 +426,6 @@
   .proj-arch-layer[data-arch="container"] > .proj-arch-layer { flex: 1 1 auto; }
 }
 
-/* ============ TELAS SECUNDÁRIAS ============ */
-
-.proj-shots {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-}
-.proj-shot {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.proj-shot img {
-  display: block;
-  width: 100%;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: border-color 0.3s;
-}
-.proj-shot:hover img {
-  border-color: rgba(245, 197, 24, 0.4);
-}
-.proj-shot figcaption {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  color: var(--muted);
-  text-align: center;
-}
-
 /* ============ PRÓXIMO PROJETO ============ */
 /* Mesma anatomia visual do .cross-link (nichos/_shared.css), mas
    declarada à parte: .cross-link não está disponível fora de
