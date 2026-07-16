@@ -17,6 +17,11 @@
     'clinicas-vet': { title: 'Clínicas Veterinárias',  from: 'página de clínicas veterinárias' },
     motels:         { title: 'Motéis e Hospitalidade', from: 'página de motéis' },
     stack:          { title: 'Nossa stack em Rust',    from: 'página da nossa stack' },
+
+    /* Páginas de case (/projeto/*). Cada uma se identifica para sabermos qual
+       case trouxe o lead — é o motivo de existirem. */
+    'projeto-pedrored':       { title: 'Sistemas sob medida', from: 'página do case do Pedro Red' },
+    'projeto-drakerlyhelena': { title: 'Médicos',             from: 'página do case da Dra. Kerly Helena' },
   };
 
   /* Texto pré-pronto do CTA "Falar no WhatsApp" (botão direto, sem form). */

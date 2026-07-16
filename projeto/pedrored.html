@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0d1b2a" />
+  <title>Pedro Red — ERP e loja de peças em Rust · VibeSurfDev</title>
+  <meta name="description" content="Case Pedro Red: ERP de oficina e loja de peças num só binário Rust. Autenticação single-admin, contrato de resposta à prova de vazamento, PIX gerado do zero e 453 testes auditados." />
+
+  <link rel="canonical" href="https://vibesurfdev.com/projeto/pedrored" />
+
+  <meta property="og:title" content="Pedro Red — ERP e loja de peças em Rust · VibeSurfDev" />
+  <meta property="og:description" content="Um binário Rust é o produto inteiro: SPA, API e loja pública com PIX, servidos junto. Autenticação single-admin, PostgreSQL 17, 453 testes auditados." />
+  <meta property="og:image" content="https://vibesurfdev.com/assets/work/pedrored-site.png" />
+  <meta property="og:url" content="https://vibesurfdev.com/projeto/pedrored" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://vibesurfdev.com/projeto/pedrored#article",
+        "headline": "Pedro Red — ERP e loja de peças em Rust",
+        "description": "Estudo de caso: ERP de oficina e loja de peças num único binário Rust, com auditoria de arquitetura, segurança e testes.",
+        "image": "https://vibesurfdev.com/assets/work/pedrored-site.png",
+        "datePublished": "2026-07-16",
+        "dateModified": "2026-07-16",
+        "url": "https://vibesurfdev.com/projeto/pedrored",
+        "inLanguage": "pt-BR",
+        "about": { "@id": "https://pedrored.com.br/#oficina" },
+        "mentions": [
+          { "@type": "ComputerLanguage", "name": "Rust" },
+          { "@type": "SoftwareApplication", "name": "PostgreSQL", "applicationCategory": "DatabaseApplication" }
+        ],
+        "author": {
+          "@type": "Organization",
+          "name": "VibeSurfDev",
+          "url": "https://vibesurfdev.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "VibeSurfDev",
+          "url": "https://vibesurfdev.com",
+          "logo": "https://vibesurfdev.com/assets/favicon-512.png"
+        }
+      },
+      {
+        "@type": "AutoRepair",
+        "@id": "https://pedrored.com.br/#oficina",
+        "name": "PedroRed",
+        "description": "Oficina mecânica especialista em Volkswagen e Audi, motores TSI/MSI, em São Luís (MA).",
+        "url": "https://pedrored.com.br",
+        "telephone": "+5598984066635",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "R. São Benedito, 85 - Vila Vicente Fialho",
+          "addressLocality": "São Luís",
+          "addressRegion": "MA",
+          "postalCode": "65073-590",
+          "addressCountry": "BR"
+        },
+        "sameAs": [
+          "https://www.youtube.com/@PEDROredtsi",
+          "https://www.instagram.com/pedrored_oficial"
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://vibesurfdev.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Pedro Red" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,wght@0,400;1,400;1,500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css?v=25" />
+  <link rel="stylesheet" href="../nichos/_shared.css?v=5" />
+  <link rel="stylesheet" href="_case.css?v=1" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="../assets/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+</head>
+
+<body data-niche="projeto-pedrored">
+  <a class="skip-link" href="#top">Pular para o conteúdo</a>
+
+  <div class="ambient-waves" aria-hidden="true">
+    <svg class="ambient-wave ambient-wave-a" viewBox="0 0 1440 200" preserveAspectRatio="none">
+      <path d="M0,100 C240,60 480,140 720,100 C960,60 1200,140 1440,100 L1440,200 L0,200 Z"
+        fill="none" stroke="#F5C518" stroke-width="1" stroke-opacity="0.06" />
+    </svg>
+    <svg class="ambient-wave ambient-wave-b" viewBox="0 0 1440 200" preserveAspectRatio="none">
+      <path d="M0,120 C300,80 600,160 900,120 C1100,90 1300,150 1440,120 L1440,200 L0,200 Z"
+        fill="none" stroke="#F5C518" stroke-width="1" stroke-opacity="0.04" />
+    </svg>
+  </div>
+
+  <div class="scroll-progress"></div>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav niche-nav">
+    <a href="/" class="nav-brand" aria-label="VibeSurfDev home">
+      <svg class="nav-brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M2 20 C 8 12, 12 28, 16 20 S 24 12, 30 20" stroke="#F5C518" stroke-width="2" stroke-linecap="round" />
+        <path d="M4 24 C 9 18, 13 30, 17 24 S 24 18, 28 24" stroke="#F5C518" stroke-opacity="0.4" stroke-width="1.4"
+          stroke-linecap="round" />
+        <circle cx="22" cy="10" r="1.8" fill="#F5C518" />
+      </svg>
+      <span class="nav-brand-text">VibeSurf<span class="accent">Dev</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#problema">O problema</a></li>
+      <li><a href="#solucao">A solução</a></li>
+      <li><a href="#engenharia">Engenharia</a></li>
+      <li><a href="#numeros">Números</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="/" class="back-to-site">← Site completo</a>
+      <a href="#contato" class="nav-cta cta-glow">Falar no WhatsApp</a>
+    </div>
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section class="proj-hero" id="top">
+    <div class="container">
+      <span class="eyebrow reveal">Caso em produção · 2026</span>
+      <h1 class="reveal">Pedro Red — um binário <span class="accent">Rust</span> como produto inteiro.</h1>
+      <p class="reveal">Oficina, loja de peças e acompanhamento de serviço no mesmo sistema. A loja não pede login;
+        o <code class="proj-code">/admin</code> exige sessão de um único usuário — o dono.</p>
+
+      <dl class="proj-hero-meta reveal">
+        <div class="proj-meta-item">
+          <dt>Status</dt>
+          <dd><span class="proj-status">No ar</span></dd>
+        </div>
+        <div class="proj-meta-item">
+          <dt>Domínio</dt>
+          <dd>pedrored.com.br</dd>
+        </div>
+        <div class="proj-meta-item">
+          <dt>Stack</dt>
+          <dd>Rust · Axum · SQLx · PostgreSQL 17</dd>
+        </div>
+        <div class="proj-meta-item">
+          <dt>Ano</dt>
+          <dd>2026</dd>
+        </div>
+      </dl>
+
+      <div class="hero-cta-row reveal">
+        <a class="btn-primary" href="https://pedrored.com.br" target="_blank" rel="noopener">
+          Ver no ar
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+        <a href="#arquitetura" class="btn-ghost">
+          Ver a arquitetura
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+            <path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SCREENSHOT ============ -->
+  <section class="proj-section" aria-label="Captura de tela do site Pedro Red">
+    <div class="container">
+      <div class="work-slide in" style="display:block;">
+        <div class="browser-frame">
+          <div class="browser-chrome">
+            <div class="browser-dots">
+              <span class="dot dot-r"></span>
+              <span class="dot dot-y"></span>
+              <span class="dot dot-g"></span>
+            </div>
+            <div class="browser-url">
+              <span class="url-protocol">https://</span><span class="url-host"
+                style="--url-width: 15ch;">pedrored.com.br</span><span class="url-caret"
+                aria-hidden="true">▍</span>
+            </div>
+            <div class="browser-actions">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                <path d="M2 8a6 6 0 1 1 1.76 4.24" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+                  fill="none" />
+                <path d="M2 4v3.5h3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+              </svg>
+            </div>
+          </div>
+          <div class="browser-viewport">
+            <picture>
+              <source type="image/avif" srcset="../assets/work/pedrored-site.avif" />
+              <source type="image/webp" srcset="../assets/work/pedrored-site.webp" />
+              <img src="../assets/work/pedrored-site.png" alt="Pedro Red — home da loja de peças no ar"
+                width="1905" height="944" decoding="async" />
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ O PROBLEMA ============ -->
+  <section class="proj-section" id="problema">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">O problema</span>
+        <h2>Um mecânico <span class="accent">sozinho</span>, três dores de operação manual.</h2>
+        <p>Pedro é mecânico autônomo especializado em motor VW TSI/MSI, em São Luís. Trabalha sozinho, com demanda
+          volátil de 1 a 6 carros por dia — e tudo passava pelo WhatsApp.</p>
+      </div>
+
+      <div class="proj-cards">
+        <article class="proj-card reveal">
+          <span class="proj-card-num">01</span>
+          <h3>Peça sob encomenda virava bagunça financeira</h3>
+          <p>Compra com dinheiro próprio, aplica markup, cliente às vezes atrasa — e o rastro se perde quando vários
+            carros acumulam ao mesmo tempo.</p>
+        </article>
+        <article class="proj-card reveal">
+          <span class="proj-card-num">02</span>
+          <h3>Estoque sem controle</h3>
+          <p>Óleo, filtros, pneus, rodas — sem visibilidade de margem, sem alerta de mínimo.</p>
+        </article>
+        <article class="proj-card reveal">
+          <span class="proj-card-num">03</span>
+          <h3>Demanda sem agenda nem comunicação estruturada</h3>
+          <p>Cada carro, cada peça, cada combinado — tudo vivendo na memória e no histórico de conversas do
+            WhatsApp.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ A SOLUÇÃO ============ -->
+  <section class="proj-section" id="solucao">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">A solução</span>
+        <h2>Um ERP <span class="accent">e</span> uma loja, no mesmo binário.</h2>
+      </div>
+
+      <p class="proj-lead reveal">Um sistema que cobre a operação inteira — e uma loja pública de peças, servidos
+        pelo mesmo binário Rust.</p>
+      <div class="proj-prose reveal">
+        <p>A loja não pede login: qualquer cliente navega o catálogo, monta carrinho e fecha pedido direto. O
+          <code class="proj-code">/admin</code> já é outra história — exige sessão, e a autenticação é
+          single-admin: o sistema tem um usuário só, o dono.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ECOSSISTEMA / TELAS ============ -->
+  <section class="proj-section" id="ecossistema">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Ecossistema</span>
+        <h2>Loja, site institucional e <span class="accent">painel</span> num só lugar.</h2>
+        <p>Loja pública com catálogo, carrinho, checkout com PIX e acompanhamento do pedido; site institucional da
+          oficina; e um painel admin com 8 módulos.</p>
+      </div>
+
+      <div class="work-tags reveal">
+        <span>Dashboard</span><span>Ordens de Serviço</span><span>Clientes &amp; Veículos</span><span>Estoque</span><span>Financeiro</span><span>Agenda</span><span>Loja</span><span>Segurança</span>
+      </div>
+
+      <div class="proj-shots reveal">
+        <figure class="proj-shot">
+          <picture>
+            <source type="image/avif" srcset="../assets/work/pedrored-oficina.avif" />
+            <source type="image/webp" srcset="../assets/work/pedrored-oficina.webp" />
+            <img src="../assets/work/pedrored-oficina.png"
+              alt="Site institucional do Pedro Red com mapa da oficina em São Luís/MA" width="1903" height="948"
+              loading="lazy" decoding="async" />
+          </picture>
+          <figcaption>Site institucional · mapa da oficina</figcaption>
+        </figure>
+        <figure class="proj-shot">
+          <picture>
+            <source type="image/avif" srcset="../assets/work/pedrored-admin.avif" />
+            <source type="image/webp" srcset="../assets/work/pedrored-admin.webp" />
+            <img src="../assets/work/pedrored-admin.png"
+              alt="Painel admin do Pedro Red — ordens de serviço, estoque, financeiro e loja" width="1919"
+              height="942" loading="lazy" decoding="async" />
+          </picture>
+          <figcaption>Painel admin · 8 módulos</figcaption>
+        </figure>
+        <figure class="proj-shot">
+          <picture>
+            <source type="image/avif" srcset="../assets/work/pedrored-loja.avif" />
+            <source type="image/webp" srcset="../assets/work/pedrored-loja.webp" />
+            <img src="../assets/work/pedrored-loja.png" alt="Listagem de produtos da loja pública do Pedro Red"
+              width="1440" height="1677" loading="lazy" decoding="async" />
+          </picture>
+          <figcaption>Loja · listagem de produtos</figcaption>
+        </figure>
+        <figure class="proj-shot">
+          <picture>
+            <source type="image/avif" srcset="../assets/work/pedrored-checkout.avif" />
+            <source type="image/webp" srcset="../assets/work/pedrored-checkout.webp" />
+            <img src="../assets/work/pedrored-checkout.png" alt="Checkout da loja do Pedro Red com pagamento via PIX"
+              width="1440" height="1565" loading="lazy" decoding="async" />
+          </picture>
+          <figcaption>Checkout · PIX</figcaption>
+        </figure>
+        <figure class="proj-shot">
+          <picture>
+            <source type="image/avif" srcset="../assets/work/pedrored-faq.avif" />
+            <source type="image/webp" srcset="../assets/work/pedrored-faq.webp" />
+            <img src="../assets/work/pedrored-faq.png" alt="Seção de FAQ do site do Pedro Red, no tom bem-humorado da marca"
+              width="1440" height="616" loading="lazy" decoding="async" />
+          </picture>
+          <figcaption>FAQ · voz do Pedro</figcaption>
+        </figure>
+      </div>
+
+      <div class="proj-prose reveal">
+        <p>O FAQ do site é a cara da marca — não é copy de estúdio, é a voz do próprio Pedro, publicada no ar:</p>
+      </div>
+      <blockquote class="proj-prose reveal">
+        <p>— <strong>Mexe com Fiat?</strong><br />“Deus me livre.”</p>
+        <p>— <strong>Meu carro tem um defeito que ninguém acha. Tem jeito?</strong><br />“Tem. Eu sou o ‘ninguém’ que
+          as outras oficinas mandam você procurar.”</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ============ ARQUITETURA ============ -->
+  <section class="proj-section proj-section--tech" id="arquitetura">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Dobra técnica · arquitetura</span>
+        <h2>Um binário Rust é o <span class="accent">produto</span> inteiro.</h2>
+      </div>
+
+      <div class="proj-grid-2">
+        <div class="proj-prose reveal">
+          <p>O binário aplica as migrations no boot, expõe a API sob <code class="proj-code">/api</code>, aplica
+            rate-limit, gera <code class="proj-code">sitemap.xml</code>/<code class="proj-code">robots.txt</code> —
+            e ainda serve o build do SPA. Sem Node em produção, mesma origem, sem CORS. O mesmo executável também
+            roda como CLI, para tarefas administrativas de bastidor.</p>
+          <p>Na frente, Caddy cuida do TLS automático. Atrás, PostgreSQL 17 sem porta exposta.</p>
+        </div>
+
+        <div class="proj-arch reveal" role="img"
+          aria-label="Diagrama de arquitetura: o navegador se conecta ao Caddy, que faz a terminação TLS e encaminha para o binário Rust — que serve o SPA e responde a API sob barra api no mesmo processo — que por sua vez se conecta ao PostgreSQL 17, sem porta exposta.">
+          <div class="proj-arch-layer" aria-hidden="true">Navegador</div>
+          <div class="proj-arch-arrow" aria-hidden="true"></div>
+          <div class="proj-arch-layer" aria-hidden="true">Caddy (TLS automático)</div>
+          <div class="proj-arch-arrow" aria-hidden="true"></div>
+          <div class="proj-arch-layer" data-arch="container" data-label="Binário Rust" aria-hidden="true">
+            <div class="proj-arch-layer">SPA</div>
+            <div class="proj-arch-layer">/api</div>
+          </div>
+          <div class="proj-arch-arrow" aria-hidden="true"></div>
+          <div class="proj-arch-layer" aria-hidden="true">PostgreSQL 17</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ENGENHARIA ============ -->
+  <section class="proj-section proj-section--tech" id="engenharia">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Dobra técnica · engenharia</span>
+        <h2>Seis decisões que <span class="accent">seguram</span> o sistema.</h2>
+        <p>Cada uma existe no código e é exercitada por teste.</p>
+      </div>
+
+      <div class="proj-callout reveal">
+        <h3>Contrato de resposta à prova de vazamento</h3>
+        <p>Toda rota responde <code class="proj-code">{ ok, data }</code> ou <code class="proj-code">{ ok, error
+            }</code> — até falhas do framework: rejeições de extractor e fallbacks 404/405 são remapeados para o
+          mesmo envelope. Erro interno nunca vaza detalhe. Confirmado no ar: <code
+            class="proj-code">/api/auth/me</code> devolve 401 com <code class="proj-code">{"error":"credenciais
+            inválidas ou sessão expirada","ok":false}</code>.</p>
+      </div>
+      <div class="proj-callout reveal">
+        <h3>Loja anônima com token opaco</h3>
+        <p>O pedido é rastreado por um token HMAC-SHA256 do UUID, com verificação constant-time — sem linha no
+          banco, sem expiração. Token errado, ausente ou pedido inexistente devolvem o mesmo 404 uniforme. A API
+          nunca revela se um pedido existe.</p>
+      </div>
+      <div class="proj-callout reveal">
+        <h3>Preço é sempre do servidor</h3>
+        <p>O checkout aceita apenas <code class="proj-code">{ produto_id, quantidade }</code>; <code
+            class="proj-code">#[serde(deny_unknown_fields)]</code> rejeita com 422 qualquer preço forjado, e o
+          total é recalculado do banco. Dinheiro nunca em float: <code class="proj-code">numeric(12,2)</code> →
+          <code class="proj-code">Decimal</code> → string no JSON.</p>
+      </div>
+      <div class="proj-callout reveal">
+        <h3>PIX gerado do zero no servidor</h3>
+        <p>O BR Code (EMV/BACEN, TLV) é montado em Rust, com o CRC-16/CCITT-FALSE implementado à mão e validado
+          contra o vetor canônico <code class="proj-code">"123456789"</code> → <code
+            class="proj-code">"29B1"</code>. O front só renderiza o copia-e-cola.</p>
+      </div>
+      <div class="proj-callout reveal">
+        <h3>Custo médio com segurança de concorrência</h3>
+        <p>O recálculo do custo médio ponderado roda dentro de <code class="proj-code">SELECT … FOR UPDATE</code>;
+          um teste de concorrência prova que duas saídas simultâneas não deixam o saldo negativo.</p>
+      </div>
+      <div class="proj-callout reveal">
+        <h3>Regra de negócio mora no código, não no banco</h3>
+        <p>Totais, baixa de estoque e custo médio vivem em Rust — testável e versionado; o SQL guarda só o gatilho
+          de <code class="proj-code">atualizado_em</code> e colunas geradas. Handlers finos recebem o extractor
+          <code class="proj-code">Admin</code> como argumento, então autenticação vira requisito de tipo — e um
+          teste tabelado de guard 401 cobre a maior parte das rotas. SQLx checa as queries em tempo de compilação
+          contra o schema real.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ A REESCRITA EM RUST ============ -->
+  <section class="proj-section proj-section--tech" id="reescrita">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Dobra técnica · a reescrita</span>
+        <h2>Por que reescrever um sistema que <span class="accent">já funcionava</span>.</h2>
+        <p>A versão anterior não era protótipo. Era um sistema real, construído em 8 sprints, com autenticação,
+          ordens de serviço e financeiro marcados como "validada em produção" — o Pedro usava. Estoque, agenda e
+          loja já estavam implementados. Reescrever um sistema que funciona é uma decisão de peso.</p>
+      </div>
+
+      <div class="proj-cards">
+        <article class="proj-card reveal">
+          <span class="proj-card-num">01</span>
+          <h3>Controle e fim do lock-in</h3>
+          <p>Sair da dependência de plataformas de terceiros; o dado e a infraestrutura passam a morar em VPS
+            própria.</p>
+        </article>
+        <article class="proj-card reveal">
+          <span class="proj-card-num">02</span>
+          <h3>Custo</h3>
+          <p>A VPS já existia e já rodava outra coisa. Consolidar em vez de somar mais um plano.</p>
+        </article>
+        <article class="proj-card reveal">
+          <span class="proj-card-num">03</span>
+          <h3>Corretude e segurança</h3>
+          <p>Regra de negócio no código, testada e versionada, em vez de espalhada pelo banco — tipos e testes
+            fechando a porta para a classe de erro que aparece quando a lógica vive em SQL e em RLS.</p>
+        </article>
+        <article class="proj-card reveal">
+          <span class="proj-card-num">04</span>
+          <h3>Domínio da stack</h3>
+          <p>Rust é a aposta declarada do estúdio. Esta página é a <a href="/stack">/stack</a> aplicada na
+            prática.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SEGURANÇA ============ -->
+  <section class="proj-section proj-section--tech" id="seguranca">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Dobra técnica · segurança</span>
+        <h2>Cada controle <span class="accent">existe</span> no código.</h2>
+      </div>
+
+      <div class="proj-prose reveal">
+        <ul>
+          <li><strong>Senha com Argon2id</strong> (mínimo 12 caracteres) + defesa anti-timing: quando o e-mail não
+            existe, roda um verify contra um hash dummy fixo para igualar a latência e impedir enumeração de
+            usuários.</li>
+          <li><strong>Sessão em cookie cifrado</strong> com revogação server-side por epoch, checada a cada
+            requisição — logout, troca de senha e setup de 2FA invalidam sessões antigas.</li>
+          <li><strong>2FA TOTP</strong> + recovery codes single-use em hash; segredo cifrado em repouso com
+            AES-256-GCM, chave derivada por HKDF.</li>
+          <li><strong>Rate-limit por IP</strong> em login, verificação de 2FA, cadastro público e checkout.</li>
+          <li><strong>Security headers globais</strong> (CSP · <code class="proj-code">X-Frame-Options: DENY</code>
+            · nosniff · Referrer-Policy) + HSTS só em produção. Confirmado no ar.</li>
+          <li><strong>Uploads validados por magic bytes</strong> — a assinatura binária real, não o MIME declarado
+            — com confinamento contra path traversal.</li>
+          <li><strong>Guard-rail de boot</strong>: o processo panica se detectar produção sem configuração segura de
+            cookies ou com secrets de exemplo. Falha rápido, não sobe inseguro.</li>
+          <li><strong>CLI break-glass</strong> sem superfície HTTP, e senha de admin por prompt oculto.</li>
+        </ul>
+      </div>
+
+      <div class="proj-prose reveal">
+        <p><em>Nota honesta: eventos sensíveis são gravados como log estruturado, não em uma tabela de auditoria
+            durável.</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTES ============ -->
+  <section class="proj-section proj-section--tech" id="testes">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Dobra técnica · testes</span>
+        <h2>453 testes, <span class="accent">auditados</span> — não estimados.</h2>
+        <p>Contados contra o código-fonte, em julho de 2026.</p>
+      </div>
+
+      <div class="proj-stats">
+        <div class="proj-stat reveal">
+          <span class="proj-stat-value">236</span>
+          <span class="proj-stat-label">Testes Rust</span>
+        </div>
+        <div class="proj-stat reveal">
+          <span class="proj-stat-value">209</span>
+          <span class="proj-stat-label">Testes Vitest</span>
+        </div>
+        <div class="proj-stat reveal">
+          <span class="proj-stat-value">8</span>
+          <span class="proj-stat-label">Testes Playwright E2E</span>
+        </div>
+      </div>
+
+      <div class="proj-prose reveal">
+        <p>Os 236 do Rust se dividem em 175 de integração <code class="proj-code">#[sqlx::test]</code> contra
+          Postgres real, 53 <code class="proj-code">#[test]</code> e 8 <code class="proj-code">#[tokio::test]</code>.
+          Os 209 do Vitest cobrem schemas Zod, formatadores e a camada de API. Os 8 de Playwright rodam a loja e o
+          admin em desktop e mobile (390×844, sem overflow horizontal).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DEPLOY ============ -->
+  <section class="proj-section proj-section--tech" id="deploy">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Dobra técnica · deploy</span>
+        <h2>Build de <span class="accent">3 estágios</span>, rodando sem root.</h2>
+      </div>
+
+      <div class="proj-prose reveal">
+        <p>Build Docker de 3 estágios: um estágio compila o SPA, outro compila o binário Rust em release (sem banco
+          no build), e a imagem final leva só o binário, as migrations e o build do SPA — rodando como usuário
+          não-root.</p>
+        <p>No compose de produção, o banco e a aplicação ficam sem porta exposta no host; só o Caddy responde nas
+          portas 80 e 443. Backups cifrados, off-site, com retenção de 30 dias. Deploy é <code
+            class="proj-code">git pull</code> + subir os containers de novo; as migrations aplicam no boot.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NÚMEROS VERIFICÁVEIS ============ -->
+  <section class="proj-section" id="numeros">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Números verificáveis</span>
+        <h2>Números contados no <span class="accent">código</span>.</h2>
+      </div>
+
+      <p class="proj-lead reveal">Nada aqui é estimativa: cada número foi contado no código-fonte em julho de
+        2026.</p>
+
+      <div class="proj-stats">
+        <div class="proj-stat reveal">
+          <span class="proj-stat-value">453</span>
+          <span class="proj-stat-label">Testes</span>
+        </div>
+        <div class="proj-stat reveal">
+          <span class="proj-stat-value">121</span>
+          <span class="proj-stat-label">Endpoints</span>
+        </div>
+        <div class="proj-stat reveal">
+          <span class="proj-stat-value">27</span>
+          <span class="proj-stat-label">Tabelas no banco</span>
+        </div>
+        <div class="proj-stat reveal">
+          <span class="proj-stat-value">8</span>
+          <span class="proj-stat-label">Módulos no painel</span>
+        </div>
+        <div class="proj-stat reveal">
+          <span class="proj-stat-value">1</span>
+          <span class="proj-stat-label">Binário em produção</span>
+        </div>
+        <div class="proj-stat reveal">
+          <span class="proj-stat-value">0</span>
+          <span class="proj-stat-label">Dependência de Node em produção</span>
+        </div>
+      </div>
+
+      <div class="proj-prose reveal">
+        <p>Além dos seis acima: 17 enums, 3 views e 6 migrations no schema; cerca de 9,7 mil linhas de Rust de
+          produção e 20,8 mil de TypeScript/TSX; a ordem de serviço é uma máquina de 6 estados; 149 commits no
+          histórico.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTATO / CTA FINAL ============ -->
+  <section class="proj-section" id="contato">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Bora construir</span>
+        <h2>Quer um sistema assim <span class="accent">para você</span>?</h2>
+        <p>Do primeiro commit ao deploy — a gente cuida da stack inteira.</p>
+      </div>
+
+      <div class="hero-cta-row reveal">
+        <a class="btn-primary" data-wa-direct
+          href="https://wa.me/5598984357980?text=Ol%C3%A1!%20Vim%20pelo%20case%20do%20Pedro%20Red%20da%20VibeSurfDev%20e%20quero%20conversar%20sobre%20meu%20projeto."
+          target="_blank" rel="noopener">
+          Falar no WhatsApp
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+        <a href="https://pedrored.com.br" class="btn-ghost" target="_blank" rel="noopener">
+          Ver pedrored.com.br
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+
+      <a href="/projeto/drakerlyhelena" class="proj-next reveal">
+        <span class="label">Outro case</span>
+        <span class="title">Dra. Kerly Helena</span>
+        <span class="desc">Site institucional + questionário de captação para uma ginecologista integrativa.</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="niche-footer">
+    <div class="container">
+      <div class="footer-brand">
+        <div class="name">VibeSurf<span class="accent">Dev</span></div>
+        <div class="tag">BUILD · SURF · SHIP</div>
+      </div>
+      <div class="footer-links">
+        <a data-wa-direct
+          href="https://wa.me/5598984357980?text=Ol%C3%A1!%20Vim%20pelo%20case%20do%20Pedro%20Red%20da%20VibeSurfDev%20e%20quero%20conversar%20sobre%20meu%20projeto."
+          target="_blank" rel="noopener">WhatsApp · +55 98 98435-7980</a>
+        <a href="https://instagram.com/vibesurfdev" target="_blank" rel="noopener">Instagram · @vibesurfdev</a>
+        <a href="/">← Voltar ao site completo</a>
+      </div>
+    </div>
+    <div class="footer-legal">© 2026 VibeSurfDev — Feito com intenção, entregue sem drama.</div>
+  </footer>
+
+  <!-- WhatsApp FAB -->
+  <a class="wa-fab" data-wa-direct
+    href="https://wa.me/5598984357980?text=Ol%C3%A1!%20Vim%20pelo%20case%20do%20Pedro%20Red%20da%20VibeSurfDev%20e%20quero%20conversar%20sobre%20meu%20projeto."
+    target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
+    <span class="wa-fab-tip" aria-hidden="true">Fale com a gente</span>
+    <svg class="wa-fab-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.358.101 11.892c0 2.096.549 4.142 1.595 5.945L0 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.582 0 11.946-5.358 11.949-11.893a11.821 11.821 0 00-3.421-8.402z" />
+    </svg>
+  </a>
+  <script src="../nichos/_shared.js?v=3"></script>
+</body>
+
+</html>

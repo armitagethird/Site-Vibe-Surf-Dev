@@ -1,0 +1,529 @@
+/* ============================================
+   VibeSurfDev — Case Study Pages (/projeto/*)
+   Componentes exclusivos das páginas de projeto
+   (drakerlyhelena, pedrored).
+   Carregado APÓS ../styles.css e ../nichos/_shared.css
+   — herda tokens e reusa .container, .section-head,
+   .eyebrow, .accent, .reveal, .browser-frame, .work-tags,
+   .work-info, .btn-primary/.btn-ghost, .niche-nav,
+   .niche-footer, .cross-links/.cross-link. Este arquivo
+   adiciona apenas o que é novo (prefixo .proj-*).
+   ============================================ */
+
+/* ============ HERO ============ */
+/* Herda o ritmo tipográfico do .niche-hero (nichos/_shared.css):
+   mesmo clamp() de h1, mesma tagline, mesmo tratamento de eyebrow.
+   Só o wrapper muda de nome — .proj-hero não é .niche-hero porque
+   estas páginas não usam o menu de nicho. */
+
+.proj-hero {
+  position: relative;
+  padding: 120px 48px 80px;
+}
+.proj-hero .container {
+  position: relative;
+  z-index: 2;
+  max-width: 920px;
+}
+.proj-hero .eyebrow {
+  margin-bottom: 24px;
+}
+.proj-hero h1 {
+  font-size: clamp(36px, 5.5vw, 72px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+}
+.proj-hero h1 .accent {
+  color: var(--yellow);
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  font-weight: 400;
+}
+/* Tagline: parágrafo puro, sem classe própria — mantém o HTML simples
+   (o contrato não prevê uma classe dedicada para ela). */
+.proj-hero p {
+  font-size: clamp(16px, 1.4vw, 19px);
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 640px;
+}
+
+@media (max-width: 700px) {
+  .proj-hero { padding: 100px 20px 56px; }
+  .proj-hero h1 { font-size: clamp(28px, 8vw, 44px); }
+}
+@media (max-width: 480px) {
+  .proj-hero { padding: 88px 16px 48px; }
+}
+
+/* ============ HERO META ============ */
+/* Faixa de metadados sob a tagline. Marcação esperada: <dl class="proj-hero-meta">
+   com um <div class="proj-meta-item"><dt>…</dt><dd>…</dd></div> por item —
+   agrupar dt/dd em divs dentro de dl é válido em HTML5. */
+
+.proj-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 28px;
+  margin: 8px 0 36px;
+}
+.proj-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.proj-meta-item dt {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--yellow);
+}
+.proj-meta-item dd {
+  font-size: 15px;
+  color: var(--white);
+  margin: 0;
+}
+
+/* ============ STATUS PILL ============ */
+/* Único uso de verde na página inteira (ESTETICA.md §2 — verde é
+   reservado a indicadores "ao vivo"). Reusa a keyframe global @pulse
+   já definida em styles.css (.live::before) em vez de redeclará-la. */
+
+.proj-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 14px 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.02);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+.proj-status::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #28c840;
+  box-shadow: 0 0 10px #28c840;
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+/* ============ SECTION WRAPPER ============ */
+
+.proj-section {
+  padding: 96px 48px;
+}
+@media (max-width: 700px) {
+  .proj-section { padding: 64px 20px; }
+}
+@media (max-width: 480px) {
+  .proj-section { padding: 48px 16px; }
+}
+
+/* Dobra técnica: marca a virada de registro comercial → engenharia. */
+.proj-section--tech {
+  border-top: 1px solid var(--line);
+  background: var(--navy-2);
+}
+
+/* ---- Ritmo vertical ----
+   Os componentes (.proj-cards, .proj-callout, .proj-shots, .proj-stats…) não
+   carregam margem própria: quem define o ritmo é a seção. Regra do irmão
+   adjacente — espaço só ENTRE blocos, nunca antes do primeiro, então nada
+   briga com o padding da seção.
+   Valores da ESTETICA.md §4: section-head → primeiro bloco 56px (36px mobile). */
+
+.proj-section > .container > * + * { margin-top: 40px; }
+.proj-section > .container > .section-head + * { margin-top: 56px; }
+.proj-section > .container > .proj-callout + .proj-callout { margin-top: 24px; }
+.proj-section > .container > .proj-next { margin-top: 56px; }
+
+/* blockquote chega com margem lateral do user-agent; zeramos os outros lados
+   sem encostar no margin-top que a regra acima acabou de dar. */
+.proj-section > .container > blockquote.proj-prose {
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+}
+
+@media (max-width: 700px) {
+  .proj-section > .container > * + * { margin-top: 28px; }
+  .proj-section > .container > .section-head + * { margin-top: 36px; }
+  .proj-section > .container > .proj-next { margin-top: 40px; }
+}
+
+/* ============ PROSE ============ */
+
+.proj-prose {
+  max-width: 68ch;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+.proj-prose p {
+  margin: 0 0 20px;
+}
+.proj-prose p:last-child {
+  margin-bottom: 0;
+}
+
+.proj-lead {
+  font-size: 20px;
+  line-height: 1.55;
+  font-weight: 400;
+  color: var(--white);
+}
+
+/* ============ GRID 2 COLUNAS (editorial) ============ */
+
+.proj-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 80px;
+}
+@media (max-width: 900px) {
+  .proj-grid-2 { grid-template-columns: 1fr; gap: 40px; }
+}
+
+/* ============ CARDS ============ */
+
+.proj-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.proj-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 32px 28px;
+  background: linear-gradient(180deg, var(--navy-3) 0%, var(--navy-2) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  transition: border-color 0.4s, transform 0.4s var(--ease-out), box-shadow 0.5s;
+}
+.proj-card:hover {
+  border-color: rgba(245, 197, 24, 0.28);
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.6);
+}
+.proj-card-num {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: var(--yellow);
+}
+.proj-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  color: var(--white);
+}
+.proj-card p {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ============ STATS ============ */
+
+.proj-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 24px;
+}
+/* auto-fit já resolveria sozinho na maioria dos casos, mas com
+   minmax(160px) cabem 2 colunas apertadas em 390px — força 1 coluna
+   para garantir zero overflow, como pedido. */
+@media (max-width: 480px) {
+  .proj-stats { grid-template-columns: 1fr; gap: 20px; }
+}
+
+.proj-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 24px;
+  border-left: 1px solid var(--line);
+}
+.proj-stat:first-child {
+  border-left-color: var(--yellow);
+}
+.proj-stat-value {
+  display: flex;
+  align-items: baseline;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--white);
+}
+.proj-stat-suffix {
+  color: var(--yellow);
+  margin-left: 2px;
+}
+.proj-stat-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ============ CALLOUT ============ */
+/* Bloco de destaque de engenharia. Empilha com respiro quando há
+   mais de um callout seguido na mesma seção (até 6, por spec). */
+
+.proj-callout {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 24px 28px;
+  background: rgba(245, 197, 24, 0.04);
+  border-left: 2px solid var(--yellow);
+  border-radius: 0 14px 14px 0;
+}
+.proj-callout + .proj-callout {
+  margin-top: 20px;
+}
+.proj-callout h3 {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--yellow);
+}
+.proj-callout p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ============ CODE (inline) ============ */
+
+.proj-code {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  color: var(--white);
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+/* ============ ARQUITETURA (diagrama em CSS puro) ============ */
+/* Sem imagem, sem Mermaid. Camadas empilhadas em coluna, ligadas por
+   .proj-arch-arrow. Para a camada que precisa conter sub-caixas (o
+   binário Rust = SPA + /api), NÃO existe classe própria no contrato —
+   usa-se o mesmo .proj-arch-layer aninhado, ativado por um atributo
+   estrutural: data-arch="container" no pai + data-label="…" para o
+   rótulo (via content:attr(), sem precisar de span extra) e
+   .proj-arch-layer comuns como filhos. Ex.:
+
+   <div class="proj-arch">
+     <div class="proj-arch-layer">Navegador</div>
+     <div class="proj-arch-arrow"></div>
+     <div class="proj-arch-layer">Caddy (TLS)</div>
+     <div class="proj-arch-arrow"></div>
+     <div class="proj-arch-layer" data-arch="container" data-label="Binário Rust">
+       <div class="proj-arch-layer">SPA</div>
+       <div class="proj-arch-layer">/api</div>
+     </div>
+     <div class="proj-arch-arrow"></div>
+     <div class="proj-arch-layer">PostgreSQL 17</div>
+   </div> */
+
+.proj-arch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.proj-arch-layer {
+  width: 100%;
+  padding: 18px 24px;
+  background: linear-gradient(180deg, var(--navy-3) 0%, var(--navy-2) 100%);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  text-align: center;
+}
+
+/* Camada-container: hospeda sub-caixas lado a lado (wrap automático
+   evita overflow — em telas estreitas as sub-caixas empilham sozinhas). */
+.proj-arch-layer[data-arch="container"] {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 12px;
+  padding: 42px 16px 16px;
+  position: relative;
+  background: rgba(245, 197, 24, 0.03);
+  border-color: rgba(245, 197, 24, 0.22);
+  text-align: left;
+}
+.proj-arch-layer[data-arch="container"]::before {
+  content: attr(data-label);
+  position: absolute;
+  top: 16px;
+  left: 24px;
+  right: 24px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  text-align: center;
+}
+.proj-arch-layer[data-arch="container"] > .proj-arch-layer {
+  width: auto;
+  flex: 1 1 130px;
+  padding: 12px 14px;
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.proj-arch-arrow {
+  width: 1px;
+  height: 28px;
+  background: var(--line);
+  position: relative;
+}
+.proj-arch-arrow::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 7px solid var(--yellow);
+}
+
+@media (max-width: 480px) {
+  .proj-arch-layer[data-arch="container"] { flex-direction: column; }
+  .proj-arch-layer[data-arch="container"] > .proj-arch-layer { flex: 1 1 auto; }
+}
+
+/* ============ TELAS SECUNDÁRIAS ============ */
+
+.proj-shots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.proj-shot {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.proj-shot img {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: border-color 0.3s;
+}
+.proj-shot:hover img {
+  border-color: rgba(245, 197, 24, 0.4);
+}
+.proj-shot figcaption {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ============ PRÓXIMO PROJETO ============ */
+/* Mesma anatomia visual do .cross-link (nichos/_shared.css), mas
+   declarada à parte: .cross-link não está disponível fora de
+   nichos/_shared.css como componente solto de 1 link, e o contrato
+   pede uma classe própria aqui. */
+
+.proj-next {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 28px 32px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  transition: border-color 0.3s, background 0.3s, transform 0.3s var(--ease-out);
+}
+.proj-next:hover {
+  border-color: rgba(245, 197, 24, 0.5);
+  background: rgba(245, 197, 24, 0.04);
+  transform: translateY(-2px);
+}
+.proj-next .label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--yellow);
+}
+.proj-next .title {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.proj-next .desc {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* ============================================================
+   ACESSIBILIDADE DO MOVIMENTO
+   Único autoplay introduzido por este arquivo é o pulse do
+   .proj-status; hovers (card, shot, next) não entram aqui por não
+   serem movimento automático.
+
+   O .reveal também entra aqui: ele nasce em opacity:0 + translateY(30px)
+   e só ganha .in via IntersectionObserver, mas styles.css não tem
+   fallback de reduced-motion para ele — a única regra reduced-motion de
+   lá cobre .ambient-wave. Escopamos por body[data-niche] em vez de
+   redefinir .reveal global: é o mesmo padrão que _shared.css usa para os
+   fallbacks de médicos e stack, e mantém o efeito intacto nas outras
+   páginas. Sem isto, quem pede menos movimento no SO recebe o slide de
+   30px assim mesmo.
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .proj-status::before {
+    animation: none;
+  }
+
+  body[data-niche^="projeto"] .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

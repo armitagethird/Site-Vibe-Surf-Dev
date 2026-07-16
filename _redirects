@@ -10,3 +10,7 @@
 
 # Root pages
 /stack.html                 /stack                 301
+
+# Case study pages
+/projeto/drakerlyhelena.html   /projeto/drakerlyhelena   301
+/projeto/pedrored.html         /projeto/pedrored         301
