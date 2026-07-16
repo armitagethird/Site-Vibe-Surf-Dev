@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#0d1b2a" />
   <title>Sistemas sob medida · VibeSurfDev</title>
-  <meta name="description" content="Software sob medida para operações que não cabem em SaaS genérico. Cases em produção: ProntuVet (clínicas veterinárias) e Motel Paraíso (hospitalidade)." />
+  <meta name="description" content="Software sob medida para operações que não cabem em SaaS genérico. Cases em produção: Pedro Red (oficina, ERP em Rust), ProntuVet (clínicas veterinárias) e Motel Paraíso (hospitalidade)." />
 
   <link rel="canonical" href="https://vibesurfdev.com/nichos/sistemas" />
 
@@ -147,11 +147,101 @@
     <div class="container">
       <div class="section-head reveal">
         <span class="eyebrow">Cases em produção · 2026</span>
-        <h2>Dois sistemas, <span class="accent">duas operações</span>, em produção.</h2>
+        <h2>Três sistemas, <span class="accent">três operações</span>, em produção.</h2>
         <p>Stack diferente, mesma engenharia.</p>
       </div>
 
-      <!-- CASE 1: ProntuVet -->
+      <!-- CASE 1: Pedro Red -->
+      <div class="case-spotlight">
+        <article class="work-slide in" data-project="pedro-red">
+          <div class="browser-frame">
+            <div class="browser-chrome">
+              <div class="browser-dots">
+                <span class="dot dot-r"></span>
+                <span class="dot dot-y"></span>
+                <span class="dot dot-g"></span>
+              </div>
+              <div class="browser-url">
+                <span class="url-protocol">https://</span><span class="url-host"
+                  style="--url-width: 15ch;">pedrored.com.br</span><span class="url-caret"
+                  aria-hidden="true">▍</span>
+              </div>
+              <div class="browser-actions">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                  <path d="M2 8a6 6 0 1 1 1.76 4.24" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+                    fill="none" />
+                  <path d="M2 4v3.5h3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                </svg>
+              </div>
+            </div>
+            <div class="browser-viewport">
+              <picture>
+                <source type="image/avif" srcset="../assets/work/pedrored-site.avif" />
+                <source type="image/webp" srcset="../assets/work/pedrored-site.webp" />
+                <img src="../assets/work/pedrored-site.png" alt="Pedro Red — loja de peças no ar"
+                     width="1905" height="944" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+          </div>
+
+          <div class="work-meta">
+            <div class="work-meta-head">
+              <span class="work-num">CASO · PEDRO RED</span>
+              <span class="work-year">2026</span>
+            </div>
+            <h3 class="work-title">Pedro Red</h3>
+            <p class="work-tagline">ERP da oficina e loja de peças com PIX — a operação inteira servida por um binário Rust.</p>
+            <ul class="work-outcomes">
+              <li>Loja pública sem login: catálogo, carrinho, checkout com PIX e acompanhamento do pedido por token assinado.</li>
+              <li>Painel admin com <strong>8 módulos</strong> — ordens de serviço, clientes e veículos, estoque com custo médio, financeiro, agenda e loja.</li>
+              <li>Um único binário aplica as migrations no boot, expõe a API e serve o SPA — sem Node em produção, mesma origem, sem CORS.</li>
+              <li>PIX gerado no servidor: o BR Code é montado em Rust, com CRC-16 validado contra o vetor canônico.</li>
+              <li>121 endpoints e 453 testes, auditados no código em julho de 2026.</li>
+            </ul>
+            <div class="work-tags">
+              <span>Rust</span><span>Axum</span><span>SQLx</span><span>PostgreSQL 17</span><span>React 19</span><span>Vite</span>
+            </div>
+            <div class="work-cta">
+              <a href="https://pedrored.com.br" class="work-link" target="_blank" rel="noopener">
+                Ver site no ar <span aria-hidden="true">→</span>
+              </a>
+            </div>
+            <div class="work-screens" aria-label="Telas do sistema">
+              <button type="button" class="work-screen" aria-label="Site institucional e localização da oficina">
+                <picture>
+                  <source type="image/avif" srcset="../assets/work/pedrored-oficina.avif" />
+                  <source type="image/webp" srcset="../assets/work/pedrored-oficina.webp" />
+                  <img src="../assets/work/pedrored-oficina.png" alt="Site institucional do Pedro Red com mapa da oficina em São Luís/MA"
+                       width="1903" height="948" loading="lazy" decoding="async" />
+                </picture>
+              </button>
+              <button type="button" class="work-screen" aria-label="Painel admin de gestão da oficina e da loja">
+                <picture>
+                  <source type="image/avif" srcset="../assets/work/pedrored-admin.avif" />
+                  <source type="image/webp" srcset="../assets/work/pedrored-admin.webp" />
+                  <img src="../assets/work/pedrored-admin.png" alt="Painel admin do Pedro Red — ordens de serviço, estoque, financeiro e loja"
+                       width="1919" height="942" loading="lazy" decoding="async" />
+                </picture>
+              </button>
+            </div>
+            <dl class="work-info" aria-label="Detalhes do Pedro Red">
+              <div class="work-info-item">
+                <dt class="work-info-label">Por que esta stack</dt>
+                <dd class="work-info-value">Rust + Axum (um binário serve API e SPA na mesma origem) · SQLx (queries checadas em tempo de compilação) · PostgreSQL 17 em VPS própria</dd>
+              </div>
+              <div class="work-info-item">
+                <dt class="work-info-label">Segurança</dt>
+                <dd class="work-info-value">Sessão em cookie cifrado com revogação server-side · 2FA TOTP com segredo cifrado em repouso · rate-limit por IP · upload validado por magic bytes</dd>
+              </div>
+            </dl>
+            <a href="/projeto/pedrored" class="case-deepen">
+              Ver o case completo →
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <!-- CASE 2: ProntuVet -->
       <div class="case-spotlight">
         <article class="work-slide in" data-project="prontuvet">
           <div class="browser-frame">
@@ -241,7 +331,7 @@
         </article>
       </div>
 
-      <!-- CASE 2: Motel Paraíso -->
+      <!-- CASE 3: Motel Paraíso -->
       <div class="case-spotlight">
         <article class="work-slide in" data-project="motel-paraiso">
           <div class="browser-frame">
@@ -331,9 +421,6 @@
         </article>
       </div>
 
-      <a href="/projeto/pedrored" class="case-deepen">
-        Mais um sistema sob medida em produção: aprofunde no case do Pedro Red →
-      </a>
     </div>
   </section>
 
